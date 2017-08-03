@@ -9,11 +9,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: c51c727c1cb022eca59f819c7f24d8e058c677da
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.openlocfilehash: 164af369d49e3044e5409c28d8b6145ebc067313
+ms.sourcegitcommit: 020066d68d4ab68da162a4ae0cb4e239241f950f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 07/28/2017
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Installer le module Azure PowerShell Service Management
 
@@ -35,7 +35,7 @@ Name          Version Path
 PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
 ```
 
-Si PowerShellGet n’est pas installé, consultez [Comment obtenir PowerShellGet](install-azurerm-ps.md#how-to-get-powershellget).
+Si PowerShellGet n’est pas installé, consultez [Comment obtenir PowerShellGet](#how-to-get-powershellget).
 
 ## <a name="step-2-install-azure-powershell"></a>Étape 2 : Installer Azure PowerShell
 
@@ -76,3 +76,20 @@ Les modules Azure PowerShell sont fréquemment mis à jour. Si vous remarquez qu
 Pour obtenir des exemples de scripts qui peuvent vous aider à automatiser certaines tâches courantes dans Azure, consultez le [Centre de scripts Microsoft Azure](http://www.windowsazure.com/documentation/scripts/).
 
 Pour obtenir des informations générales sur l’installation, l’apprentissage, l’utilisation et la personnalisation de Windows PowerShell, consultez [Écriture de scripts avec Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=320210).
+
+### <a name="how-to-get-powershellget"></a>Comment obtenir PowerShellGet
+
+|Version du SE|Instructions d’installation|
+|---|---|
+|J’ai Windows 10 ou Windows Server 2016|Intégré à Windows Management Framework (WMF) 5.0 inclus dans le système d’exploitation|
+|Je veux effectuer la mise à niveau vers PowerShell 5|[Installer la dernière version de WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
+|Mon ordinateur exécute une version de Windows avec PowerShell 3 ou 4|[Obtenir les modules PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
+
+<a id="helpmechoose"></a>
+### <a name="checking-the-version-of-azure-powershell"></a>Vérification de la version d’Azure PowerShell
+
+Bien que nous vous encouragions à effectuer la mise à niveau vers la version la plus récente dès que possible, plusieurs versions d’Azure PowerShell sont prises en charge. Pour déterminer la version d’Azure PowerShell installée, exécutez `Get-Module AzureRM` à partir de la ligne de commande.
+
+```powershell
+Get-Module AzureRM -list | Select-Object Name,Version,Path
+```
