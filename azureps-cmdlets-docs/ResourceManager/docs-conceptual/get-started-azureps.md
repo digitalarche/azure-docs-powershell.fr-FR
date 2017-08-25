@@ -10,30 +10,29 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 03/30/2017
-ms.openlocfilehash: 4bfa14f4f139fa8c35d4bb51ae81baea819188ce
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.openlocfilehash: f1c13317f0b42b547166a8130dd8c29bed5759c9
+ms.sourcegitcommit: db5c50de90764a9bdc7c1f1dbca3aed5bfeb05fa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 08/22/2017
 ---
 # <a name="getting-started-with-azure-powershell"></a>Bien démarrer avec Azure PowerShell
 
 Azure PowerShell est conçu pour la gestion et l’administration des ressources Azure à partir de la ligne de commande, et pour la création de scripts d’automatisation utilisables avec Azure Resource Manager. Cet article vous aide à bien démarrer et explique les concepts de base.
 
-
 ## <a name="install-azure-powershell"></a>Installation d'Azure PowerShell
-La première étape est de vérifier que la dernière version d’Azure PowerShell est installée.  La version la plus récente est la version 4.1.0.
+
+La première étape est de vérifier que la dernière version d’Azure PowerShell est installée. Pour plus d’informations sur la version la plus récente, consultez les [notes de publication](./release-notes-azureps.md).
 
 1. [Installez Azure PowerShell](install-azurerm-ps.md).
-
 2. Pour vérifier que l’installation a réussi, exécutez `Get-Module AzureRM` à partir de la ligne de commande.
-
 
 ## <a name="log-in-to-azure"></a>Connexion à Azure
 
 Connectez-vous de manière interactive :
 
-1. Saisissez `Login-AzureRmAccount`.  Une boîte de dialogue s’affiche pour vous demander vos informations d’identification Azure. L’option '-EnvironmentName' peut vous permettre de vous connecter à Azure Chine ou Azure Allemagne.
+1. Saisissez `Login-AzureRmAccount`. Une boîte de dialogue s’affiche pour vous demander vos informations d’identification Azure. L’option '-EnvironmentName' peut vous permettre de vous connecter à Azure Chine ou Azure Allemagne.
+
    Par exemple, Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 2. Entrez l’adresse de messagerie et le mot de passe associés à votre compte. Azure authentifie et enregistre les informations d’identification, puis ferme la fenêtre.
