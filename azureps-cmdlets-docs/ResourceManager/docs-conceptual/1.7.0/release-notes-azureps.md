@@ -17,13 +17,11 @@ ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="6ed15-103">Notes de publication</span><span class="sxs-lookup"><span data-stu-id="6ed15-103">Release notes</span></span>
-<a id="release-notes" class="xliff"></a>
+# <a name="release-notes"></a><span data-ttu-id="6ed15-103">Notes de publication</span><span class="sxs-lookup"><span data-stu-id="6ed15-103">Release notes</span></span>
 
 <span data-ttu-id="6ed15-104">Il s’agit de la liste des modifications apportées à Azure PowerShell dans cette version.</span><span class="sxs-lookup"><span data-stu-id="6ed15-104">This is a list of changes made to Azure PowerShell in this release.</span></span>
 
-## <span data-ttu-id="6ed15-105">Version 1.7.0</span><span class="sxs-lookup"><span data-stu-id="6ed15-105">Version 1.7.0</span></span>
-<a id="version-170" class="xliff"></a>
+## <a name="version-170"></a><span data-ttu-id="6ed15-105">Version 1.7.0</span><span class="sxs-lookup"><span data-stu-id="6ed15-105">Version 1.7.0</span></span>
 
 * <span data-ttu-id="6ed15-106">**Modification du comportement des paramètres -Force, –Confirm et $ConfirmPreference pour toutes les applets de commande. Nous modifions cette implémentation conformément aux directives PowerShell. Pour la plupart des applets de commande, cela implique de supprimer le paramètre Force et d’ignorer l’invite ShouldProcess, les utilisateurs doivent inclure le paramètre : « -Confirm:$false » dans leurs scripts PowerShell.**</span><span class="sxs-lookup"><span data-stu-id="6ed15-106">**Behavioral change for -Force, –Confirm and $ConfirmPreference parameters for all cmdlets. We are changing this implementation to be in line with PowerShell guidelines. For most cmdlets, this means removing the Force parameter and to skip the ShouldProcess prompt, users will need to include the parameter: ‘-Confirm:$false’ in their PowerShell scripts.**</span></span> <span data-ttu-id="6ed15-107">Ces changements corrigent les problèmes suivants :</span><span class="sxs-lookup"><span data-stu-id="6ed15-107">This changes are addressing following issues:</span></span>
   - <span data-ttu-id="6ed15-108">Implémentation correcte de la fonctionnalité –WhatIf, qui permet à un utilisateur de déterminer les effets d’une applet de commande ou d’un script sans apporter de modification réelle</span><span class="sxs-lookup"><span data-stu-id="6ed15-108">Correct implementation of –WhatIf functionality, allowing a user to determine the effects of a cmdlet or script without making any actual changes</span></span>

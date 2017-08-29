@@ -1,6 +1,6 @@
 ---
-title: "<span data-ttu-id=\"196b5-101\">Mise en forme des résultats de requête | Microsoft Docs</span><span class=\"sxs-lookup\"><span data-stu-id=\"196b5-101\">Formatting query results | Microsoft Docs</span></span>"
-description: "<span data-ttu-id=\"196b5-102\">Comment effectuer une requête de ressources dans Azure et mettre en forme les résultats.</span><span class=\"sxs-lookup\"><span data-stu-id=\"196b5-102\">How to query for resources in Azure and format the results.</span></span>"
+title: "Mise en forme des résultats de requête | Microsoft Docs"
+description: "Comment effectuer une requête de ressources dans Azure et mettre en forme les résultats."
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -16,8 +16,7 @@ ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="196b5-103">Mise en forme des résultats de requête</span><span class="sxs-lookup"><span data-stu-id="196b5-103">Formatting query results</span></span>
-<a id="formatting-query-results" class="xliff"></a>
+# <a name="formatting-query-results"></a><span data-ttu-id="196b5-103">Mise en forme des résultats de requête</span><span class="sxs-lookup"><span data-stu-id="196b5-103">Formatting query results</span></span>
 
 <span data-ttu-id="196b5-104">Par défaut, chaque applet de commande PowerShell met en forme la sortie selon des paramètres prédéfinis pour faciliter la lecture.</span><span class="sxs-lookup"><span data-stu-id="196b5-104">By default each PowerShell cmdlet has predefined formatting of output making it easy to read.</span></span>  <span data-ttu-id="196b5-105">PowerShell offre également une grande flexibilité pour adapter la sortie ou convertir la sortie de l’applet de commande dans un format différent. Pour cela, vous pouvez utiliser les applets de commande suivantes :</span><span class="sxs-lookup"><span data-stu-id="196b5-105">PowerShell also provides the flexibility to adjust the output or convert the cmdlet output to a different format with the following cmdlets:</span></span>
 
@@ -28,8 +27,7 @@ ms.lasthandoff: 06/29/2017
 | `Format-Table`  | `ConvertTo-Json` |
 | `Format-Wide`   | `ConvertTo-Xml`  |
 
-## <span data-ttu-id="196b5-108">Exemples de mise en forme</span><span class="sxs-lookup"><span data-stu-id="196b5-108">Formatting examples</span></span>
-<a id="formatting-examples" class="xliff"></a>
+## <a name="formatting-examples"></a><span data-ttu-id="196b5-108">Exemples de mise en forme</span><span class="sxs-lookup"><span data-stu-id="196b5-108">Formatting examples</span></span>
 
 <span data-ttu-id="196b5-109">Dans cet exemple, nous obtenons une liste des machines virtuelles Azure créées dans notre abonnement par défaut.</span><span class="sxs-lookup"><span data-stu-id="196b5-109">In this example we get a list of Azure VMs in our default subscription.</span></span>  <span data-ttu-id="196b5-110">Par défaut, la commande Get-AzureRmVM présente la sortie sous forme de tableau.</span><span class="sxs-lookup"><span data-stu-id="196b5-110">The Get-AzureRmVM command defaults output into a table format.</span></span>
 
@@ -75,8 +73,7 @@ Location          : westeurope
 ResourceGroupName : MYWESTEURG
 ```
 
-## <span data-ttu-id="196b5-116">Conversion en d’autres types de données</span><span class="sxs-lookup"><span data-stu-id="196b5-116">Converting to other data types</span></span>
-<a id="converting-to-other-data-types" class="xliff"></a>
+## <a name="converting-to-other-data-types"></a><span data-ttu-id="196b5-116">Conversion en d’autres types de données</span><span class="sxs-lookup"><span data-stu-id="196b5-116">Converting to other data types</span></span>
 
 <span data-ttu-id="196b5-117">PowerShell propose également plusieurs formats de sortie à utiliser selon vos besoins.</span><span class="sxs-lookup"><span data-stu-id="196b5-117">PowerShell also offers multiple output format you can use to meet your needs.</span></span>  <span data-ttu-id="196b5-118">Dans l’exemple suivant, nous utilisons l’applet de commande `Select-Object` pour obtenir les attributs des machines virtuelles créées dans notre abonnement, et nous convertissons la sortie au format CSV pour pouvoir ensuite l’importer facilement dans une base de données ou une feuille de calcul.</span><span class="sxs-lookup"><span data-stu-id="196b5-118">In the following example we use the `Select-Object` cmdlet to get attributes of the virtual machines in our subscription and and convert the output to CSV format for easy import into a database or spreadsheet.</span></span>
 

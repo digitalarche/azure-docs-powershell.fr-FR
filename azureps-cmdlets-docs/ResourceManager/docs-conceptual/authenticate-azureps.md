@@ -1,6 +1,6 @@
 ---
-title: <span data-ttu-id="18088-101">Se connecter avec Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="18088-101">Log in with Azure PowerShell</span></span>
-description: <span data-ttu-id="18088-102">Se connecter avec Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="18088-102">Log in with Azure PowerShell</span></span>
+title: Se connecter avec Azure PowerShell
+description: Se connecter avec Azure PowerShell
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -16,20 +16,17 @@ ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="18088-103">Se connecter avec Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="18088-103">Log in with Azure PowerShell</span></span>
-<a id="log-in-with-azure-powershell" class="xliff"></a>
+# <a name="log-in-with-azure-powershell"></a><span data-ttu-id="18088-103">Se connecter avec Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="18088-103">Log in with Azure PowerShell</span></span>
 
 <span data-ttu-id="18088-104">Azure PowerShell prend en charge plusieurs méthodes de connexion.</span><span class="sxs-lookup"><span data-stu-id="18088-104">Azure PowerShell supports multiple login methods.</span></span> <span data-ttu-id="18088-105">La méthode la plus simple est de vous connecter de manière interactive à partir de la ligne de commande.</span><span class="sxs-lookup"><span data-stu-id="18088-105">The simplest way to get started is to log in interactively at the command line.</span></span>
 
-## <span data-ttu-id="18088-106">Connexion interactive</span><span class="sxs-lookup"><span data-stu-id="18088-106">Interactive log in</span></span>
-<a id="interactive-log-in" class="xliff"></a>
+## <a name="interactive-log-in"></a><span data-ttu-id="18088-106">Connexion interactive</span><span class="sxs-lookup"><span data-stu-id="18088-106">Interactive log in</span></span>
 
 1. <span data-ttu-id="18088-107">Saisissez `Login-AzureRmAccount`.</span><span class="sxs-lookup"><span data-stu-id="18088-107">Type `Login-AzureRmAccount`.</span></span> <span data-ttu-id="18088-108">Une boîte de dialogue s’affiche pour vous demander vos informations d’identification Azure.</span><span class="sxs-lookup"><span data-stu-id="18088-108">You will get dialog box asking for your Azure credentials.</span></span>
 
 2. <span data-ttu-id="18088-109">Entrez l’adresse de messagerie et le mot de passe associés à votre compte.</span><span class="sxs-lookup"><span data-stu-id="18088-109">Type the email address and password associated with your account.</span></span> <span data-ttu-id="18088-110">Azure authentifie et enregistre les informations d’identification, puis ferme la fenêtre.</span><span class="sxs-lookup"><span data-stu-id="18088-110">Azure authenticates and saves the credential information, and then closes the window.</span></span>
 
-## <span data-ttu-id="18088-111">Connexion avec un principal du service</span><span class="sxs-lookup"><span data-stu-id="18088-111">Log in with a service principal</span></span>
-<a id="log-in-with-a-service-principal" class="xliff"></a>
+## <a name="log-in-with-a-service-principal"></a><span data-ttu-id="18088-111">Connexion avec un principal du service</span><span class="sxs-lookup"><span data-stu-id="18088-111">Log in with a service principal</span></span>
 
 <span data-ttu-id="18088-112">Les principaux du service offrent un moyen de créer des comptes non interactifs que vous pouvez ensuite utiliser pour manipuler les ressources.</span><span class="sxs-lookup"><span data-stu-id="18088-112">Service principals provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="18088-113">Les principaux du service sont comme des comptes d’utilisateur auxquels vous pouvez appliquer des règles à l’aide d’Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="18088-113">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span> <span data-ttu-id="18088-114">En accordant les autorisations minimales nécessaires à un principal du service, vous sécurisez encore davantage vos scripts d’automatisation.</span><span class="sxs-lookup"><span data-stu-id="18088-114">By granting the minimum permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span>
 
@@ -56,8 +53,7 @@ ms.lasthandoff: 06/29/2017
     CurrentStorageAccount :
     ```
 
-## <span data-ttu-id="18088-118">Connexion à un autre cloud</span><span class="sxs-lookup"><span data-stu-id="18088-118">Log in to another Cloud</span></span>
-<a id="log-in-to-another-cloud" class="xliff"></a>
+## <a name="log-in-to-another-cloud"></a><span data-ttu-id="18088-118">Connexion à un autre cloud</span><span class="sxs-lookup"><span data-stu-id="18088-118">Log in to another Cloud</span></span>
 
 <span data-ttu-id="18088-119">Les services de cloud computing d’Azure offrent différents environnements conformes aux règles de traitement des données de nombreux gouvernements.</span><span class="sxs-lookup"><span data-stu-id="18088-119">Azure cloud services provide different environments that adhere to the data-handling regulations of various governments.</span></span> <span data-ttu-id="18088-120">Si votre compte Azure se trouve dans un des clouds gouvernementaux, vous devez spécifier cet environnement lors de la connexion.</span><span class="sxs-lookup"><span data-stu-id="18088-120">If your Azure account is in one the government clouds, you need to specify the environment when you sign in.</span></span> <span data-ttu-id="18088-121">Par exemple, si votre compte se trouve dans le cloud de la Chine, connectez-vous à l’aide la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="18088-121">For example, if you account is in the China cloud you sign on using the following command:</span></span>
 
@@ -80,8 +76,7 @@ AzureUSGovernment
 AzureGermanCloud
 ```
 
-## <span data-ttu-id="18088-123">En savoir plus sur la gestion de l’accès en fonction du rôle dans Azure</span><span class="sxs-lookup"><span data-stu-id="18088-123">Learn more about managing Azure role-based access</span></span>
-<a id="learn-more-about-managing-azure-role-based-access" class="xliff"></a>
+## <a name="learn-more-about-managing-azure-role-based-access"></a><span data-ttu-id="18088-123">En savoir plus sur la gestion de l’accès en fonction du rôle dans Azure</span><span class="sxs-lookup"><span data-stu-id="18088-123">Learn more about managing Azure role-based access</span></span>
 
 <span data-ttu-id="18088-124">Pour plus d’informations sur la gestion de l’authentification et de l’abonnement dans Azure, consultez la page [Gérer des comptes, des abonnements et des rôles d’administrateur](/azure/active-directory/role-based-access-control-configure).</span><span class="sxs-lookup"><span data-stu-id="18088-124">For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](/azure/active-directory/role-based-access-control-configure).</span></span>
 

@@ -16,8 +16,7 @@ ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="50494-104">Gérer plusieurs abonnements Azure</span><span class="sxs-lookup"><span data-stu-id="50494-104">Manage multiple Azure subscriptions</span></span>
-<a id="manage-multiple-azure-subscriptions" class="xliff"></a>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="50494-104">Gérer plusieurs abonnements Azure</span><span class="sxs-lookup"><span data-stu-id="50494-104">Manage multiple Azure subscriptions</span></span>
 
 <span data-ttu-id="50494-105">Si vous débutez avec Azure, vous avez probablement un seul abonnement.</span><span class="sxs-lookup"><span data-stu-id="50494-105">If you are brand new to Azure, you probably only have a single subscription.</span></span> <span data-ttu-id="50494-106">Si vous utilisez Azure depuis un moment déjà, vous avez peut-être créé plusieurs abonnements Azure.</span><span class="sxs-lookup"><span data-stu-id="50494-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span> <span data-ttu-id="50494-107">Vous pouvez configurer Azure PowerShell pour exécuter les commandes sur un abonnement spécifique.</span><span class="sxs-lookup"><span data-stu-id="50494-107">You can configure Azure PowerShell to execute commands against a particular subscription.</span></span>
 

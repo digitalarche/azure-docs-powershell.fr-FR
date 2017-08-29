@@ -17,13 +17,11 @@ ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 06/29/2017
 ---
-# <span data-ttu-id="f6ea2-103">Notes de publication</span><span class="sxs-lookup"><span data-stu-id="f6ea2-103">Release notes</span></span>
-<a id="release-notes" class="xliff"></a>
+# <a name="release-notes"></a><span data-ttu-id="f6ea2-103">Notes de publication</span><span class="sxs-lookup"><span data-stu-id="f6ea2-103">Release notes</span></span>
 
 <span data-ttu-id="f6ea2-104">Il s’agit de la liste des modifications apportées à Azure PowerShell dans cette version.</span><span class="sxs-lookup"><span data-stu-id="f6ea2-104">This is a list of changes made to Azure PowerShell in this release.</span></span>
 
-## <span data-ttu-id="f6ea2-105">Version 3.8.0</span><span class="sxs-lookup"><span data-stu-id="f6ea2-105">Version 3.8.0</span></span>
-<a id="version-380" class="xliff"></a>
+## <a name="version-380"></a><span data-ttu-id="f6ea2-105">Version 3.8.0</span><span class="sxs-lookup"><span data-stu-id="f6ea2-105">Version 3.8.0</span></span>
 * <span data-ttu-id="f6ea2-106">Calcul</span><span class="sxs-lookup"><span data-stu-id="f6ea2-106">Compute</span></span>
   - <span data-ttu-id="f6ea2-107">Correction d’un bogue dans les applets de commande Get-* pour permettre la récupération de plusieurs pages de données (plus de 120 éléments)</span><span class="sxs-lookup"><span data-stu-id="f6ea2-107">Fix bug in Get-* cmdlets, to allow retrieving multiple pages of data (more than 120 items)</span></span>
 * <span data-ttu-id="f6ea2-108">DataLakeAnalytics</span><span class="sxs-lookup"><span data-stu-id="f6ea2-108">DataLakeAnalytics</span></span>
