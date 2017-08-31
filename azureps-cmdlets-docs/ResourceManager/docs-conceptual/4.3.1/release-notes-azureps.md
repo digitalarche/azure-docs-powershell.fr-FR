@@ -72,7 +72,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     * La collecte de données a été activée par défaut. Les données d’utilisation sont collectées par Microsoft afin d’améliorer l’expérience utilisateur. Les données sont anonymes et n’incluent pas de valeurs d’argument de ligne de commande.
       - Utilisation de l’applet de commande Disable-AzureRmDataCollection pour désactiver la fonctionnalité
       - Utilisation de l’applet de commande Enable-AzureRmDataCollection pour activer la fonctionnalité
-* Resources
+* Ressources
     * Ajout de la prise en charge de la validation des étendues des applets de commande roledefinition et roleassignment suivantes avant l’envoi de la requête à ARM
       - Get-AzureRMRoleAssignment
       - New-AzureRMRoleAssignment
