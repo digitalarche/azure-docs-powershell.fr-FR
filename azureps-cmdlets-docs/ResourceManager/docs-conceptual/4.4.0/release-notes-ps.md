@@ -18,12 +18,12 @@ Module de la galerie pour les applets de commande héritées pour la gestion du 
     * Mise à jour de la recherche de référence SKU dans New-AzureRmAnalysisServicesServer et Set-AzureRmAnalysisServicesServer
         - Remplacement de la recherche de référence SKU codée en dur par une recherche dynamique.
     * Add-AzureAnalysisServicesAccount pour prendre en charge la connexion avec le principal de service
-* Automation
+* Automatisation
     * Modifications apportées aux applets de commande AutomationDSC * pour extraire plus de 100 enregistrements
     * Résolution du problème des flux de commentaires qui arrêtaient de fonctionner après l’appel de certaines applets de commande d’automatisation (par exemple, Get-AzureRmAutomationVariable, Get-AzureRmAutomationJob).
     * Ajout de la prise en charge de la gestion des versions de build NodeConfiguration dans StartAzureAutomationDscCompilationJob et ImportAzureAutomationDscNodeConfiguration.
     * Correctifs de bogues pour les problèmes existants - Résolution du problème d’alias n°3775 et de l’alias runOn, ainsi que de la prise en charge pour HybridWorkers.
-* Compute
+* Calcul
     * Set-AzureRmVMAEMExtension : Ajout de la prise en charge des nouvelles tailles de disque Premium
     * Set-AzureRmVMAEMExtension : Ajout de la prise en charge de la série M
     * Ajout du paramètre ForceUpdateTag à Add-AzureRmVmssExtension
@@ -34,7 +34,7 @@ Module de la galerie pour les applets de commande héritées pour la gestion du 
     * Exposition de Restriction et de Capability au format de tableau de Get-AzureRmComputeResourceSku
 * DataLakeStore
     * Correctif du problème : https://github.com/Azure/azure-powershell/issues/4323
-* EventHub
+* Event Hub
     * Ajout de la propriété ResourceGroup à NamespaceAttributes
         - ResourceGroup - Obtient le nom du groupe de ressources dans lequel se trouve Namespace
     * Mise à jour des applets de commande avec le nouveau paramètre et l’alias de paramètre
@@ -51,7 +51,7 @@ Module de la galerie pour les applets de commande héritées pour la gestion du 
             + Génère une nouvelle clé principale/secondaire pour la règle AuthorizationRule du NameSpace ou de l’EventHub existant.
         - Get-AzureRmEventHubKey
             + Obtient la clé principale/secondaire pour la règle AuthorizationRule du NameSpace ou de l’EventHub existant.
-* Network
+* Réseau
     * New-AzureRmExpressRouteCircuitPeeringConfig : ajout de la prise en charge d’IPv6. Nouveau paramètre facultatif ajouté
         - PeerAddressType
     * Set-AzureRmExpressRouteCircuitPeeringConfig : ajout de la prise en charge d’IPv6. Nouveau paramètre facultatif ajouté
@@ -62,11 +62,11 @@ Module de la galerie pour les applets de commande héritées pour la gestion du 
         - Add-AzureRmApplicationGatewayBackendHttpSettings
         - New-AzureRmApplicationGatewayBackendHttpSettings
         - Set-AzureRmApplicationGatewayBackendHttpSettings
-* Profile
+* Profil
     * La collecte de données a été activée par défaut. Les données d’utilisation sont collectées par Microsoft afin d’améliorer l’expérience utilisateur. Les données sont anonymes et n’incluent pas de valeurs d’argument de ligne de commande.
         - Utilisation de l’applet de commande Disable-AzureRmDataCollection pour désactiver la fonctionnalité
         - Utilisation de l’applet de commande Enable-AzureRmDataCollection pour activer la fonctionnalité
-* Resources
+* Ressources
     * Ajout de la prise en charge de la validation des étendues des applets de commande roledefinition et roleassignment suivantes avant l’envoi de la requête à ARM
         - Get-AzureRMRoleAssignment
         - New-AzureRMRoleAssignment
