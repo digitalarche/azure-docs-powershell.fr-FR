@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.workload: 
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.sourcegitcommit: 9d2d35944106bdb6758853b050089bc804e6b9d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="release-notes"></a>Notes de publication
 
@@ -51,13 +51,13 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - Nouvelle cmdlet : Get-AzureRmVmssRollingUpgrade affiche l’état de la mise à niveau propagé du groupe identique de machines virtuelles.
   * Le paramètre booléen AssignIdentity est introduit pour l’identité affectée par le système.
     - Nouveau paramètre : AssignIdentity est ajouté à New-AzureRmVMConfig, New-AzureRmVmssConfig et Update-AzureRmVM
-  * Fonctionnalité de chiffrement de disque Vmss :
+  * Fonctionnalité de chiffrement de disque VMSS :
     - Nouvelle cmdlet : Set-AzureRmVmssDiskEncryptionExtension active le chiffrement de disque sur le groupe identique de machines virtuelles
     - Nouvelle cmdlet : Disable-AzureRmVmssDiskEncryption désactive le chiffrement de disque sur le groupe identique de machines virtuelles
     - Nouvelle cmdlet : Get-AzureRmVmssDiskEncryptionStatus affiche l’état du chiffrement de disque du groupe identique de machines virtuelles
-    - Nouvelle cmdlet : Get-AzureRmVmssDiskEncryptionStatus affiche l’état du chiffrement de disque des machines virtuelles d’un groupe identique de machines virtuelles
+    - Nouvelle cmdlet : Get-AzureRmVmssVMDiskEncryptionStatus affiche l’état du chiffrement de disque des machines virtuelles d’un groupe identique de machines virtuelles
 * ContainerInstance
-  * Ajout de cmdlets PowerShell pour Azure Container Instance
+  * Ajout de cmdlets PowerShell pour Azure Container Instance
     - New-AzureRmContainerGroup
     - Get-AzureRmContainerGroup
     - Remove-AzureRmContainerGroup
@@ -101,24 +101,24 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - Mise à jour du paramètre Set-AzureRmVirtualSubnetConfig : ajout du paramètre optionnel -ServiceEndpoint
   * Ajout d’une cmdlet pour répertorier les services de point de terminaison disponibles à l’emplacement
     - Get-AzureRmVirtualNetworkAvailableEndpointService
-  * Ajout de la possibilité de configurer une authentification P2S basée sur un serveur RADIUS externe pour les commandlets suivantes
+  * Ajout de la possibilité de configurer une authentification P2S basée sur un serveur RADIUS externe pour les commandlets suivantes
     - New-AzureVirtualNetworkGateway
     - Set-AzureVirtualNetworkGateway
     - Set-AzureRmVirtualNetworkGatewayVpnClientConfig
-  * Ajout d’une cmdlet pour permettre la génération de profils VPN pour une authentification P2S basée sur un serveur RADIUS externe
+  * Ajout d’une cmdlet pour permettre la génération de profils VPN pour une authentification P2S basée sur un serveur RADIUS externe
     - New-AzureRmVpnClientConfiguration
     - Get-AzureRmVpnClientConfiguration
-  * Ajout de la prise en charge de paramètre SKU pour les adresses IP publiques et les équilibreurs de charge
+  * Ajout de la prise en charge de paramètre SKU pour les adresses IP publiques et les équilibreurs de charge
     - Mise à jour du paramètre New-AzureRMLoadBalancer : ajout du paramètre optionnel -Sku
-    - Mise à jour du paramètre New-AzureRMPublicIpAddress : ajout du paramètre optionnel -Sku
-  * Ajout de la prise en charge du paramètre DisableOutboundSNAT pour les règles d’équilibrage de charge
-    - Mise à jour du paramètre New-AzureRMLoadBalancerRuleConfig : ajout du paramètre optionnel DisableOutboundSNAT
-    - Mise à jour du paramètre Add-AzureRMLoadBalancerRuleConfig : ajout du paramètre optionnel DisableOutboundSNAT
-    - Mise à jour du paramètre Set-AzureRMLoadBalancerRuleConfig : ajout du paramètre optionnel DisableOutboundSNAT
+    - Mise à jour du paramètre New-AzureRMPublicIpAddress : ajout du paramètre optionnel - Sku
+  * Ajout de la prise en charge du paramètre DisableOutboundSNAT pour les règles d’équilibrage de charge
+    - Mise à jour du paramètre New-AzureRMLoadBalancerRuleConfig : ajout du paramètre optionnel DisableOutboundSNAT
+    - Mise à jour du paramètre Add-AzureRMLoadBalancerRuleConfig : ajout du paramètre optionnel DisableOutboundSNAT
+    - Mise à jour du paramètre Set-AzureRMLoadBalancerRuleConfig : ajout du paramètre optionnel DisableOutboundSNAT
   * Ajout de la prise en charge de IkeV2 P2S
     - Mise à jour du paramètre New-AzureRmVirtualNetworkGateway : ajout du paramètre optionnel -VpnClientProtocol, valeur par défaut [ « SSTP », « IkeV2 » ]
     - Mise à jour du paramètre Set-AzureRmVirtualNetworkGateway : ajout du paramètre optionnel -VpnClientProtocol
-  * Ajout de la prise en charge de règles MultiValued dans les règles de sécurité réseau et les règles de sécurité réseau efficaces
+  * Ajout de la prise en charge de règles MultiValued dans les règles de sécurité réseau et les règles de sécurité réseau efficaces
     - Mise à jour du paramètre Add-AzureRmNetworkSecurityRuleConfig : mise à jour des paramètres SourcePortRange, DestinationPortRange et SourceAddressPrefix pour accepter une liste de chaînes
     - Mise à jour du paramètre New-AzureRmNetworkSecurityRuleConfig : mise à jour des paramètres SourcePortRange, DestinationPortRange et SourceAddressPrefix pour accepter une liste de chaînes
     - Mise à jour du paramètre Set-AzureRmNetworkSecurityRuleConfig : mise à jour des paramètres SourcePortRange, DestinationPortRange et SourceAddressPrefix pour accepter une liste de chaînes
@@ -126,9 +126,9 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - Mise à jour du paramètre New-AzureRmNetworkSecurityGroup : mise à jour du paramètre SecurityRules pour accepter les paramètres SourcePortRange, DestinationPortRange et SourceAddressPrefix, qui sont des listes de chaînes dans l’objet PSSecurityRule
     - Mise à jour du paramètre Get-AzureRmEffectiveNetworkSecurityGroup : ajout du paramètre TagMap
     - Mise à jour du paramètre Get-AzureRmEffectiveNetworkSecurityGroup : mise à jour de l’objet PSEffectiveSecurityRule retourné avec les paramètres SourcePortRange, DestinationPortRange et SourceAddressPrefix, qui sont des listes de chaînes.
-  * Ajout de la prise en charge de la protection DDOS pour les réseaux virtuels
+  * Ajout de la prise en charge de la protection DDOS pour les réseaux virtuels
     - Mise à jour du paramètre New-AzureRmVirtualNetwork : ajout des paramètres booléens EnableDDoSProtection et EnableVmProtection
-    - Ajout des propriétés EnableDDoSProtection et EnableVmProtection dans l’objet PSVirtualNetwork
+    - Ajout des propriétés EnableDDoSProtection et EnableVmProtection dans l’objet PSVirtualNetwork
   * Ajout de la prise en charge de l’équilibreur de charge interne à haute disponibilité
     - Mise à jour du paramètre Add-AzureRmLoadBalancerRuleConfig : ajout de l’élément All comme valeur acceptable pour le paramètre Protocol
     - Mise à jour du paramètre New-AzureRmLoadBalancerRuleConfig : ajout de l’élément All comme valeur acceptable pour le paramètre Protocol
@@ -144,11 +144,11 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - Mise à jour du paramètre New-AzureRmNetworkSecurityRuleConfig : ajout des paramètres optionnels SourceApplicationSecurityGroup, SourceApplicationSecurityGroupId, DestinationApplicationSecurityGroup et DestinationApplicationSecurityGroupId
     - Mise à jour du paramètre Add-AzureRmNetworkSecurityRuleConfig : ajout des paramètres optionnels SourceApplicationSecurityGroup, SourceApplicationSecurityGroupId, DestinationApplicationSecurityGroup et DestinationApplicationSecurityGroupId
     - Mise à jour du paramètre Set-AzureRmNetworkSecurityRuleConfig : ajout des paramètres optionnels SourceApplicationSecurityGroup, SourceApplicationSecurityGroupId, DestinationApplicationSecurityGroup et DestinationApplicationSecurityGroupId
-  * Ajout de nouvelles commandes pour les scripts VpnDeviceConfiguration
+  * Ajout de nouvelles commandes pour les scripts VpnDeviceConfiguration
     - Get-AzureRmVirtualNetworkGatewaySupportedVpnDevices
     - Get-AzureRmVirtualNetworkGatewayConnectionVpnDeviceConfigScript
 * Profil
-  * Prise en charge de Start-Job pour les cmdlets AzureRM.
+  * Prise en charge de Start-Job pour les cmdlets AzureRM.
     * Toutes les cmdlets AzureRM ajoutent le paramètre -AzureRmContext, qui peut accepter un contexte (sortie d’une cmdlet de contexte).
       - Modèle commun pour les tâches avec la conservation de contexte DÉSACTIVÉE : `Start-Job {param ($context) New-AzureRmVM -AzureRmContext $context [... other parameters]} -ArgumentList (Get-AzureRmContext)`
       - Modèle commun pour les tâches avec la conservation de contexte ACTIVÉE : `Start-Job {New-AzureRmVM [... other parameters]}`
@@ -172,9 +172,9 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
   * Ajout des paramètres -PolicySetDefinition, -Sku et -NotScope aux cmdlets New-AzureRmPolicyAssignment et Set-AzureRmPolicyAssignment
   * Ajout de la prise en charge de transmission d’URL de stratégie aux cmdlets New-AzureRmPolicyDefinition et Set-AzureRmPolicyDefinition
   * Ajout du paramètre -Mode à la cmdlet New-AzureRmPolicyDefinition
-  * Ajout de la prise en charge de la suppression d’affectation de rôle à l’aide de l’objet PSRoleAssignment
-    - Les utilisateurs peuvent maintenant utiliser l’objet d’entrée PSRoleassignment avec la cmdlet Remove-AzureRMRoleAssignment pour supprimer l’affectation de rôle.
-  * Ajouter des cmdlets ManagedApplication
+  * Ajout de la prise en charge de la suppression d’affectation de rôle à l’aide de l’objet PSRoleAssignment
+    - Les utilisateurs peuvent désormais utiliser l’objet d’entrée PSRoleassignment avec la commandlet Remove-AzureRMRoleAssignment pour supprimer l’affectation de rôle.
+  * Ajouter des cmdlets ManagedApplication
     - New-AzureRmManagedApplication : cmdlet pour créer une application gérée
     - Get-AzureRmManagedApplication : cmdlet pour répertorier toutes les applications gérées d’un abonnement ou pour obtenir une application gérée spécifique
     - Remove-AzureRmManagedApplication : cmdlet pour supprimer une application gérée
@@ -186,12 +186,12 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - Set-AzureRmManagedApplicationDefinition : cmdlet pour mettre à jour une définition d’application gérée existante
 * SQL
   * Ajout de la prise en charge des règles de réseau virtuel
-    - Ajout de la cmdlet Get-AzureRmSqlServerVirtualNetworkRule qui obtient les règles de réseau virtuel par un nom de règle spécifique ou une liste de règles de réseau virtuel dans un serveur Azure SQL.
+    - Ajout de la cmdlet Get-AzureRmSqlServerVirtualNetworkRule qui obtient les règles de réseau virtuel par un nom de règle spécifique ou une liste de règles de réseau virtuel dans un serveur Azure SQL.
     - Ajout de la cmdlet Set-AzureRmSqlServerVirtualNetworkRule qui modifie le réseau virtuel visé par la règle.
-    - Ajout de la cmdlet Remove-AzureRmSqlServerVirtualNetworkRule qui supprime une règle de réseau virtuel d’un serveur Azure SQL.
-    - Ajout de la cmdlet New-AzureRmSqlServerVirtualNetworkRule qui crée une règle de réseau virtuel pour un serveur Azure SQL.
+    - Ajout de la cmdlet Remove-AzureRmSqlServerVirtualNetworkRule qui supprime une règle de réseau virtuel d’un serveur Azure SQL.
+    - Ajout de la cmdlet New-AzureRmSqlServerVirtualNetworkRule qui crée une règle de réseau virtuel pour un serveur Azure SQL.
 * Sites web
-  * Ajout du niveau PremiumV2 pour les plans App Service
+  * Ajout du niveau PremiumV2 pour les plans App Service
 * Azure.Storage
   * Mise à niveau vers Azure Storage Client Library 8.4.0 et Azure Storage Data Movement Library 0.6.1
   * Ajout de la prise en charge de PremiumPageBlobTier dans l’API de chargement et de copie d’objet blob
