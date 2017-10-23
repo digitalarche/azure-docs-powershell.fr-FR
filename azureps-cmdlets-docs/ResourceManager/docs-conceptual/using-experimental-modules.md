@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 4a8a74977440fa89b89843bbc95e43d622a58474
-ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.openlocfilehash: 7a01957040be7c0498ef4f0e9b8f7297119221a5
+ms.sourcegitcommit: 9d2d35944106bdb6758853b050089bc804e6b9d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Utilisation des modules Azure PowerShell expérimentaux
 
@@ -35,7 +35,20 @@ Cette convention d’affectation de noms est similaire à la dénomination des m
 
 ## <a name="how-to-install-an-experimental-module"></a>Comment installer un module expérimental
 
-Les modules expérimentaux sont publiés dans PowerShell Gallery, comme les modules Azure PowerShell existants. Pour installer le module expérimental, utilisez les commandes suivantes à partir d’une session PowerShell avec élévation de privilèges :
+Les modules expérimentaux sont publiés dans PowerShell Gallery, comme les modules Azure PowerShell existants. Pour consulter une liste de modules expérimentaux, exécutez la commande suivante :
+
+```powershell
+Find-Module AzureRM.*.Experiments
+```
+
+```Output
+Version    Name                                Repository           Description
+-------    ----                                ----------           -----------
+1.0.0      AzureRM.Websites.Experiments        PSGallery            Create and deploy web applications using Azure Ap...
+1.0.25     AzureRM.Compute.Experiments         PSGallery            Azure Compute experiments for VM creation
+```
+
+Pour installer le module expérimental, utilisez les commandes suivantes à partir d’une session PowerShell avec élévation de privilèges :
 
 ```powershell
 Install-Module AzureRM.Compute.Experiments
@@ -108,4 +121,10 @@ Receive-Job $job
 
 ```powershell
 Send-Feedback
+```
+
+### <a name="uninstall-the-experimental-modules"></a>Désinstaller les modules expérimentaux
+
+```powershell
+Uninstall-Module AzureRM.Compute.Experiments
 ```
