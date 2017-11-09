@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
 ms.openlocfilehash: 94b39c18acaca7a4b17b5207feed025442665acc
-ms.sourcegitcommit: 202ec2df66c40a60f47ea06b30a6701ad444d229
+ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Installer et configurer Azure PowerShell sur macOS et Linux
 
@@ -69,7 +69,7 @@ La commande ci-dessus vous invite à accéder à `https://aka.ms/devicelogin` et
 
 Les modules Azure PowerShell pour .NET Standard sont en cours de développement. Ces modules ne fournissent pas l’ensemble des applets de commande qui sont disponibles pour la version Windows des modules. Les fonctions suivantes sont implémentées dans les modules AzureRM.Netcore :
 
-* Gestion des comptes
+* Account Management
   - Se connecter avec un compte Microsoft, un compte d’organisation ou un principal du service via Microsoft Azure Active Directory
   - Enregistrer les informations d’identification sur disque avec Save-AzureRmContext et charger les informations d’identification enregistrées avec Import-AzureRmContext
 * Environnement
@@ -79,7 +79,7 @@ Les modules Azure PowerShell pour .NET Standard sont en cours de développement.
   - Machine virtuelle
   - App Service (sites web)
   - Base de données SQL
-  - Stockage
+  - Storage
   - Réseau
 
 ## <a name="next-steps"></a>Étapes suivantes
