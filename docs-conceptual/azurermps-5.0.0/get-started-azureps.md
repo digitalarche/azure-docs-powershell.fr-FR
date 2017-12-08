@@ -1,4 +1,20 @@
---titre: Prise en main de Azure PowerShell | Microsoft Docs description: services: azure author: sdwheeler ms.author: sewhee manager: carmonm ms.product: azure ms.service: azure-powershell ms.devlang: powershell ms.topic: get-started-article ms.date: 15/11/2017
+---
+title: "Bien démarrer avec Azure PowerShell | Microsoft Docs"
+description: 
+services: azure
+author: sdwheeler
+ms.author: sewhee
+manager: carmonm
+ms.product: azure
+ms.service: azure-powershell
+ms.devlang: powershell
+ms.topic: get-started-article
+ms.date: 08/31/2017
+ms.openlocfilehash: 2cd3fc8e955ae826471dceee79d5e6b70070d416
+ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/07/2017
 ---
 # <a name="getting-started-with-azure-powershell"></a>Bien démarrer avec Azure PowerShell
 
@@ -10,15 +26,15 @@ La façon la plus simple de commencer est de [lancer Cloud Shell](/azure/cloud-s
 
 1. Lancez Cloud Shell dans le volet de navigation supérieur du Portail Azure.
 
-   ![Icône Shell](/media/get-started-azureps/shell-icon.png)
+   ![Icône Shell](~/media/get-started-azureps/shell-icon.png)
 
 2. Sélectionnez l’abonnement que vous souhaitez utiliser, et créez un compte de stockage.
 
-   ![Créez un compte de stockage.](/media/get-started-azureps/storage-prompt.png)
+   ![Créez un compte de stockage.](~/media/get-started-azureps/storage-prompt.png)
 
 Une fois que votre espace de stockage est créé, Azure Cloud Shell ouvre une session PowerShell dans le navigateur.
 
-![Azure Cloud Shell pour PowerShell](/media/get-started-azureps/cloud-powershell.png)
+![Azure Cloud Shell pour PowerShell](~/media/get-started-azureps/cloud-powershell.png)
 
 Vous pouvez également installer Azure PowerShell et l’utiliser en local dans une session PowerShell.
 
@@ -28,7 +44,7 @@ La première étape est de vérifier que la dernière version d’Azure PowerShe
 
 1. [Installez Azure PowerShell](install-azurerm-ps.md).
 
-2. Pour vérifier que l’installation a réussi, exécutez `Get-Module AzureRM -ListAvailable` à partir de la ligne de commande.
+2. Pour vérifier que l’installation a réussi, exécutez `Get-Module AzureRM` à partir de la ligne de commande.
 
 ## <a name="log-in-to-azure"></a>Connexion à Azure
 
