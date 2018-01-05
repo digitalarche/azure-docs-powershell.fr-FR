@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 7a01957040be7c0498ef4f0e9b8f7297119221a5
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.openlocfilehash: c11e4503c07b0a0c4a71021bc511da723098188e
+ms.sourcegitcommit: 42bfd513fe646494d3d9eb0cfc35b049f7e1fbb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Utilisation des modules Azure PowerShell expérimentaux
 
@@ -26,12 +26,7 @@ Pour faciliter l’expérimentation, nous créons des modules Azure PowerShell 
 
 Ces modules peuvent être installés en parallèle avec des modules Azure PowerShell existants. Les noms de cmdlet ont été raccourcis, de manière à éviter les conflits de noms avec des cmdlets existantes, non expérimentales.
 
-Les modules expérimentaux utilisent la convention d’affectation de noms suivante :
-
-- AzureRM.Compute.Experiments
-- AzureRM.Websites.Experiments
-
-Cette convention d’affectation de noms est similaire à la dénomination des modules de préversion : `AzureRM.*.Preview`. Les modules de préversion diffèrent des modules expérimentaux. Ils implémentent de nouvelles fonctionnalités des services Azure qui sont uniquement disponibles en tant qu’offre de préversion. Les modules de préversion remplacent les modules Azure PowerShell existants et utilisent les mêmes noms de paramètre et de cmdlet.
+Les modules expérimentaux utilisent la convention d’affectation de noms suivante : `AzureRM.*.Experiments`. Cette convention d’affectation de noms est similaire à la dénomination des modules de préversion : `AzureRM.*.Preview`. Les modules de préversion diffèrent des modules expérimentaux. Ils implémentent de nouvelles fonctionnalités des services Azure qui sont uniquement disponibles en tant qu’offre de préversion. Les modules de préversion remplacent les modules Azure PowerShell existants et utilisent les mêmes noms de paramètre et de cmdlet.
 
 ## <a name="how-to-install-an-experimental-module"></a>Comment installer un module expérimental
 
@@ -42,10 +37,10 @@ Find-Module AzureRM.*.Experiments
 ```
 
 ```Output
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.0.0      AzureRM.Websites.Experiments        PSGallery            Create and deploy web applications using Azure Ap...
-1.0.25     AzureRM.Compute.Experiments         PSGallery            Azure Compute experiments for VM creation
+Version Name                         Repository Description
+------- ----                         ---------- -----------
+1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
+1.0.0   AzureRM.Websites.Experiments PSGallery  Create and deploy web applications using Azure App Services.
 ```
 
 Pour installer le module expérimental, utilisez les commandes suivantes à partir d’une session PowerShell avec élévation de privilèges :
@@ -74,7 +69,7 @@ Les améliorations principales sont considérées comme des optimisations de «�
 
 - Noms plus courts : cela inclut les noms des cmdlets (par exemple, `New-AzureRmVM` => `New-AzVm`) et les noms des paramètres (par exemple, `-ResourceGroupName` => `-Rg`). Utilisez des alias pour assurer la compatibilité avec les « anciennes » cmdlets. Fournissez des ensembles de paramètres _à compatibilité descendante_.
 
-- Valeurs par défaut intelligentes : créez des valeurs par défaut intelligentes pour indiquer les informations « requises ». Par exemple :
+- Valeurs par défaut intelligentes : créez des valeurs par défaut intelligentes pour indiquer les informations « requises ». Par exemple : 
   - Groupe de ressources
   - Lieu
   - Ressources dépendantes
@@ -101,30 +96,3 @@ Par exemple, le scénario de « Création d’application web » peut avoir un
 - Valeurs par défaut de la taille : les « tailles » des ressources peuvent être difficiles à comprendre pour les utilisateurs, car de nombreux fournisseurs de ressources utilisent des noms différents (par exemple, « Standard\_DS1\_v2 » ou « S1 »). Toutefois, la plupart des utilisateurs se préoccupent surtout des coûts. Pour cette raison, il est judicieux de définir des tailles « universelles » selon un calendrier de tarification. Les utilisateurs peuvent choisir une taille spécifique, ou laisser à Azure PowerShell le soin de choisir le _meilleure option_ en fonction de la ressource et du budget.
 
 - Format de sortie : actuellement, Azure PowerShell renvoie des éléments `PSObject` et la sortie de console est limitée. Azure PowerShell peut avoir besoin d’afficher certaines informations à l’utilisateur concernant les « valeurs par défaut intelligentes » utilisées.
-
-## <a name="try-using-the-experiments"></a>Essayez de tirer parti des expériences
-
-### <a name="install"></a>Installer
-
-```powershell
-Install-Module AzureRM.Compute.Experiments
-```
-
-### <a name="create-a-vm"></a>Créer une machine virtuelle
-
-```powershell
-$job = New-AzVm -Name MyVm -AsJob
-Receive-Job $job
-```
-
-### <a name="send-us-feedback"></a>Envoyez-nous des commentaires
-
-```powershell
-Send-Feedback
-```
-
-### <a name="uninstall-the-experimental-modules"></a>Désinstaller les modules expérimentaux
-
-```powershell
-Uninstall-Module AzureRM.Compute.Experiments
-```

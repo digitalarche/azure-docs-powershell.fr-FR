@@ -37,6 +37,8 @@
       items:
         - name: À l’aide de modules expérimentaux
           href: using-experimental-modules.md
+        - name: Applets de commande en cours d’exécution en parallèle à l’aide de travaux PowerShell
+          href: using-psjobs.md
     - name: Notes de publication
       href: release-notes-azureps.md
 - name: Exemples de scripts
@@ -45,7 +47,7 @@
       href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Machines virtuelles Windows
       href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: "Applications\_Web"
+    - name: "Web\_Apps"
       href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: BASES DE DONNÉES SQL
       href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
