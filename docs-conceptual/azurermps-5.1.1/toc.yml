@@ -37,10 +37,11 @@
       items:
         - name: À l’aide de modules expérimentaux
           href: using-experimental-modules.md
-        - name: Applets de commande en cours d’exécution en parallèle à l’aide de travaux PowerShell
-          href: using-psjobs.md
     - name: Notes de publication
       href: release-notes-azureps.md
+      items:
+        - name: Dernières modifications d’Azure PowerShell 5.x
+          href: migration-guide.5.0.0.md
 - name: Exemples de scripts
   items:
     - name: Machines virtuelles Linux
