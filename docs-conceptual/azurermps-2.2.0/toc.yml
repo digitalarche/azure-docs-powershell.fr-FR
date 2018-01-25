@@ -29,13 +29,16 @@
           href: 'https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-powershell-sas-token'
     - name: Notes de publication
       href: release-notes-azureps.md
+      items:
+        - name: Dernières modifications d’Azure PowerShell 2.x
+          href: migration-guide.2.0.0.md
 - name: Exemples de scripts
   items:
     - name: Machines virtuelles Linux
       href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
     - name: Machines virtuelles Windows
       href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
-    - name: "Applications\_Web"
+    - name: "Web\_Apps"
       href: 'https://docs.microsoft.com/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
     - name: BASES DE DONNÉES SQL
       href: 'https://docs.microsoft.com/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
