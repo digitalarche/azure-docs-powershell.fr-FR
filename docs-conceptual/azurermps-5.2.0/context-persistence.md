@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.openlocfilehash: 8ef20796b64b16c78a653e293a57d5e752d89710
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.sourcegitcommit: 72f56597f0329d35779a3ea4ccea6293f0fd2502
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="persisting-user-logins-across-powershell-sessions"></a>Connexions d’utilisateur persistant d’une session à l’autre PowerShell
 
@@ -83,7 +83,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 L’exemple précédent ajoute un nouveau contexte qui cible « Contoso Subscription 1 » en utilisant vos informations d’identification actuelles. Le nouveau contexte est nommé « Contoso1 ». Si vous ne fournissez aucun nom au contexte, un nom par défaut sera utilisé, constitué de l’ID du compte et de l’ID de l’abonnement.
 
-Pour renommer un contexte existant, utilisez la cmdlet `Rename-AzureRmContext`. Par exemple :
+Pour renommer un contexte existant, utilisez la cmdlet `Rename-AzureRmContext`. Par exemple : 
 
 ```powershell
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
@@ -91,7 +91,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 Cet exemple change le nom `[user1@contoso.org; 123456-7890-1234-564321]` automatiquement attribué au contexte par le nom « Contoso2 ». Les cmdlets qui gèrent les contextes utilisent aussi la saisie automatique via la touche Tab, ce qui vous permet de sélectionner rapidement le contexte.
 
-Enfin, pour supprimer un contexte, utilisez la cmdlet `Remove-AzureRmContext`.  Par exemple :
+Enfin, pour supprimer un contexte, utilisez la cmdlet `Remove-AzureRmContext`.  Par exemple : 
 
 ```powershell
 PS C:\> Remove-AzureRmContext Contoso2

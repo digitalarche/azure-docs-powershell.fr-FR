@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.openlocfilehash: 0e560332c87fdcc8b7365f2271de24481003a4d6
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.sourcegitcommit: 72f56597f0329d35779a3ea4ccea6293f0fd2502
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="install-and-configure-azure-powershell"></a>Installation et configuration d'Azure PowerShell
 
@@ -91,7 +91,7 @@ Pour plus d’informations sur l’utilisation d’Azure PowerShell, consultez l
 
 Si vous rencontrez des bogues en utilisant l’outil, signalez un problème dans la section [Issues](https://github.com/Azure/azure-powershell/issues) (Problèmes) de notre référentiel GitHub. Pour fournir des commentaires à partir de la ligne de commande, utilisez l’applet de commande `Send-Feedback`.
 
-## <a name="frequently-asked-questions"></a>Forum Aux Questions
+## <a name="frequently-asked-questions"></a>Questions fréquentes (FAQ)
 
 ### <a name="how-to-get-powershellget"></a>Comment obtenir PowerShellGet
 
