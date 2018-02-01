@@ -1,0 +1,56 @@
+- name: "Azure\_PowerShell"
+  href: overview.md
+  items:
+    - name: Installer
+      href: install-azurerm-ps.md
+      items:
+        - name: Installer sur macOS et Linux
+          href: install-azurermps-maclinux.md
+        - name: Autres méthodes d’installation
+          href: other-install.md
+    - name: Prise en main
+      href: get-started-azureps.md
+    - name: Cloud Shell
+      href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+    - name: Se connecter
+      href: authenticate-azureps.md
+      items:
+        - name: Créer un principal du service
+          href: create-azure-service-principal-azureps.md
+        - name: À l’aide d’informations d’identification persistantes
+          href: context-persistence.md
+    - name: Requêtes
+      href: queries-azureps.md
+    - name: Mise en forme
+      href: formatting-output.md
+    - name: Abonnements
+      href: manage-subscriptions-azureps.md
+    - name: Déployer
+      items:
+        - name: Déployer à l'aide de modèles Resource Manager
+          href: /azure/azure-resource-manager/resource-group-template-deploy
+        - name: Exporter des modèles Resource Manager
+          href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+        - name: Déployer un modèle Resource Manager privé avec un jeton SAP
+          href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+    - name: Concepts
+      items:
+        - name: À l’aide de modules expérimentaux
+          href: using-experimental-modules.md
+    - name: Notes de publication
+      href: release-notes-azureps.md
+      items:
+        - name: Dernières modifications d’Azure PowerShell 5.x
+          href: migration-guide.5.0.0.md
+- name: Exemples de scripts
+  items:
+    - name: Machines virtuelles Linux
+      href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: Machines virtuelles Windows
+      href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: "Web\_Apps"
+      href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: BASES DE DONNÉES SQL
+      href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: Cosmos DB
+      href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
