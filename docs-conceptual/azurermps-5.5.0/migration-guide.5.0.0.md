@@ -388,7 +388,7 @@ $consumergroup = Get-AzureRmEventHubConsumerGroup <parameters>
 
 ### <a name="add-azurermlogalertrule"></a>**Add-AzureRMLogAlertRule**
 - L’applet de commande **Add-AzureRMLogAlertRule** a été dépréciée.
-- À compter du 1er octobre, cette applet de commande n’aura plus aucun effet, dans la mesure où cette fonctionnalité est en cours de transition vers les alertes de journal d’activité. Pour plus d’informations, accédez au lien https://aka.ms/migratemealerts.
+- À compter du 1er octobre, cette applet de commande n’aura plus aucun effet, dans la mesure où cette fonctionnalité est en cours de transition vers les alertes de journal d’activité. Pour plus d’informations, consultez https://aka.ms/migratemealerts.
 
 ### <a name="get-azurermusage"></a>**Get-AzureRMUsage**
 - L’applet de commande **Get-AzureRMUsage** a été dépréciée.
