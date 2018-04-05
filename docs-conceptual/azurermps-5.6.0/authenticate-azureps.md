@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 1af5aeffb8e87e916df3e2440a84805935136c0f
-ms.sourcegitcommit: 15bf69bf95eceb936b3a429e741add95c308826a
+ms.openlocfilehash: f07dee0eed106e39879d58ae06ff08b787faa531
+ms.sourcegitcommit: 8376e0bc5f862d382d7283ba72990e3707591e7b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="log-in-with-azure-powershell"></a>Se connecter avec Azure PowerShell
 
@@ -22,7 +22,7 @@ Azure PowerShell prend en charge plusieurs méthodes de connexion. La méthode l
 
 ## <a name="interactive-log-in"></a>Connexion interactive
 
-1. Saisissez `Login-AzureRmAccount`. Une boîte de dialogue s’affiche pour vous demander vos informations d’identification Azure.
+1. Saisissez `Connect-AzureRmAccount`. Une boîte de dialogue s’affiche pour vous demander vos informations d’identification Azure.
 
 2. Entrez l’adresse de messagerie et le mot de passe associés à votre compte. Azure authentifie et enregistre les informations d’identification, puis ferme la fenêtre.
 
@@ -35,7 +35,7 @@ Les principaux du service offrent un moyen de créer des comptes non interactifs
 2. Connectez-vous avec le principal du service.
 
     ```powershell
-    Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
+    Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
     Pour obtenir votre ID de locataire (TenantId), connectez-vous de manière interactive, puis recherchez la valeur TenantId dans votre abonnement.
@@ -64,7 +64,7 @@ Pour en savoir plus sur MSI, consultez [Utilisation d’une identité de service
 Les services de cloud computing d’Azure offrent différents environnements conformes aux règles de traitement des données de nombreux gouvernements. Si votre compte Azure se trouve dans un des clouds gouvernementaux, vous devez spécifier cet environnement lors de la connexion. Par exemple, si votre compte se trouve dans le cloud de la Chine, connectez-vous à l’aide la commande suivante :
 
 ```powershell
-Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+Connect-AzureRmAccount -Environment AzureChinaCloud
 ```
 
 Pour obtenir la liste d’environnements disponibles, utilisez la commande suivante :
