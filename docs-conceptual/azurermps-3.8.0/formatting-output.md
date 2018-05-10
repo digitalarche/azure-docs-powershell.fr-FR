@@ -1,6 +1,6 @@
 ---
-title: "Mise en forme des résultats de requête | Microsoft Docs"
-description: "Comment effectuer une requête de ressources dans Azure et mettre en forme les résultats."
+title: Mise en forme des résultats de requête | Microsoft Docs
+description: Comment effectuer une requête de ressources dans Azure et mettre en forme les résultats.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 2b23af1ef84b7c91abdcbe0738b29b068f82fd32
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="formatting-query-results"></a>Mise en forme des résultats de requête
 

@@ -203,7 +203,7 @@ Les applets de commande suivantes affectaient cette version :
 Les applets de commande suivantes affectaient cette version :
 
 ### <a name="new-azurermsqldatabasefailovergroup"></a>New-AzureRmSqlDatabaseFailoverGroup
-- Le paramètre `Tag` a été supprimé.
+- Le paramètre `Tag` a été renommé.
 - Le paramètre `GracePeriodWithDataLossHour` a été renommé en `GracePeriodWithDataLossHours`.
 
 ```powershell
@@ -215,7 +215,7 @@ New-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -F
 ```
 
 ### <a name="set-azurermsqldatabasefailovergroup"></a>Set-AzureRmSqlDatabaseFailoverGroup
-- Le paramètre `Tag` a été supprimé.
+- Le paramètre `Tag` a été renommé.
 - Le paramètre `GracePeriodWithDataLossHour` a été renommé en `GracePeriodWithDataLossHours`.
 
 ```powershell
@@ -227,7 +227,7 @@ Set-AzureRmSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName server1 -F
 ```
 
 ### <a name="add-azurermsqldatabasetofailovergroup"></a>Add-AzureRmSqlDatabaseToFailoverGroup
-- Le paramètre `Tag` a été supprimé.
+- Le paramètre `Tag` a été renommé.
 
 ```powershell
 # Old
@@ -238,7 +238,7 @@ Add-AzureRmSqlDatabaseToFailoverGroup -ResourceGroupName rg -ServerName server1 
 ```
 
 ###  <a name="remove-azurermsqldatabasefromfailovergroup"></a>Remove-AzureRmSqlDatabaseFromFailoverGroup
-- Le paramètre `Tag` a été supprimé.
+- Le paramètre `Tag` a été renommé.
 
 ```powershell
 # Old

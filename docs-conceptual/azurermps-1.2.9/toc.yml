@@ -1,4 +1,4 @@
-- name: "Azure\_PowerShell"
+- name: Azure PowerShell
   href: overview.md
   items:
     - name: Installer
@@ -35,7 +35,7 @@
       href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
     - name: Machines virtuelles Windows
       href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
-    - name: "Applications\_Web"
+    - name: "Web\_Apps"
       href: 'https://docs.microsoft.com/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
     - name: BASES DE DONNÉES SQL
       href: 'https://docs.microsoft.com/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'

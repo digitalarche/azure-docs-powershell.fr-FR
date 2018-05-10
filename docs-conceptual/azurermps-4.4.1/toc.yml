@@ -1,4 +1,4 @@
-- name: "Azure\_PowerShell"
+- name: Azure PowerShell
   href: overview.md
   items:
     - name: Installer

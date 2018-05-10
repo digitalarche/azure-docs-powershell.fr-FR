@@ -1,6 +1,6 @@
 ---
-title: "Installation et configuration d’Azure PowerShell │ Microsoft Docs"
-description: "Comment installer et configurer Azure PowerShell pour la première utilisation."
+title: Installation et configuration d’Azure PowerShell │ Microsoft Docs
+description: Comment installer et configurer Azure PowerShell pour la première utilisation.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/17/2017
 ms.openlocfilehash: 0c1500a8748a3aa4546c6ce1e8d16a635b056edb
-ms.sourcegitcommit: 226527be7cb647acfe2ea9ab151185053ab3c6db
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="install-and-configure-azure-powershell"></a>Installation et configuration d'Azure PowerShell
 
@@ -84,7 +84,7 @@ Pour plus d’informations sur l’utilisation d’Azure PowerShell, consultez l
 
 * [Prise en main d’Azure PowerShell](get-started-azureps.md)
 
-## <a name="frequently-asked-questions"></a>Forum Aux Questions
+## <a name="frequently-asked-questions"></a>Questions fréquentes (FAQ)
 
 ### <a name="how-to-get-powershellget"></a>Comment obtenir PowerShellGet
 
