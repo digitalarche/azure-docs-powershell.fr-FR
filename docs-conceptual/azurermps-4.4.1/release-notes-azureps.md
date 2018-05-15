@@ -1,6 +1,6 @@
 ---
 title: Journal de modifications Azure PowerShell | Microsoft Docs
-description: "Il s’agit d’un historique des modifications apportées à Azure PowerShell dans la dernière version."
+description: Il s’agit d’un historique des modifications apportées à Azure PowerShell dans la dernière version.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: 9d2d35944106bdb6758853b050089bc804e6b9d2
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Notes de publication
 
@@ -230,7 +230,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
   * Exposition de MaintenanceRedeployStatus à la sortie Get-AzureRmVM-Status
   * Exposition de Restriction et de Capability au format de tableau de Get-AzureRmComputeResourceSku
 * DataLakeStore
-  * Correctif du problème : https://github.com/Azure/azure-powershell/issues/4323
+  * Corrigez le problème : https://github.com/Azure/azure-powershell/issues/4323
 * Event Hub
   * Ajout de la propriété ResourceGroup à NamespaceAttributes
     - ResourceGroup - Obtient le nom du groupe de ressources dans lequel se trouve Namespace
@@ -288,7 +288,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
       - Remove-AzureRmSqlDatabaseAuditing
       - Remove-AzureRmSqlServerAuditing
     * L’analyse du fichier de schéma pour Update-AzureRmSqlSyncGroup ne tient désormais plus compte de la casse.
-* Storage
+* Stockage
     * Ajout de la prise en charge de NeworkRule aux applets de commande de compte de stockage du mode de ressources
       - New-AzureRmStorageAccount
       - Set-AzureRmStorageAccount
@@ -305,9 +305,9 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
       - Update-AzureRmDisk
       - Update-AzureRmSnapshot
 * Profil
-    - Correction d’un problème avec l’authentification des utilisateurs non interactifs dans RDFE (lien) [https://github.com/Azure/azure-powershell/issues/4299]
+    - Correction d’un problème avec l’authentification utilisateur non interactive dans RDFE (lien) [https://github.com/Azure/azure-powershell/issues/4299]
 * ServiceManagement
-    - Correction d’un problème avec l’authentification des utilisateurs non interactifs (lien) [https://github.com/Azure/azure-powershell/issues/4299]
+    - Correction d’un problème avec l’authentification utilisateur non interactive (lien) [https://github.com/Azure/azure-powershell/issues/4299]
 
 ## <a name="2017711---version-420"></a>11/07/2017 - Version 4.2.0
 * AnalysisServices
@@ -315,7 +315,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
         - Introduction de l’API pour récupérer le journal du serveur Analysis Services, Export-AzureAnalysisServicesInstanceLog
 * Automatisation
     * Paramétrage correct de la valeur TimeZone pour les planifications hebdomadaires et mensuelles pour New-AzureRmAutomationSchedule
-        - Des informations supplémentaires sont disponibles pour le problème : https://github.com/Azure/azure-powershell/issues/3043
+        - Des informations supplémentaires sont disponibles dans cette publication : https://github.com/Azure/azure-powershell/issues/3043
 * AzureBatch
     - Ajout d’une nouvelle applet de commande Get-AzureBatchJobPreparationAndReleaseTaskStatus.
     - Ajout du début et de la fin de la plage d’octets aux paramètres Get-AzureBatchNodeFileContent.
@@ -437,7 +437,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
         - Get-AzureRmVirtualNetworkUsageList
 * Profil
     * Correction de l’erreur lors de l’utilisation d’Import-AzureRmContext ou de Save-AzureRmContext
-        - Des informations supplémentaires sont disponibles pour le problème : https://github.com/Azure/azure-powershell/issues/3954
+        - Des informations supplémentaires sont disponibles dans cette publication : https://github.com/Azure/azure-powershell/issues/3954
 * RecoveryServices.SiteRecovery
     * Introduction d’un nouveau module pour les opérations Azure Site Recovery.
         - Toutes les applets de commande commencent par AzureRmRecoveryServicesAsr*
@@ -447,7 +447,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     * Les applets de commande de mise à niveau de serveur sont déconseillées car l’ancienne version du serveur (2.0) n’existe plus.
     * Ajout d’un nouveau paramètre de commutateur facultatif « AssignIdentity » aux applets de commande New-AzureRmSqlServer et Set-AzureRmSqlServer pour prendre en charge l’approvisionnement d’une identité de ressource pour la ressource SQL Server
     * Le paramètre ResourceGroupName est désormais facultatif pour Get-AzureRmSqlServer
-        - Des informations supplémentaires sont disponibles pour le problème suivant : https://github.com/Azure/azure-powershell/issues/635
+        - Des informations supplémentaires sont disponibles dans la publication suivante : https://github.com/Azure/azure-powershell/issues/635
 * ServiceManagement pour ExpressRoute :
     * L’applet de commande New-AzureBgpPeering a été mise à jour pour ajouter les nouvelles options suivantes :
         - PeerAddressType : la valeur « IPv4 » ou « IPv6 » peut être spécifiée pour créer une homologation BGP du type de famille d’adresses correspondant
@@ -554,7 +554,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
   - Suppression des propriétés DataDiskNames et NetworkInterfaceIDs en double de l’objet de machine virtuelle PS.
   - Paramètres DataDiskNames et NetworkInterfaceIDs rendus facultatifs dans Remove-AzureRmVMDataDisk et Remove-AzureRmVMNetworkInterface, respectivement.
   - Corrigez le problème de combinaison d’applets de commande Get quand les applets de commande Get retournent un objet de liste.
-  - Les applets de commande qui sont en conflit avec les applets de commande RDFE ont été renommées. Consultez la page du problème https://github.com/Azure/azure-powershell/issues/2917 pour plus de détails
+  - Les applets de commande qui sont en conflit avec les applets de commande RDFE ont été renommées. Voir la publication https://github.com/Azure/azure-powershell/issues/2917 pour plus de détails
     + `New-AzureVMSqlServerAutoBackupConfig` a été renommé en `New-AzureRmVMSqlServerAutoBackupConfig`
     + `New-AzureVMSqlServerAutoPatchingConfig` a été renommé en `New-AzureRmVMSqlServerAutoPatchingConfig`
     + `New-AzureVMSqlServerKeyVaultCredentialConfig` a été renommé en `New-AzureRmVMSqlServerKeyVaultCredentialConfig`
