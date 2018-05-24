@@ -2,19 +2,19 @@
 title: Autres méthodes d’installation d’Azure PowerShell | Microsoft Docs
 description: Comment installer Azure PowerShell à l’aide du package MSI ou de Web Platform Installer.
 services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: 73c099375cecc8abdd5d6179109513946e7e793b
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: 32b82852aa794407b1aba1538bd1595296981b78
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="other-installation-methods"></a>Autres méthodes d’installation
 
