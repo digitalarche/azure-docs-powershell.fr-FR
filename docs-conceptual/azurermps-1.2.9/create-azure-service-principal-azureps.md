@@ -3,47 +3,47 @@ title: Créer un principal du service Azure avec Azure PowerShell
 description: Découvrez comment créer un principal du service pour votre application ou service avec Azure PowerShell.
 keywords: Azure PowerShell, Azure Active Directory, Azure Active directory, AD, RBAC
 services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 6eda2d2a729331b212938aa2681d0188a25b734a
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: dd2e50a4fe5ee9061403e2b61ace74213b5c858e
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
-# <a name="create-an-azure-service-principal-with-azure-powershell"></a><span data-ttu-id="97a09-104">Créer un principal du service Azure avec Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="97a09-104">Create an Azure service principal with Azure PowerShell</span></span>
+# <a name="create-an-azure-service-principal-with-azure-powershell"></a><span data-ttu-id="9636c-104">Créer un principal du service Azure avec Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="9636c-104">Create an Azure service principal with Azure PowerShell</span></span>
 
-<span data-ttu-id="97a09-105">Si vous prévoyez de gérer votre application ou service avec Azure PowerShell, vous devez l’exécuter avec un principal du service Azure Active Directory (AAD) plutôt qu’avec vos informations d’identification personnelles.</span><span class="sxs-lookup"><span data-stu-id="97a09-105">If you plan to manage your app or service with Azure PowerShell, you should run it under an Azure Active Directory (AAD) service principal, rather than your own credentials.</span></span> <span data-ttu-id="97a09-106">Cette rubrique vous explique pas à pas comment créer un principal de sécurité avec Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="97a09-106">This topic steps you through creating a security principal with Azure PowerShell.</span></span>
+<span data-ttu-id="9636c-105">Si vous prévoyez de gérer votre application ou service avec Azure PowerShell, vous devez l’exécuter avec un principal du service Azure Active Directory (AAD) plutôt qu’avec vos informations d’identification personnelles.</span><span class="sxs-lookup"><span data-stu-id="9636c-105">If you plan to manage your app or service with Azure PowerShell, you should run it under an Azure Active Directory (AAD) service principal, rather than your own credentials.</span></span> <span data-ttu-id="9636c-106">Cette rubrique vous explique pas à pas comment créer un principal de sécurité avec Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9636c-106">This topic steps you through creating a security principal with Azure PowerShell.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="97a09-107">Vous pouvez également créer un principal du service par l’intermédiaire du portail Azure.</span><span class="sxs-lookup"><span data-stu-id="97a09-107">You can also create a service principal through the Azure portal.</span></span> <span data-ttu-id="97a09-108">Pour plus d’informations, consultez [Utiliser le portail pour créer une application et un principal du service Active Directory pouvant accéder aux ressources](/azure/azure-resource-manager/resource-group-create-service-principal-portal).</span><span class="sxs-lookup"><span data-stu-id="97a09-108">Read [Use portal to create Active Directory application and service principal that can access resources](/azure/azure-resource-manager/resource-group-create-service-principal-portal) for more details.</span></span>
+> <span data-ttu-id="9636c-107">Vous pouvez également créer un principal du service par l’intermédiaire du portail Azure.</span><span class="sxs-lookup"><span data-stu-id="9636c-107">You can also create a service principal through the Azure portal.</span></span> <span data-ttu-id="9636c-108">Pour plus d’informations, consultez [Utiliser le portail pour créer une application et un principal du service Active Directory pouvant accéder aux ressources](/azure/azure-resource-manager/resource-group-create-service-principal-portal).</span><span class="sxs-lookup"><span data-stu-id="9636c-108">Read [Use portal to create Active Directory application and service principal that can access resources](/azure/azure-resource-manager/resource-group-create-service-principal-portal) for more details.</span></span>
 
-## <a name="what-is-a-service-principal"></a><span data-ttu-id="97a09-109">Qu’est-ce qu’un « principal du service » ?</span><span class="sxs-lookup"><span data-stu-id="97a09-109">What is a 'service principal'?</span></span>
+## <a name="what-is-a-service-principal"></a><span data-ttu-id="9636c-109">Qu’est-ce qu’un « principal du service » ?</span><span class="sxs-lookup"><span data-stu-id="9636c-109">What is a 'service principal'?</span></span>
 
-<span data-ttu-id="97a09-110">Un principal du service Azure est une identité de sécurité utilisée par les applications, les services et les outils d’automatisation créés par l’utilisateur pour accéder à des ressources Azure spécifiques.</span><span class="sxs-lookup"><span data-stu-id="97a09-110">An Azure service principal is a security identity used by user-created apps, services, and automation tools to access specific Azure resources.</span></span> <span data-ttu-id="97a09-111">Il équivaut un peu à une identité d’utilisateur (nom d’utilisateur et mot de passe ou certificat) avec un rôle spécifique et des autorisations étroitement contrôlées.</span><span class="sxs-lookup"><span data-stu-id="97a09-111">Think of it as a 'user identity' (username and password or certificate) with a specific role, and tightly controlled permissions.</span></span> <span data-ttu-id="97a09-112">Il doit pouvoir effectuer uniquement des opérations spécifiques, contrairement à une identité d’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="97a09-112">It only needs to be able to do specific things, unlike a general user identity.</span></span> <span data-ttu-id="97a09-113">Il améliore la sécurité si vous lui octroyez seulement le niveau d’autorisation minimal nécessaire pour effectuer ses tâches de gestion.</span><span class="sxs-lookup"><span data-stu-id="97a09-113">It improves security if you only grant it the minimum permissions level needed to perform its management tasks.</span></span>
+<span data-ttu-id="9636c-110">Un principal du service Azure est une identité de sécurité utilisée par les applications, les services et les outils d’automatisation créés par l’utilisateur pour accéder à des ressources Azure spécifiques.</span><span class="sxs-lookup"><span data-stu-id="9636c-110">An Azure service principal is a security identity used by user-created apps, services, and automation tools to access specific Azure resources.</span></span> <span data-ttu-id="9636c-111">Il équivaut un peu à une identité d’utilisateur (nom d’utilisateur et mot de passe ou certificat) avec un rôle spécifique et des autorisations étroitement contrôlées.</span><span class="sxs-lookup"><span data-stu-id="9636c-111">Think of it as a 'user identity' (username and password or certificate) with a specific role, and tightly controlled permissions.</span></span> <span data-ttu-id="9636c-112">Il doit pouvoir effectuer uniquement des opérations spécifiques, contrairement à une identité d’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="9636c-112">It only needs to be able to do specific things, unlike a general user identity.</span></span> <span data-ttu-id="9636c-113">Il améliore la sécurité si vous lui octroyez seulement le niveau d’autorisation minimal nécessaire pour effectuer ses tâches de gestion.</span><span class="sxs-lookup"><span data-stu-id="9636c-113">It improves security if you only grant it the minimum permissions level needed to perform its management tasks.</span></span>
 
-## <a name="verify-your-own-permission-level"></a><span data-ttu-id="97a09-114">Vérifier votre propre niveau d’autorisation</span><span class="sxs-lookup"><span data-stu-id="97a09-114">Verify your own permission level</span></span>
+## <a name="verify-your-own-permission-level"></a><span data-ttu-id="9636c-114">Vérifier votre propre niveau d’autorisation</span><span class="sxs-lookup"><span data-stu-id="9636c-114">Verify your own permission level</span></span>
 
-<span data-ttu-id="97a09-115">Tout d’abord, vous devez avoir les autorisations suffisantes dans votre annuaire Azure Active Directory et votre abonnement Azure.</span><span class="sxs-lookup"><span data-stu-id="97a09-115">First, you must have sufficient permissions in both your Azure Active Directory and your Azure subscription.</span></span> <span data-ttu-id="97a09-116">Plus précisément, vous devez pouvoir créer une application dans l’annuaire Active Directory et affecter un rôle au principal du service.</span><span class="sxs-lookup"><span data-stu-id="97a09-116">Specifically, you must be able to create an app in the Active Directory, and assign a role to the service principal.</span></span>
+<span data-ttu-id="9636c-115">Tout d’abord, vous devez avoir les autorisations suffisantes dans votre annuaire Azure Active Directory et votre abonnement Azure.</span><span class="sxs-lookup"><span data-stu-id="9636c-115">First, you must have sufficient permissions in both your Azure Active Directory and your Azure subscription.</span></span> <span data-ttu-id="9636c-116">Plus précisément, vous devez pouvoir créer une application dans l’annuaire Active Directory et affecter un rôle au principal du service.</span><span class="sxs-lookup"><span data-stu-id="9636c-116">Specifically, you must be able to create an app in the Active Directory, and assign a role to the service principal.</span></span>
 
-<span data-ttu-id="97a09-117">Le moyen le plus simple pour vérifier que votre compte dispose des autorisations adéquates est d’utiliser le portail.</span><span class="sxs-lookup"><span data-stu-id="97a09-117">The easiest way to check whether your account has adequate permissions is through the portal.</span></span> <span data-ttu-id="97a09-118">Consultez [Vérifier l’autorisation requise dans le portail](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span><span class="sxs-lookup"><span data-stu-id="97a09-118">See [Check required permission in portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span></span>
+<span data-ttu-id="9636c-117">Le moyen le plus simple pour vérifier que votre compte dispose des autorisations adéquates est d’utiliser le portail.</span><span class="sxs-lookup"><span data-stu-id="9636c-117">The easiest way to check whether your account has adequate permissions is through the portal.</span></span> <span data-ttu-id="9636c-118">Consultez [Vérifier l’autorisation requise dans le portail](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span><span class="sxs-lookup"><span data-stu-id="9636c-118">See [Check required permission in portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).</span></span>
 
-## <a name="create-a-service-principal-for-your-app"></a><span data-ttu-id="97a09-119">Créer un principal du service pour votre application</span><span class="sxs-lookup"><span data-stu-id="97a09-119">Create a service principal for your app</span></span>
+## <a name="create-a-service-principal-for-your-app"></a><span data-ttu-id="9636c-119">Créer un principal du service pour votre application</span><span class="sxs-lookup"><span data-stu-id="9636c-119">Create a service principal for your app</span></span>
 
-<span data-ttu-id="97a09-120">Une fois que vous êtes connecté à votre compte Azure, vous pouvez créer le principal du service.</span><span class="sxs-lookup"><span data-stu-id="97a09-120">Once you are signed into your Azure account, you can create the service principal.</span></span> <span data-ttu-id="97a09-121">Vous devez identifier votre application déployée par l’une des informations suivantes :</span><span class="sxs-lookup"><span data-stu-id="97a09-121">You must have one of the following ways to identify your deployed app:</span></span>
+<span data-ttu-id="9636c-120">Une fois que vous êtes connecté à votre compte Azure, vous pouvez créer le principal du service.</span><span class="sxs-lookup"><span data-stu-id="9636c-120">Once you are signed into your Azure account, you can create the service principal.</span></span> <span data-ttu-id="9636c-121">Vous devez identifier votre application déployée par l’une des informations suivantes :</span><span class="sxs-lookup"><span data-stu-id="9636c-121">You must have one of the following ways to identify your deployed app:</span></span>
 
-* <span data-ttu-id="97a09-122">Le nom unique de votre application déployée (par exemple, « MyDemoWebApp » dans les exemples suivants)</span><span class="sxs-lookup"><span data-stu-id="97a09-122">The unique name of your deployed app, such as "MyDemoWebApp" in the following examples, or</span></span>
-* <span data-ttu-id="97a09-123">L’ID de l’application, le GUID unique associé à votre application, service ou objet déployé</span><span class="sxs-lookup"><span data-stu-id="97a09-123">the Application ID, the unique GUID associated with your deployed app, service, or object</span></span>
+* <span data-ttu-id="9636c-122">Le nom unique de votre application déployée (par exemple, « MyDemoWebApp » dans les exemples suivants)</span><span class="sxs-lookup"><span data-stu-id="9636c-122">The unique name of your deployed app, such as "MyDemoWebApp" in the following examples, or</span></span>
+* <span data-ttu-id="9636c-123">L’ID de l’application, le GUID unique associé à votre application, service ou objet déployé</span><span class="sxs-lookup"><span data-stu-id="9636c-123">the Application ID, the unique GUID associated with your deployed app, service, or object</span></span>
 
-### <a name="get-information-about-your-application"></a><span data-ttu-id="97a09-124">Obtenir des informations sur votre application</span><span class="sxs-lookup"><span data-stu-id="97a09-124">Get information about your application</span></span>
+### <a name="get-information-about-your-application"></a><span data-ttu-id="9636c-124">Obtenir des informations sur votre application</span><span class="sxs-lookup"><span data-stu-id="9636c-124">Get information about your application</span></span>
 
-<span data-ttu-id="97a09-125">Vous pouvez utiliser l’applet de commande `Get-AzureRmADApplication` pour obtenir des informations sur votre application.</span><span class="sxs-lookup"><span data-stu-id="97a09-125">The `Get-AzureRmADApplication` cmdlet can be used to discover information about your application.</span></span>
+<span data-ttu-id="9636c-125">Vous pouvez utiliser l’applet de commande `Get-AzureRmADApplication` pour obtenir des informations sur votre application.</span><span class="sxs-lookup"><span data-stu-id="9636c-125">The `Get-AzureRmADApplication` cmdlet can be used to discover information about your application.</span></span>
 
 ```powershell
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
@@ -61,9 +61,9 @@ AppPermissions          :
 ReplyUrls               : {}
 ```
 
-### <a name="create-a-service-principal-for-your-application"></a><span data-ttu-id="97a09-126">Créer un principal du service pour votre application</span><span class="sxs-lookup"><span data-stu-id="97a09-126">Create a service principal for your application</span></span>
+### <a name="create-a-service-principal-for-your-application"></a><span data-ttu-id="9636c-126">Créer un principal du service pour votre application</span><span class="sxs-lookup"><span data-stu-id="9636c-126">Create a service principal for your application</span></span>
 
-<span data-ttu-id="97a09-127">Utilisez l’applet de commande `New-AzureRmADServicePrincipal` pour créer le principal du service.</span><span class="sxs-lookup"><span data-stu-id="97a09-127">The `New-AzureRmADServicePrincipal` cmdlet is used to create the service principal.</span></span>
+<span data-ttu-id="9636c-127">Utilisez l’applet de commande `New-AzureRmADServicePrincipal` pour créer le principal du service.</span><span class="sxs-lookup"><span data-stu-id="9636c-127">The `New-AzureRmADServicePrincipal` cmdlet is used to create the service principal.</span></span>
 
 ```powershell
 Add-Type -Assembly System.Web
@@ -77,7 +77,7 @@ DisplayName                    Type                           ObjectId
 MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
-### <a name="get-information-about-the-service-principal"></a><span data-ttu-id="97a09-128">Obtenir des informations sur le principal du service</span><span class="sxs-lookup"><span data-stu-id="97a09-128">Get information about the service principal</span></span>
+### <a name="get-information-about-the-service-principal"></a><span data-ttu-id="9636c-128">Obtenir des informations sur le principal du service</span><span class="sxs-lookup"><span data-stu-id="9636c-128">Get information about the service principal</span></span>
 
 ```powershell
 $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
@@ -92,16 +92,16 @@ Id                    : 698138e7-d7b6-4738-a866-b4e3081a69e4
 Type                  : ServicePrincipal
 ```
 
-### <a name="sign-in-using-the-service-principal"></a><span data-ttu-id="97a09-129">Se connecter en tant que principal du service</span><span class="sxs-lookup"><span data-stu-id="97a09-129">Sign in using the service principal</span></span>
+### <a name="sign-in-using-the-service-principal"></a><span data-ttu-id="9636c-129">Se connecter en tant que principal du service</span><span class="sxs-lookup"><span data-stu-id="9636c-129">Sign in using the service principal</span></span>
 
-<span data-ttu-id="97a09-130">Vous pouvez maintenant vous connecter en tant que nouveau principal du service pour votre application en utilisant les valeurs *appId* et *password* que vous avez fournies.</span><span class="sxs-lookup"><span data-stu-id="97a09-130">You can now sign in as the new service principal for your app using the *appId* and *password* you provided.</span></span> <span data-ttu-id="97a09-131">Vous devez fournir l’ID de locataire (TenantId) pour votre compte.</span><span class="sxs-lookup"><span data-stu-id="97a09-131">You need to supply the Tenant Id for your account.</span></span> <span data-ttu-id="97a09-132">Cet ID s’affiche quand vous vous connectez à Azure avec vos informations d’identification personnelles.</span><span class="sxs-lookup"><span data-stu-id="97a09-132">Your Tenant Id is displayed when you sign into Azure with your personal credentials.</span></span>
+<span data-ttu-id="9636c-130">Vous pouvez maintenant vous connecter en tant que nouveau principal du service pour votre application en utilisant les valeurs *appId* et *password* que vous avez fournies.</span><span class="sxs-lookup"><span data-stu-id="9636c-130">You can now sign in as the new service principal for your app using the *appId* and *password* you provided.</span></span> <span data-ttu-id="9636c-131">Vous devez fournir l’ID de locataire (TenantId) pour votre compte.</span><span class="sxs-lookup"><span data-stu-id="9636c-131">You need to supply the Tenant Id for your account.</span></span> <span data-ttu-id="9636c-132">Cet ID s’affiche quand vous vous connectez à Azure avec vos informations d’identification personnelles.</span><span class="sxs-lookup"><span data-stu-id="9636c-132">Your Tenant Id is displayed when you sign into Azure with your personal credentials.</span></span>
 
 ```powershell
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
 Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-<span data-ttu-id="97a09-133">Exécutez cette commande à partir d’une nouvelle session PowerShell.</span><span class="sxs-lookup"><span data-stu-id="97a09-133">Run this command from a new PowerShell session.</span></span> <span data-ttu-id="97a09-134">Une fois que vous êtes connecté, vous voyez un message similaire à celui-ci :</span><span class="sxs-lookup"><span data-stu-id="97a09-134">After a successfully signing on you see output something like this:</span></span>
+<span data-ttu-id="9636c-133">Exécutez cette commande à partir d’une nouvelle session PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9636c-133">Run this command from a new PowerShell session.</span></span> <span data-ttu-id="9636c-134">Une fois que vous êtes connecté, vous voyez un message similaire à celui-ci :</span><span class="sxs-lookup"><span data-stu-id="9636c-134">After a successfully signing on you see output something like this:</span></span>
 
 ```
 Environment           : AzureCloud
@@ -112,23 +112,23 @@ SubscriptionName      :
 CurrentStorageAccount :
 ```
 
-<span data-ttu-id="97a09-135">Félicitations !</span><span class="sxs-lookup"><span data-stu-id="97a09-135">Congratulations!</span></span> <span data-ttu-id="97a09-136">Vous pouvez utiliser ces informations d’identification pour exécuter votre application.</span><span class="sxs-lookup"><span data-stu-id="97a09-136">You can use these credentials to run your app.</span></span> <span data-ttu-id="97a09-137">Ensuite, modifiez les autorisations du principal du service.</span><span class="sxs-lookup"><span data-stu-id="97a09-137">Next, you need to adjust the permissions of the service principal.</span></span>
+<span data-ttu-id="9636c-135">Félicitations !</span><span class="sxs-lookup"><span data-stu-id="9636c-135">Congratulations!</span></span> <span data-ttu-id="9636c-136">Vous pouvez utiliser ces informations d’identification pour exécuter votre application.</span><span class="sxs-lookup"><span data-stu-id="9636c-136">You can use these credentials to run your app.</span></span> <span data-ttu-id="9636c-137">Ensuite, modifiez les autorisations du principal du service.</span><span class="sxs-lookup"><span data-stu-id="9636c-137">Next, you need to adjust the permissions of the service principal.</span></span>
 
-## <a name="managing-roles"></a><span data-ttu-id="97a09-138">Gestion des rôles</span><span class="sxs-lookup"><span data-stu-id="97a09-138">Managing roles</span></span>
+## <a name="managing-roles"></a><span data-ttu-id="9636c-138">Gestion des rôles</span><span class="sxs-lookup"><span data-stu-id="9636c-138">Managing roles</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="97a09-139">Le contrôle d’accès en fonction du rôle (RBAC) dans Azure est un modèle utilisé pour définir et gérer les rôles des principaux de l’utilisateur et du service.</span><span class="sxs-lookup"><span data-stu-id="97a09-139">Azure Role-Based Access Control (RBAC) is a model for defining and managing roles for user and service principals.</span></span> <span data-ttu-id="97a09-140">Les rôles sont associés à des ensembles d’autorisations, qui déterminent les ressources qu’un principal peut lire, écrire ou gérer, ou auxquelles il peut accéder.</span><span class="sxs-lookup"><span data-stu-id="97a09-140">Roles have sets of permissions associated with them, which determine the resources a principal can read, access, write, or manage.</span></span> <span data-ttu-id="97a09-141">Pour plus d’informations sur le contrôle d’accès en fonction du rôle et sur les différents rôles, consultez [Rôles intégrés pour le contrôle d’accès en fonction du rôle Azure](/azure/active-directory/role-based-access-built-in-roles).</span><span class="sxs-lookup"><span data-stu-id="97a09-141">For more information on RBAC and roles, see [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles).</span></span>
+> <span data-ttu-id="9636c-139">Le contrôle d’accès en fonction du rôle (RBAC) dans Azure est un modèle utilisé pour définir et gérer les rôles des principaux de l’utilisateur et du service.</span><span class="sxs-lookup"><span data-stu-id="9636c-139">Azure Role-Based Access Control (RBAC) is a model for defining and managing roles for user and service principals.</span></span> <span data-ttu-id="9636c-140">Les rôles sont associés à des ensembles d’autorisations, qui déterminent les ressources qu’un principal peut lire, écrire ou gérer, ou auxquelles il peut accéder.</span><span class="sxs-lookup"><span data-stu-id="9636c-140">Roles have sets of permissions associated with them, which determine the resources a principal can read, access, write, or manage.</span></span> <span data-ttu-id="9636c-141">Pour plus d’informations sur le contrôle d’accès en fonction du rôle et sur les différents rôles, consultez [Rôles intégrés pour le contrôle d’accès en fonction du rôle Azure](/azure/active-directory/role-based-access-built-in-roles).</span><span class="sxs-lookup"><span data-stu-id="9636c-141">For more information on RBAC and roles, see [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles).</span></span>
 
-<span data-ttu-id="97a09-142">Azure PowerShell fournit les applets de commande suivantes pour gérer les attributions de rôle :</span><span class="sxs-lookup"><span data-stu-id="97a09-142">Azure PowerShell provides the following cmdlets to manage role assignments:</span></span>
+<span data-ttu-id="9636c-142">Azure PowerShell fournit les applets de commande suivantes pour gérer les attributions de rôle :</span><span class="sxs-lookup"><span data-stu-id="9636c-142">Azure PowerShell provides the following cmdlets to manage role assignments:</span></span>
 
-* [<span data-ttu-id="97a09-143">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="97a09-143">Get-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/get-azurermroleassignment)
-* [<span data-ttu-id="97a09-144">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="97a09-144">New-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/new-azurermroleassignment)
-* [<span data-ttu-id="97a09-145">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="97a09-145">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/remove-azurermroleassignment)
+* [<span data-ttu-id="9636c-143">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="9636c-143">Get-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/get-azurermroleassignment)
+* [<span data-ttu-id="9636c-144">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="9636c-144">New-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/new-azurermroleassignment)
+* [<span data-ttu-id="9636c-145">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="9636c-145">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/azurerm.resources/remove-azurermroleassignment)
 
-<span data-ttu-id="97a09-146">Un principal du service a le rôle **Contributor** (Collaborateur) par défaut.</span><span class="sxs-lookup"><span data-stu-id="97a09-146">The default role for a service principal is **Contributor**.</span></span> <span data-ttu-id="97a09-147">En raison des autorisations générales qu’il inclut, ce rôle n’est pas forcément le meilleur choix en fonction de l’étendue des interactions de votre application avec les services Azure.</span><span class="sxs-lookup"><span data-stu-id="97a09-147">It may not be the best choice depending on the scope of your app's interactions with Azure services, given its broad permissions.</span></span>
-<span data-ttu-id="97a09-148">Le rôle **Reader** (Lecteur) étant plus restrictif, il peut être un bon choix pour les applications en lecture seule.</span><span class="sxs-lookup"><span data-stu-id="97a09-148">The **Reader** role is more restrictive and can be a good choice for read-only apps.</span></span> <span data-ttu-id="97a09-149">Vous pouvez afficher les détails des autorisations propres à chaque rôle ou créer des autorisations personnalisées par le biais du portail Azure.</span><span class="sxs-lookup"><span data-stu-id="97a09-149">You can view details on role-specific permissions or create custom ones through the Azure portal.</span></span>
+<span data-ttu-id="9636c-146">Un principal du service a le rôle **Contributor** (Collaborateur) par défaut.</span><span class="sxs-lookup"><span data-stu-id="9636c-146">The default role for a service principal is **Contributor**.</span></span> <span data-ttu-id="9636c-147">En raison des autorisations générales qu’il inclut, ce rôle n’est pas forcément le meilleur choix en fonction de l’étendue des interactions de votre application avec les services Azure.</span><span class="sxs-lookup"><span data-stu-id="9636c-147">It may not be the best choice depending on the scope of your app's interactions with Azure services, given its broad permissions.</span></span>
+<span data-ttu-id="9636c-148">Le rôle **Reader** (Lecteur) étant plus restrictif, il peut être un bon choix pour les applications en lecture seule.</span><span class="sxs-lookup"><span data-stu-id="9636c-148">The **Reader** role is more restrictive and can be a good choice for read-only apps.</span></span> <span data-ttu-id="9636c-149">Vous pouvez afficher les détails des autorisations propres à chaque rôle ou créer des autorisations personnalisées par le biais du portail Azure.</span><span class="sxs-lookup"><span data-stu-id="9636c-149">You can view details on role-specific permissions or create custom ones through the Azure portal.</span></span>
 
-<span data-ttu-id="97a09-150">Dans cet exemple, nous ajoutons le rôle **Reader** à notre exemple précédent, et nous supprimons le rôle **Contributor** :</span><span class="sxs-lookup"><span data-stu-id="97a09-150">In this example, we add the **Reader** role to our prior example, and delete the **Contributor** one:</span></span>
+<span data-ttu-id="9636c-150">Dans cet exemple, nous ajoutons le rôle **Reader** à notre exemple précédent, et nous supprimons le rôle **Contributor** :</span><span class="sxs-lookup"><span data-stu-id="9636c-150">In this example, we add the **Reader** role to our prior example, and delete the **Contributor** one:</span></span>
 
 ```powershell
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
@@ -149,7 +149,7 @@ ObjectType         : ServicePrincipal
 Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
-<span data-ttu-id="97a09-151">Pour afficher les rôles actuellement attribués :</span><span class="sxs-lookup"><span data-stu-id="97a09-151">To view the current roles assigned:</span></span>
+<span data-ttu-id="9636c-151">Pour afficher les rôles actuellement attribués :</span><span class="sxs-lookup"><span data-stu-id="9636c-151">To view the current roles assigned:</span></span>
 
 ```powershell
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
@@ -166,18 +166,18 @@ ObjectId           : 698138e7-d7b6-4738-a866-b4e3081a69e4
 ObjectType         : ServicePrincipal
 ```
 
-<span data-ttu-id="97a09-152">Autres applets de commande Azure PowerShell pour la gestion des rôles :</span><span class="sxs-lookup"><span data-stu-id="97a09-152">Other Azure PowerShell cmdlets for role management:</span></span>
+<span data-ttu-id="9636c-152">Autres applets de commande Azure PowerShell pour la gestion des rôles :</span><span class="sxs-lookup"><span data-stu-id="9636c-152">Other Azure PowerShell cmdlets for role management:</span></span>
 
-* [<span data-ttu-id="97a09-153">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="97a09-153">Get-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Get-AzureRmRoleDefinition)
-* [<span data-ttu-id="97a09-154">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="97a09-154">New-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/New-AzureRmRoleDefinition)
-* [<span data-ttu-id="97a09-155">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="97a09-155">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Remove-AzureRmRoleDefinition)
-* [<span data-ttu-id="97a09-156">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="97a09-156">Set-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Set-AzureRmRoleDefinition)
+* [<span data-ttu-id="9636c-153">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="9636c-153">Get-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Get-AzureRmRoleDefinition)
+* [<span data-ttu-id="9636c-154">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="9636c-154">New-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/New-AzureRmRoleDefinition)
+* [<span data-ttu-id="9636c-155">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="9636c-155">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Remove-AzureRmRoleDefinition)
+* [<span data-ttu-id="9636c-156">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="9636c-156">Set-AzureRmRoleDefinition</span></span>](/powershell/module/azurerm.resources/Set-AzureRmRoleDefinition)
 
-## <a name="change-the-credentials-of-the-security-principal"></a><span data-ttu-id="97a09-157">Changer les informations d’identification du principal de sécurité</span><span class="sxs-lookup"><span data-stu-id="97a09-157">Change the credentials of the security principal</span></span>
+## <a name="change-the-credentials-of-the-security-principal"></a><span data-ttu-id="9636c-157">Changer les informations d’identification du principal de sécurité</span><span class="sxs-lookup"><span data-stu-id="9636c-157">Change the credentials of the security principal</span></span>
 
-<span data-ttu-id="97a09-158">Nous vous recommandons de vérifier les autorisations et de mettre à jour le mot de passe régulièrement.</span><span class="sxs-lookup"><span data-stu-id="97a09-158">It's a good security practice to review the permissions and update the password regularly.</span></span> <span data-ttu-id="97a09-159">Vous pouvez également gérer et modifier les informations d’identification de sécurité à mesure que votre application évolue.</span><span class="sxs-lookup"><span data-stu-id="97a09-159">You may also want to manage and modify the security credentials as your app changes.</span></span> <span data-ttu-id="97a09-160">Par exemple, changez le mot de passe du principal du service en remplaçant le mot de passe existant par un nouveau mot de passe de votre choix.</span><span class="sxs-lookup"><span data-stu-id="97a09-160">For example, we can change the password of the service principal by creating a new password and removing the old one.</span></span>
+<span data-ttu-id="9636c-158">Nous vous recommandons de vérifier les autorisations et de mettre à jour le mot de passe régulièrement.</span><span class="sxs-lookup"><span data-stu-id="9636c-158">It's a good security practice to review the permissions and update the password regularly.</span></span> <span data-ttu-id="9636c-159">Vous pouvez également gérer et modifier les informations d’identification de sécurité à mesure que votre application évolue.</span><span class="sxs-lookup"><span data-stu-id="9636c-159">You may also want to manage and modify the security credentials as your app changes.</span></span> <span data-ttu-id="9636c-160">Par exemple, changez le mot de passe du principal du service en remplaçant le mot de passe existant par un nouveau mot de passe de votre choix.</span><span class="sxs-lookup"><span data-stu-id="9636c-160">For example, we can change the password of the service principal by creating a new password and removing the old one.</span></span>
 
-### <a name="add-a-new-password-for-the-service-principal"></a><span data-ttu-id="97a09-161">Ajouter un nouveau mot de passe pour le principal du service</span><span class="sxs-lookup"><span data-stu-id="97a09-161">Add a new password for the service principal</span></span>
+### <a name="add-a-new-password-for-the-service-principal"></a><span data-ttu-id="9636c-161">Ajouter un nouveau mot de passe pour le principal du service</span><span class="sxs-lookup"><span data-stu-id="9636c-161">Add a new password for the service principal</span></span>
 
 ```powershell
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
@@ -190,7 +190,7 @@ StartDate           EndDate             KeyId                                Typ
 3/8/2017 5:58:24 PM 3/8/2018 5:58:24 PM 6f801c3e-6fcd-42b9-be8e-320b17ba1d36 Password
 ```
 
-### <a name="get-a-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="97a09-162">Obtenir la liste des informations d’identification pour le principal du service</span><span class="sxs-lookup"><span data-stu-id="97a09-162">Get a list of credentials for the service principal</span></span>
+### <a name="get-a-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="9636c-162">Obtenir la liste des informations d’identification pour le principal du service</span><span class="sxs-lookup"><span data-stu-id="9636c-162">Get a list of credentials for the service principal</span></span>
 
 ```powershell
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
@@ -203,7 +203,7 @@ StartDate           EndDate             KeyId                                Typ
 5/5/2016 4:55:27 PM 5/5/2017 4:55:27 PM ca9d4846-4972-4c70-b6f5-a4effa60b9bc Password
 ```
 
-### <a name="remove-the-old-password-from-the-service-principal"></a><span data-ttu-id="97a09-163">Supprimer l’ancien mot de passe du principal du service</span><span class="sxs-lookup"><span data-stu-id="97a09-163">Remove the old password from the service principal</span></span>
+### <a name="remove-the-old-password-from-the-service-principal"></a><span data-ttu-id="9636c-163">Supprimer l’ancien mot de passe du principal du service</span><span class="sxs-lookup"><span data-stu-id="9636c-163">Remove the old password from the service principal</span></span>
 
 ```powershell
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
@@ -216,7 +216,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-### <a name="verify-the-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="97a09-164">Vérifier la liste des informations d’identification pour le principal du service</span><span class="sxs-lookup"><span data-stu-id="97a09-164">Verify the list of credentials for the service principal</span></span>
+### <a name="verify-the-list-of-credentials-for-the-service-principal"></a><span data-ttu-id="9636c-164">Vérifier la liste des informations d’identification pour le principal du service</span><span class="sxs-lookup"><span data-stu-id="9636c-164">Verify the list of credentials for the service principal</span></span>
 
 ```powershell
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
