@@ -17,25 +17,25 @@
       items:
         - name: Créer un principal du service
           href: create-azure-service-principal-azureps.md
-        - name: À l’aide d’informations d’identification persistantes
+        - name: Informations d’identification persistantes
           href: context-persistence.md
     - name: Requêtes
       href: queries-azureps.md
-    - name: Mise en forme
+    - name: Sortie de format
       href: formatting-output.md
-    - name: Abonnements
+    - name: Gérer les abonnements
       href: manage-subscriptions-azureps.md
     - name: Déployer
       items:
-        - name: Déployer à l'aide de modèles Resource Manager
+        - name: Déployer des modèles Resource Manager
           href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: Exporter des modèles Resource Manager
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Déployer un modèle Resource Manager privé avec un jeton SAP
+        - name: Déployer des modèles Resource Manager privés
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: Concepts
       items:
-        - name: À l’aide de modules expérimentaux
+        - name: Modules expérimentaux
           href: using-experimental-modules.md
     - name: Notes de publication
       href: release-notes-azureps.md

@@ -1,25 +1,32 @@
 ---
-title: Bien démarrer avec Azure PowerShell | Microsoft Docs
+title: Prise en main de Microsoft Azure PowerShell
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: fa9be1722b8260c4737c180eec79ae836235654c
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821885"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323133"
 ---
-# <a name="getting-started-with-azure-powershell"></a>Bien démarrer avec Azure PowerShell
+# <a name="get-started-with-azure-powershell"></a>Prise en main de Microsoft Azure PowerShell
 
-Azure PowerShell est conçu pour la gestion et l’administration des ressources Azure à partir de la ligne de commande, et pour la création de scripts d’automatisation utilisables avec Azure Resource Manager. Vous pouvez l’ouvrir dans le navigateur avec [Azure Cloud Shell](/azure/cloud-shell/overview), ou vous pouvez l’installer sur votre ordinateur local et l’utiliser dans une session PowerShell. Cet article vous aide à bien démarrer et explique les concepts de base.
+Azure PowerShell est conçu pour la gestion et l’administration des ressources Azure à partir de la ligne de commande, et pour la création de scripts d’automatisation utilisables avec Azure Resource Manager. Vous pouvez l’utiliser dans le navigateur avec [Azure Cloud Shell](/azure/cloud-shell/overview), ou l’installer sur votre ordinateur local. Cet article vous aide à bien démarrer avec Azure PowerShell et explique les concepts de base.
 
-## <a name="connect"></a>Connecter
+## <a name="install-azure-powershell"></a>Installation d'Azure PowerShell
+
+La première étape est de vérifier que la dernière version d’Azure PowerShell est installée. Pour plus d’informations sur la version la plus récente, consultez les [notes de publication](./release-notes-azureps.md).
+
+1. [Installez Azure PowerShell](install-azurerm-ps.md).
+
+2. Pour vérifier que l’installation a réussi, exécutez `Get-Module AzureRM -ListAvailable` à partir de la ligne de commande.
+
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell 
 
 La façon la plus simple de commencer est de [lancer Cloud Shell](/azure/cloud-shell/quickstart).
 
@@ -37,15 +44,7 @@ Une fois que votre espace de stockage est créé, Azure Cloud Shell ouvre une 
 
 Vous pouvez également installer Azure PowerShell et l’utiliser en local dans une session PowerShell.
 
-## <a name="install-azure-powershell"></a>Installation d'Azure PowerShell
-
-La première étape est de vérifier que la dernière version d’Azure PowerShell est installée. Pour plus d’informations sur la version la plus récente, consultez les [notes de publication](./release-notes-azureps.md).
-
-1. [Installez Azure PowerShell](install-azurerm-ps.md).
-
-2. Pour vérifier que l’installation a réussi, exécutez `Get-Module AzureRM -ListAvailable` à partir de la ligne de commande.
-
-## <a name="log-in-to-azure"></a>Connexion à Azure
+## <a name="sign-in-to-azure"></a>Connexion à Azure
 
 Connectez-vous de manière interactive :
 

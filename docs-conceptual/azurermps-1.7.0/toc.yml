@@ -15,29 +15,29 @@
           href: create-azure-service-principal-azureps.md
     - name: Requêtes
       href: queries-azureps.md
-    - name: Mise en forme
+    - name: Mettre en forme la sortie
       href: formatting-output.md
-    - name: Abonnements
+    - name: Gérer les abonnements
       href: manage-subscriptions-azureps.md
     - name: Déployer
       items:
-        - name: Déployer à l'aide de modèles Resource Manager
-          href: 'https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-deploy'
+        - name: Déployer des modèles Resource Manager
+          href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: Exporter des modèles Resource Manager
-          href: 'https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-export-template-powershell'
-        - name: Déployer un modèle Resource Manager privé avec un jeton SAP
-          href: 'https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-powershell-sas-token'
+          href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+        - name: Déployer des modèles Resource Manager privés
+          href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: Notes de publication
       href: release-notes-azureps.md
 - name: Exemples de scripts
   items:
     - name: Machines virtuelles Linux
-      href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
+      href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Machines virtuelles Windows
-      href: 'https://docs.microsoft.com/en-us/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
+      href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: "Web\_Apps"
-      href: 'https://docs.microsoft.com/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
+      href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: BASES DE DONNÉES SQL
-      href: 'https://docs.microsoft.com/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
+      href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Cosmos DB
-      href: 'https://docs.microsoft.com/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json'
+      href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
