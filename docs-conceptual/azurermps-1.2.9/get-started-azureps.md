@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
 ms.openlocfilehash: 3a0d3d1d970f4458e66167fb55c840598ce59e13
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854526"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100424"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Bien démarrer avec Azure PowerShell
 
@@ -36,7 +36,7 @@ Une fois que votre espace de stockage est créé, Azure Cloud Shell ouvre une 
 
 Vous pouvez également installer Azure PowerShell et l’utiliser en local dans une session PowerShell.
 
-## <a name="install-azure-powershell"></a>Installation d'Azure PowerShell
+## <a name="install-azure-powershell"></a>Installation d’Azure PowerShell
 
 La première étape est de vérifier que la dernière version d’Azure PowerShell est installée. Pour plus d’informations sur la version la plus récente, consultez les [notes de publication](./release-notes-azureps.md).
 

@@ -21,7 +21,7 @@
           href: context-persistence.md
     - name: Requêtes
       href: queries-azureps.md
-    - name: Sortie de format
+    - name: Mettre en forme la sortie
       href: formatting-output.md
     - name: Gérer les abonnements
       href: manage-subscriptions-azureps.md
