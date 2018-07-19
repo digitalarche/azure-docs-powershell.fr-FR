@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
+ms.openlocfilehash: 76e08c462bb34bd2b16a11f70f14c4584b72795a
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100254"
+ms.locfileid: "38100356"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Conservation des informations d’identification d’utilisateur sur plusieurs sessions PowerShell
 
@@ -38,12 +38,10 @@ Dans les versions précédentes, vous deviez créer un contexte Azure à chaque 
 
 ## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Sauvegarde automatique d’un contexte pour la future connexion
 
-Par défaut, Azure PowerShell oublie les informations de votre contexte à chaque fermeture d’une session PowerShell.
+Depuis la version 6.3.0, Azure PowerShell conserve vos informations de contexte automatiquement entre les sessions. Pour configurer PowerShell de sorte qu’il oublie votre contexte et les informations d’identification, utilisez `Disable-AzureRmContextAutoSave`. Vous devez vous connecter à Azure à chaque fois que vous ouvrez une session PowerShell.
 
 Pour permettre à Azure PowerShell de se rappeler de votre contexte après la fermeture d’une session, utilisez `Enable-AzureRmContextAutosave`. Le contexte et les informations d’identification sont sauvegardés automatiquement dans un dossier spécial caché dans votre répertoire utilisateur (`%AppData%\Roaming\Windows Azure PowerShell`).
 Chaque nouvelle session PowerShell cible alors le contexte utilisé lors de la dernière session.
-
-Pour configurer PowerShell de sorte qu’il oublie votre contexte et les informations d’identification, utilisez `Disable-AzureRmContextAutoSave`. Vous devez vous connecter à Azure à chaque fois que vous ouvrez une session PowerShell.
 
 Les cmdlets qui vous permettent de gérer des contextes Azure vous offrent aussi un contrôle affiné. Si vous souhaitez que les modifications ne s’appliquent qu’à la session PowerShell actuelle (étendue `Process`) ou à chaque session PowerShell (étendue `CurrentUser`). Ces options sont détaillées dans les détails du mode dans [Utilisation des étendues de contexte](#Using-Context-Scopes).
 

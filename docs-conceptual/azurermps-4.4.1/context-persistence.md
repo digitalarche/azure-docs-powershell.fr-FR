@@ -1,22 +1,22 @@
 ---
-title: Connexions d’utilisateur persistant d’une session à l’autre PowerShell
-description: Cet article détaille les nouvelles fonctionnalités d’Azure PowerShell qui vous permettent de réutiliser vos informations d’identification et d’autres informations utilisateur d’une session à l’autre PowerShell.
+title: Conserver les informations d’identification d’utilisateur sur plusieurs sessions PowerShell
+description: Apprenez à réutiliser les informations d’identification Azure (et autres informations) sur plusieurs sessions PowerShell.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: d650cfaae580acd10b3ddb06edec9883f1a32844
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 12a57f9aaf445fe95f731e09a6dcd174b97aa3fe
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853965"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100186"
 ---
-# <a name="persisting-user-logins-across-powershell-sessions"></a>Connexions d’utilisateur persistant d’une session à l’autre PowerShell
+# <a name="persisting-user-credentials-across-powershell-sessions"></a>Conservation des informations d’identification d’utilisateur sur plusieurs sessions PowerShell
 
-Dans la version d’Azure PowerShell sortie en septembre 2017, les cmdlets d’Azure Resource Manager présentent une nouvelle fonctionnalité, **Azure Context Autosave**. Elle permet plusieurs nouveaux scénarios utilisateur, comme par exemple :
+Azure PowerShell offre une fonctionnalité appelée **Azure Context Autosave**, qui offre les fonctions suivantes :
 
 - La conservation d’informations de connexion pour une réutilisation au cours de nouvelles sessions PowerShell.
 - Une utilisation plus simple des tâches en arrière-plan pour exécuter des cmdlets à long terme.
@@ -36,7 +36,7 @@ Un *contexte Azure* est un ensemble d’informations qui définit la cible des c
 
 Dans les versions précédentes, vous deviez créer un contexte Azure à chaque ouverture d’une nouvelle session PowerShell. Avec Azure PowerShell v4.4.0, vous pouvez activer la sauvegarde automatique de contextes Azure et leur réutilisation à chaque ouverture d’une nouvelle session PowerShell.
 
-## <a name="automatically-saving-the-context-for-the-next-login"></a>Sauvegarde automatique d’un contexte pour la future connexion
+## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Sauvegarde automatique d’un contexte pour la future connexion
 
 Par défaut, Azure PowerShell oublie les informations de votre contexte à chaque fermeture d’une session PowerShell.
 
@@ -75,7 +75,7 @@ Pour créer un contexte, vous devez être connecté à Azure. La cmdlet `Add-Azu
 
 Pour ajouter un nouveau contexte après la connexion,utilisez `Set-AzureRmContext` (ou son alias, `Select-AzureRmSubscription`).
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
 ```
 
@@ -83,7 +83,7 @@ L’exemple précédent ajoute un nouveau contexte qui cible « Contoso Subscri
 
 Pour renommer un contexte existant, utilisez la cmdlet `Rename-AzureRmContext`. Par exemple : 
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
 ```
 
@@ -91,7 +91,7 @@ Cet exemple change le nom `[user1@contoso.org; 123456-7890-1234-564321]` automat
 
 Enfin, pour supprimer un contexte, utilisez la cmdlet `Remove-AzureRmContext`.  Par exemple : 
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
@@ -101,7 +101,7 @@ Oublie le contexte nommé « Contoso2 ». Vous pouvez recréer ce contexte par
 
 Vous pouvez supprimer toutes les informations d’identification et les contextes associés à un utilisateur ou un principal du service à l’aide de `Remove-AzureRmAccount` (aussi appelé `Logout-AzureRmAccount`). Si vous l’exécutez sans paramètres, la cmdlet `Remove-AzureRmAccount` supprime toutes les informations d’identification et les contextes associés à un utilisateur ou un principal du service dans le contexte actuel. Vous pouvez, si vous le souhaitez, transmettre un nom d’utilisateur, un nom de principal du service ou un contexte pour cibler un principal spécifique.
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmAccount user1@contoso.org
 ```
 
@@ -111,7 +111,7 @@ Vous pouvez de temps en temps sélectionner, modifier ou supprimer un contexte d
 
 Par exemple, pour modifier le contexte par défaut de la session PowerShell actuelle sans impacter d’autres fenêtres ni le contexte utilisé lors de la prochaine ouverture de session, utilisez :
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 ```
 
@@ -119,7 +119,7 @@ PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 
 Le paramètre de sauvegarde automatique du contexte est sauvegardé dans le répertoire Azure PowerShell de l’utilisateur (`%AppData%\Roaming\Windows Azure PowerShell`). Certains types de comptes d’ordinateur peuvent ne pas être capables d’accéder à ce répertoire. Dans ce cas, vous pouvez utiliser la variable d’environnement
 
-```powershell
+```azurepowershell-interactive
 $env:AzureRmContextAutoSave="true" | "false"
 ```
 
@@ -140,7 +140,7 @@ Nouvelles cmdlets pour la gestion de contexte
 Modifications apportées à des cmdlets de profil existantes
 
 - [Add-AzureRmAccount][login] : permet d’étendre la connexion au processus ou à l’utilisateur actuel.
-  Permet de renommer le contexte par défaut après connexion.
+  Permet de renommer le contexte par défaut après authentification.
 - [Import-AzureRmContext][import] : permet d’étendre la connexion au processus ou à l’utilisateur actuel.
 - [Set-AzureRmContext][set-context] : permet la sélection de contextes nommés existants, et d’étendre les modifications au processus ou à l’utilisateur actuel.
 

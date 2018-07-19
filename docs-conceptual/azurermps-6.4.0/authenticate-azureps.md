@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
+ms.openlocfilehash: 20194ac2282d602ba61bf130791edac9f4ffae6c
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100271"
+ms.locfileid: "38100220"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Se connecter avec Azure PowerShell
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 L’exécution de cette applet de commande permet d’afficher une boîte de dialogue vous invitant à entrer votre adresse de messagerie et le mot de passe associé à votre compte Azure. Lorsque vous vous authentifiez, ces informations sont enregistrées pour la session PowerShell actuelle, la boîte de dialogue est fermée, et vous avez accès à toutes les applets de commande Azure PowerShell.
 
 > [!IMPORTANT]
-> Cette procédure de connexion est valable pour la session PowerShell _uniquement_. Pour conserver l’authentification sur plusieurs sessions, consultez l’article sur les [informations d’identification persistantes](context-persistence.md).
+> À compter d’Azure PowerShell 6.3.0, vos informations d’identification sont partagées entre plusieurs sessions PowerShell tant que vous restez connecté à Windows. Pour plus d’informations, consultez l’article sur les [informations d’identification persistantes](context-persistence.md).
 
 ## <a name="sign-in-with-a-service-principal"></a>Connexion avec un principal de service
 
