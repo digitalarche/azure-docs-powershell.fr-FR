@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 5aa3b3fdeff20ea4c6f830f834e61f37d81da07d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 5354a75e969e084d6457d0566a516705f365476f
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100373"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025410"
 ---
 # <a name="get-started-with-azure-powershell"></a>Prise en main de Microsoft Azure PowerShell
 
@@ -26,7 +26,7 @@ La première étape est de vérifier que la dernière version d’Azure PowerShe
 
 2. Pour vérifier que l’installation a réussi, exécutez `Get-Module AzureRM -ListAvailable` à partir de la ligne de commande.
 
-## <a name="azure-cloud-shell"></a>Azure Cloud Shell 
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell
 
 La façon la plus simple de commencer est de [lancer Cloud Shell](/azure/cloud-shell/quickstart).
 
@@ -72,6 +72,7 @@ Enter a username and password for the virtual machine.
 User: localAdmin
 Password for user localAdmin: *********
 ```
+
 Ensuite, créez la machine virtuelle.
 
 ```azurepowershell-interactive

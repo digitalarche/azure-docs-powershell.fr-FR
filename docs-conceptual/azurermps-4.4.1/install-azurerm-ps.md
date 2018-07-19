@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 2444abc6f6f2280645c77c3effcd02db74f4f997
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 3cb6497dd053c7ae5d256ae4b562001ddecaa128
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100237"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025240"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Installation et configuration d'Azure PowerShell
 
@@ -50,9 +50,9 @@ Si PowerShellGet n’est pas installé, consultez la section [Comment obtenir Po
 
 > [!NOTE]
 > L’utilisation de PowerShellGet nécessite une stratégie d’exécution pour exécuter les scripts. Pour plus d’informations sur la stratégie d’exécution de PowerShell, consultez [About Execution Policy](/powershell/module/microsoft.powershell.core/about/about_execution_policies) (À propos des stratégies d’exécution).
-
+>
 > [!IMPORTANT]
-> Le module décrit dans ce document, AzureRM, utilise .NET Framework. Cela le rend incompatible avec PowerShell 6.0, qui utilise .NET Core. Si vous utilisez PowerShell 6.0, suivez les [instructions d’installation pour macOS et Linux](install-azurermps-maclinux.md). 
+> Le module décrit dans ce document, AzureRM, utilise .NET Framework. Cela le rend incompatible avec PowerShell 6.0, qui utilise .NET Core. Si vous utilisez PowerShell 6.0, suivez les [instructions d’installation pour macOS et Linux](install-azurermps-maclinux.md).
 
 ## <a name="step-2-install-azure-powershell"></a>Étape 2 : Installer Azure PowerShell
 
@@ -85,6 +85,7 @@ Le module AzureRM est un module cumulatif pour les applets de commande Azure Res
 Si vous disposez d’une version précédente d’Azure PowerShell, vous pourriez recevoir une erreur. Pour résoudre ce problème, consultez la section [Mise à jour vers une nouvelle version d’Azure PowerShell](#update-azps) de cet article.
 
 ## <a name="step-3-load-the-azurerm-module"></a>Étape 3 : Charger le module AzureRM
+
 Une fois le module installé, vous devez le charger dans votre session PowerShell. Vous devez le faire dans une session PowerShell normale (sans élévation de privilèges). Les modules sont chargés à l’aide de l’applet de commande `Import-Module`, comme suit :
 
 ```powershell
@@ -111,8 +112,7 @@ Si vous rencontrez des bogues en utilisant l’outil, signalez un problème dans
 |Je veux effectuer la mise à niveau vers PowerShell 5|[Installer la dernière version de WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
 |Mon ordinateur exécute une version de Windows avec PowerShell 3 ou 4|[Obtenir les modules PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
-<a id="helpmechoose"></a>
-### <a name="checking-the-version-of-azure-powershell"></a>Vérification de la version d’Azure PowerShell
+### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>Vérification de la version d’Azure PowerShell
 
 Bien que nous vous encouragions à effectuer la mise à niveau vers la version la plus récente dès que possible, plusieurs versions d’Azure PowerShell sont prises en charge. Pour déterminer la version d’Azure PowerShell installée, exécutez `Get-Module AzureRM` à partir de la ligne de commande.
 
@@ -124,7 +124,7 @@ Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
 
 Si vous avez des déploiements qui utilisent le modèle de déploiement Classic, vous pouvez installer la version Service Management d’Azure PowerShell. Pour plus d’informations, consultez [Installer le module Azure PowerShell Service Management](/powershell/azure/servicemanagement/install-azure-ps). Les modules Azure et AzureRM partagent des dépendances communes. Si vous utilisez des modules Azure et AzureRM, vous devez installer la même version de chaque package.
 
-### <a id="update-azps"></a>Mise à jour vers une nouvelle version d’Azure PowerShell
+### <a name="div-idupdate-azpsupdating-to-a-new-version-of-azure-powershell"></a><div id="update-azps"/>Mise à jour vers une nouvelle version d’Azure PowerShell
 
 Si vous avez une version précédente d’Azure PowerShell installée qui inclut le module Gestion des services, vous pourriez recevoir l’erreur suivante :
 

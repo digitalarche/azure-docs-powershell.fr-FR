@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: c9a2f7b87654de5a50d8e0f06fefc6d362532aaf
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: a5ad1ce6001c9326a5dad135fe5aeea512f70675
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34852894"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025155"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Installation et configuration d'Azure PowerShell
 
@@ -79,6 +79,7 @@ Le module AzureRM est un module cumulatif pour les applets de commande Azure Res
 Si vous disposez d’une version précédente d’Azure PowerShell, vous pourriez recevoir une erreur. Pour résoudre ce problème, consultez la section [Mise à jour vers une nouvelle version d’Azure PowerShell](#update-azps) de cet article.
 
 ## <a name="step-3-load-the-azurerm-module"></a>Étape 3 : Charger le module AzureRM
+
 Une fois le module installé, vous devez le charger dans votre session PowerShell. Vous devez le faire dans une session PowerShell normale (sans élévation de privilèges). Les modules sont chargés à l’aide de l’applet de commande `Import-Module`, comme suit :
 
 ```powershell
@@ -101,8 +102,7 @@ Pour plus d’informations sur l’utilisation d’Azure PowerShell, consultez l
 |Je veux effectuer la mise à niveau vers PowerShell 5|[Installer la dernière version de WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
 |Mon ordinateur exécute une version de Windows avec PowerShell 3 ou 4|[Obtenir les modules PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
-<a id="helpmechoose"></a>
-### <a name="checking-the-version-of-azure-powershell"></a>Vérification de la version d’Azure PowerShell
+### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>Vérification de la version d’Azure PowerShell
 
 Bien que nous vous encouragions à effectuer la mise à niveau vers la version la plus récente dès que possible, plusieurs versions d’Azure PowerShell sont prises en charge. Pour déterminer la version d’Azure PowerShell installée, exécutez `Get-Module AzureRM` à partir de la ligne de commande.
 
@@ -114,7 +114,7 @@ Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
 
 Si vous avez des déploiements qui utilisent le modèle de déploiement Classic, vous pouvez installer la version Service Management d’Azure PowerShell. Pour plus d’informations, consultez [Installer le module Azure PowerShell Service Management](/powershell/azure/servicemanagement/install-azure-ps). Les modules Azure et AzureRM partagent des dépendances communes. Si vous utilisez des modules Azure et AzureRM, vous devez installer la même version de chaque package.
 
-### <a id="update-azps"></a>Mise à jour vers une nouvelle version d’Azure PowerShell
+### <a name="div-idupdate-azpsupdating-to-a-new-version-of-azure-powershell"></a><div id="update-azps"/>Mise à jour vers une nouvelle version d’Azure PowerShell
 
 Si vous avez une version précédente d’Azure PowerShell installée qui inclut le module Gestion des services, vous pourriez recevoir l’erreur suivante :
 

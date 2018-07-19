@@ -13,7 +13,7 @@ ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025206"
+ms.locfileid: "39025172"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Créer un principal du service Azure avec Azure PowerShell
 

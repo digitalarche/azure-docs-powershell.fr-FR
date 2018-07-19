@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: f6c52b413aa2981dc24c7e60fe832e37dcbc8baa
-ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
+ms.openlocfilehash: 7c6446a66cd3ab9fe8f5d8adf13fed36ee093340
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091450"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025308"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>Installer Azure PowerShell sur Windows avec un fichier MSI ou Web Platform Installer
 
@@ -30,7 +30,7 @@ Azure PowerShell peut être installé à l’aide du fichier MSI disponible sur 
 > [!NOTE]
 > N’utilisez que le module `Azure` si vous utilisez le modèle de déploiement Azure Classic.
 
-Pour commencer à utiliser Azure PowerShell, vous devez charger `AzureRM` dans votre session PowerShell actuelle avec la cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), puis vous connecter avec vos informations d'identification Azure.
+Pour commencer à utiliser Azure PowerShell, vous devez charger `AzureRM` dans votre session PowerShell actuelle avec la cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), puis vous connecter avec vos informations d’identification Azure.
 
 ```powershell
 # Import the module into the PowerShell session
@@ -40,7 +40,7 @@ Connect-AzureRmAccount
 ```
 
 Vous devez répéter ces étapes pour chaque nouvelle session PowerShell que vous démarrez. L’importation automatique du module `AzureRM` nécessite la configuration d’un profil PowerShell. Pour en savoir plus, consultez [À propos des profils](/powershell/module/microsoft.powershell.core/about/about_profiles).
-Pour savoir comment conserver votre connexion Azure sur plusieurs sessions, consultez [Persist user credentials across PowerShell sessions](context-persistence.md) (Conserver ses informations d'identification d’utilisateur sur plusieurs sessions PowerShell).
+Pour savoir comment conserver votre connexion Azure sur plusieurs sessions, consultez [Persist user credentials across PowerShell sessions](context-persistence.md) (Conserver ses informations d’identification d’utilisateur sur plusieurs sessions PowerShell).
 
 ## <a name="install-or-update-on-windows-using-the-web-platform-installer"></a>Installer ou mettre à jour sur Windows à l’aide de Web Platform Installer
 
@@ -49,7 +49,7 @@ Téléchargez le [package Azure PowerShell WebPI](http://aka.ms/webpi-azps) et d
 > [!NOTE]
 > N’utilisez que le module `Azure` si vous utilisez le modèle de déploiement Azure Classic.
 
-Pour commencer à utiliser Azure PowerShell, vous devez charger `AzureRM` dans votre session PowerShell actuelle avec la cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), puis vous connecter avec vos informations d'identification Azure.
+Pour commencer à utiliser Azure PowerShell, vous devez charger `AzureRM` dans votre session PowerShell actuelle avec la cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), puis vous connecter avec vos informations d’identification Azure.
 
 ```powershell
 # Import the module into the PowerShell session
@@ -59,4 +59,4 @@ Connect-AzureRmAccount
 ```
 
 Vous devez répéter ces étapes pour chaque nouvelle session PowerShell que vous démarrez. L’importation automatique du module `AzureRM` nécessite la configuration d’un profil PowerShell. Pour en savoir plus, consultez [À propos des profils](/powershell/module/microsoft.powershell.core/about/about_profiles).
-Pour savoir comment conserver votre connexion Azure sur plusieurs sessions, consultez [Persist user credentials across PowerShell sessions](context-persistence.md) (Conserver ses informations d'identification d’utilisateur sur plusieurs sessions PowerShell).
+Pour savoir comment conserver votre connexion Azure sur plusieurs sessions, consultez [Persist user credentials across PowerShell sessions](context-persistence.md) (Conserver ses informations d’identification d’utilisateur sur plusieurs sessions PowerShell).

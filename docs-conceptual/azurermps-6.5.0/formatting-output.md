@@ -1,35 +1,35 @@
 ---
-title: Mise en forme des résultats de requête | Microsoft Docs
-description: Comment effectuer une requête de ressources dans Azure et mettre en forme les résultats.
+title: Mettre en forme la sortie de l’applet de commande Azure PowerShell
+description: Mise en forme la sortie de l’applet de commande pour Azure PowerShell.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 37305943c272d61953c7c4765a72125088b2d805
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.date: 06/07/2018
+ms.openlocfilehash: 833c82903305f99be5ad43f707e22644bb568abe
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024560"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110719"
 ---
-# <a name="formatting-query-results"></a>Mise en forme des résultats de requête
+# <a name="format-azurepowershell-cmdlet-output"></a>Mettre en forme la sortie de l’applet de commande Azure PowerShell
 
-Par défaut, chaque applet de commande PowerShell met en forme la sortie selon des paramètres prédéfinis pour faciliter la lecture.  PowerShell offre également une grande flexibilité pour adapter la sortie ou convertir la sortie de l’applet de commande dans un format différent. Pour cela, vous pouvez utiliser les applets de commande suivantes :
+Par défaut, chaque applet de commande Azure PowerShell met en forme la sortie selon des paramètres prédéfinis pour faciliter la lecture.  PowerShell offre également une grande flexibilité pour adapter la sortie ou convertir la sortie de l’applet de commande dans un format différent. Pour cela, vous pouvez utiliser les applets de commande suivantes :
 
 | Mise en forme      | Conversion       |
 |-----------------|------------------|
-| `Format-Custom` | `ConvertTo-Csv`  |
-| `Format-List`   | `ConvertTo-Html` |
-| `Format-Table`  | `ConvertTo-Json` |
-| `Format-Wide`   | `ConvertTo-Xml`  |
+| [Format-Custom](/powershell/module/microsoft.powershell.utility/format-custom) | [ConvertTo-Csv](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
+| [Format-List](/powershell/module/microsoft.powershell.utility/format-list)   | [ConvertTo-Html](/powershell/module/microsoft.powershell.utility/convertto-html) |
+| [Format-Table](/powershell/module/microsoft.powershell.utility/format-table)  | [ConvertTo-Json](/powershell/module/microsoft.powershell.utility/convertto-json) |
+| [Format-Wide](/powershell/module/microsoft.powershell.utility/format-wide)   | [ConvertTo-Xml](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
 
-## <a name="formatting-examples"></a>Exemples de mise en forme
+## <a name="format-examples"></a>Exemples de mise en forme
 
-Dans cet exemple, nous obtenons une liste des machines virtuelles Azure créées dans notre abonnement par défaut.  Par défaut, la commande Get-AzureRmVM présente la sortie sous forme de tableau.
+Dans cet exemple, nous obtenons une liste des machines virtuelles Azure créées dans notre abonnement par défaut.  Par défaut, la commande `Get-AzureRmVM` présente la sortie sous forme de tableau.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM
 ```
 
@@ -42,7 +42,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 Si vous souhaitez limiter les colonnes retournées, utilisez l’applet de commande `Format-Table`. Dans l’exemple suivant, nous obtenons la même liste de machines virtuelles, mais nous limitons la sortie pour afficher uniquement le nom de la machine virtuelle, le groupe de ressources et l’emplacement de la machine virtuelle.  Le paramètre `-Autosize` redimensionne les colonnes en fonction de la taille des données.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
 ```
 
@@ -53,10 +53,10 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-Si vous préférez, vous pouvez afficher les informations sous forme de liste. L’exemple suivant définit ce format à l’aide de l’applet de commande `Format-List`.
+La sortie peut également être mise en forme dans une liste. L’exemple suivant définit ce format à l’aide de l’applet de commande `Format-List`.
 
-```powershell
-Get-AzureVM | Format-List Name,VmId,Location,ResourceGroupName
+```azurepowershell-interactive
+Get-AzureRmVM | Format-List Name,VmId,Location,ResourceGroupName
 ```
 
 ```output
@@ -71,11 +71,11 @@ Location          : westeurope
 ResourceGroupName : MYWESTEURG
 ```
 
-## <a name="converting-to-other-data-types"></a>Conversion en d’autres types de données
+## <a name="convert-to-other-data-types"></a>Conversion en d’autres types de données
 
-PowerShell propose également plusieurs formats de sortie à utiliser selon vos besoins.  Dans l’exemple suivant, nous utilisons l’applet de commande `Select-Object` pour obtenir les attributs des machines virtuelles créées dans notre abonnement, et nous convertissons la sortie au format CSV pour pouvoir ensuite l’importer facilement dans une base de données ou une feuille de calcul.
+PowerShell permet également de prendre la sortie de la commande et de la convertir en plusieurs formats de données. Dans l’exemple suivant, nous utilisons l’applet de commande `Select-Object` pour obtenir les attributs des machines virtuelles créées dans notre abonnement, et nous convertissons la sortie au format CSV pour pouvoir ensuite l’importer facilement dans une base de données ou une feuille de calcul.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
 ```
 
@@ -85,9 +85,9 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 "MYWESTUERG","/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MYWESTUERG/providers/Microsoft.Compute/virtualMachines/MyWin2016VM","4650c755-fc2b-4fc7-a5bc-298d5c00808f","MyWin2016VM","westeurope","Succeeded"
 ```
 
-Vous pouvez aussi convertir la sortie au format JSON.  L’exemple suivant crée la même liste de machines virtuelles, mais utilise le format de sortie JSON à la place.
+La sortie peut également être convertie au format JSON.  L’exemple suivant crée la même liste de machines virtuelles, mais utilise le format de sortie JSON à la place.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
 ```
 
