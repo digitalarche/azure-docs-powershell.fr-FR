@@ -16,11 +16,11 @@ Il n’existe pas de changement cassant par rapport à la version 1.3.0. Tous le
 
 ## <a name="install"></a>Installer
 ```
-# 1.4.0 can be installed side by side with 1.3.0
-# Remove previous version 1.2.11
+# Remove previous versions of AzureStack modules
+Uninstall-Module -Name AzureStack -Force 
 Uninstall-Module AzureRM.AzureStackAdmin -Force
 Uninstall-Module AzureRM.AzureStackStorage -Force
-Uninstall-Module -Name AzureStack -Force 
+Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
 
 
 # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
