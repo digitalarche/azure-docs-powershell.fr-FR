@@ -7,19 +7,68 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
-ms.date: 5/1/2018
-ms.openlocfilehash: 6043d17df1b5e91521bad31e65372c10ee6a5c6a
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 08/28/2018
+ms.openlocfilehash: f4f3141998be14f0b5b223aed1af283534bf061d
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250448"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383836"
 ---
 # <a name="release-notes"></a>Notes de publication
 
 Il s’agit de la liste des modifications apportées à Azure PowerShell dans cette version.
 
 ---
+## <a name="681---august-2018"></a>6.8.1 - Août 2018
+#### <a name="general"></a>Généralités
+* Résolution du problème relatif aux groupes de ressources par défaut non définis.
+* Mise à jour des assemblys de runtime courants
+
+#### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
+* Résolution du problème relatif aux groupes de ressources par défaut non définis.
+* Problème résolu https://github.com/Azure/azure-powershell/issues/6603
+    - Les cmdlets Import-AzureRmApiManagementApi et *-AzureRmApiManagementCertificate peuvent maintenant gérer les chemins d’accès relatifs
+* Problème résolu https://github.com/Azure/azure-powershell/issues/6879
+    - CertificateInformation est une propriété définissable permettant à la cmdlet Set-AzureRmApiManagement de fonctionner correctement. Résolu en passant au nuget 4.0.4-preview
+* Problème résolu https://github.com/Azure/azure-powershell/issues/6853
+    - Recherche par nom sur produit du filtre Odata résolue
+* Problème résolu https://github.com/Azure/azure-powershell/issues/6814
+    - Recherche par nom sur Api du filtre Odata résolue
+* Ajout de la prise en charge de l’enregistreur d'événements AzureMonitor
+
+
+#### <a name="azurermcompute"></a>AzureRM.Compute
+* Résolution du problème signalant que la cible est manquante dans la sortie d’erreur.
+* Résolution du problème relatif au type de compte de stockage pour les machines virtuelles dotées d’un disque managé
+* Résolution du problème relatif aux groupes de ressources par défaut non définis.
+* Correction des applets de commande AEM Extension pour d’autres environnements, par exemple Azure Chine
+
+#### <a name="azurermnetwork"></a>AzureRM.Network
+* Modification de la présentation d’une sortie de cmdlet par défaut en affichage sous forme de table
+
+#### <a name="azurermpowerbiembedded"></a>AzureRM.PowerBIEmbedded
+* Correction de l’erreur dans Update-AzureRmPowerBIEmbeddedCapacity lors d’une tentative de redimensionnement de la capacité mise en pause
+
+
+#### <a name="azurermresources"></a>AzureRM.Resources
+* Résolution du problème de création d’applications managées depuis le Marketplace.
+
+#### <a name="azurermservicebus"></a>AzureRM.ServiceBus
+* Problèmes résolus
+    - https://github.com/Azure/azure-powershell/issues/5058
+    - https://github.com/Azure/azure-powershell/issues/5055
+    - https://github.com/Azure/azure-powershell/issues/6891
+
+#### <a name="azurermtrafficmanager"></a>AzureRM.TrafficManager
+* Ajout de la prise en charge de la méthode de routage MultiValue
+    - Nouveau paramètre « MaxReturn » pour le routage MultiValue
+* Ajout de la prise en charge de la méthode de routage Subnet
+    - Prise en charge des plages d’adresses IP (sous-réseaux) dans les points de terminaison
+* Ajout de la prise en charge des en-têtes personnalisés dans les profils
+* Ajout de la prise en charge des plages de codes avec l’état Attendu dans les profils
+* Ajout de la prise en charge des en-têtes personnalisés dans les points de terminaison
+
 ## <a name="680---august-2018"></a>6.8.0 - Août 2018
 #### <a name="general"></a>Généralités
 * Résolution du problème relatif aux groupes de ressources par défaut non définis.
