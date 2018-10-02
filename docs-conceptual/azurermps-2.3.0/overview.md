@@ -1,6 +1,6 @@
 ---
-title: Vue d’ensemble d’Azure Stack PowerShell administrateur | Microsoft Docs
-description: Une vue d’ensemble d’Azure Stack PowerShell administrateur avec des instructions sur les procédures d’installation et de configuration.
+title: Vue d’ensemble d’Azure Stack PowerShell | Microsoft Docs
+description: Une vue d’ensemble d’Azure Stack PowerShell avec des instructions sur les procédures d’installation et de configuration.
 author: bganapa
 ms.author: bganapa
 manager: knithinc
@@ -8,47 +8,53 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
+ms.openlocfilehash: d514e43d82bcb51f65831dc506e58e8747db0381
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47179137"
+ms.locfileid: "47178457"
 ---
-# <a name="azure-stack-module-130"></a>Module Azure Stack 1.3.0
+# <a name="azurerm-module-230"></a>Module AzureRM 2.3.0
 
 ## <a name="requirements"></a>Requirements:
-La version minimale d’Azure Stack prise en charge est la version 1804.
+La version minimale d’Azure Stack prise en charge est la version 1808.
 
 Remarque : si vous utilisez une version antérieure, installez la version 1.2.11.
 
-## <a name="known-issues"></a>Problèmes connus :
-
-- L’option Fermer l’alerte nécessite la version 1803 d’Azure Stack.
-- Certaines cmdlets de Stockage nécessitent la version 1804 d’Azure Stack.
-- La cmdlet New-AzsOffer ne permet pas de créer une offre avec l’état Public. La cmdlet Set-AzsOffer doit être appelée après pour modifier l’état.
-- Un pool d’adresses IP ne peut pas être supprimé sans redéploiement.
-
-## <a name="breaking-changes"></a>Dernières modifications
-Tous les changements cassants liés à la migration à partir de la version 1.2.11 sont décrits ici : https://aka.ms/azspowershellmigration.
 
 ## <a name="install"></a>Installer
-```
-# Remove previous Versions
-Uninstall-Module AzureRM.AzureStackAdmin -Force
-Uninstall-Module AzureRM.AzureStackStorage -Force
+```powershell
+# Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
+Uninstall-Module -Name AzureRM -Force 
+Uninstall-Module AzureRM.AzureStackAdmin -Force -ErrorAction Continue
+Uninstall-Module AzureRM.AzureStackStorage -Force -ErrorAction Continue
+Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
+Get-Module Azure.* -ListAvailable | Uninstall-Module -Force
 
 
 # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
-# Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.3.0
 ```
+
+##<a name="release-notes"></a>Notes de publication
+* La version 2.3.0 est fournie avec une liste de changements cassants. Pour mettre à niveau à partir de la version 1.2.11, nous avons créé un guide de migration sur https://aka.ms/azspowershellmigration
+* Cette version correspond au profil d’api 2018-03-01 hybride azurestack spécifique
+* Tous les modules utilisent une dépendance supérieure ou égale sur le module AzureRm.Profile.
+* Les versions de l’API prises en charge par chacun des modules sont mises à jour. 
+    * Compute - 2017-03-30
+    * Réseau - 2017-10-01
+    * Stockage - 2016-01-01
+    * Ressources - 2018-02-01
+    * KeyVault - 2016-10-01
+    * DNS - 2016-04-01
+* Le mappage complet de la version de l’API pour chacun des types de ressources est disponible sur https://github.com/Azure/azure-rest-api-specs/blob/master/profile/2018-03-01-hybrid.json
+
 ## <a name="content"></a>Contenu :
 ### <a name="azure-bridge"></a>Azure Bridge
 Préversion du module administrateur AzureBridge d’Azure Stack, qui permet de syndiquer des images à partir d’Azure.
@@ -63,7 +69,7 @@ Préversion du module administrateur Sauvegarde, à l’aide duquel les administ
 Préversion du module administrateur Commerce d’Azure Stack, qui permet d’afficher l’utilisation de données agrégées pour l’ensemble du système Azure Stack.
 
 ### <a name="compute"></a>Calcul
-Préversion du module administrateur Calcul d’Azure Stack, qui fournit des fonctionnalités pour gérer les quotas, les images de plateforme et les extensions de machine virtuelle de calcul.
+Préversion du module administrateur de calcul Azure Stack, qui fournit des fonctionnalités pour gérer les quotas, les images de plateforme, les disques managés et les extensions de machine virtuelle de calcul.
 
 ### <a name="fabric"></a>Structure
 Préversion du module administrateur Structure d’Azure Stack, qui permet aux administrateurs d’afficher et de gérer les composants d’infrastructure :
