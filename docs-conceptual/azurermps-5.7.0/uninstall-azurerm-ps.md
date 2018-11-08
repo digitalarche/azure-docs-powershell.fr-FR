@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: f19f9fc9fb9afabdddcbfc98864c63762753e6f0
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 3828a6f9d60a68c2837cc201a50d8707324f4f0a
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024662"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211228"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Désinstaller le module Azure PowerShell
 
@@ -36,7 +36,7 @@ Si vous avez installé Azure PowerShell à l’aide de PowerShellGet, vous pouve
 
 Le script suivant peut être utilisé pour supprimer complètement une seule version d’Azure PowerShell. Le script interroge PowerShell Gallery pour obtenir une liste des sous-modules dépendants. Il désinstalle ensuite la bonne version de chaque sous-module.
 
-```powershell
+```powershell-interactive
 function Uninstall-AllModules {
   param(
     [Parameter(Mandatory=$true)]
@@ -70,7 +70,7 @@ function Uninstall-AllModules {
 
 Pour utiliser cette fonction, copiez et collez le code dans votre session PowerShell. L’exemple suivant montre comment exécuter la fonction afin de supprimer une ancienne version d’Azure PowerShell.
 
-```powershell
+```powershell-interactive
 Uninstall-AllModules -TargetModule AzureRM -Version 4.4.1 -Force
 ```
 

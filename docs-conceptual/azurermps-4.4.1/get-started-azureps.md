@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 0897e8fc3a50a58ac8945bd95722736526f63e19
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 7eb5e3fad31b5a92be1cfb36aefdaa7b920bae5f
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100152"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211024"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Bien démarrer avec Azure PowerShell
 
@@ -38,7 +38,7 @@ Vous pouvez également installer Azure PowerShell et l’utiliser en local dans
 
 ## <a name="install-azure-powershell"></a>Installation d’Azure PowerShell
 
-La première étape est de vérifier que la dernière version d’Azure PowerShell est installée. Pour plus d’informations sur la version la plus récente, consultez les [notes de publication](./release-notes-azureps.md).
+La première étape est de vérifier que la dernière version d’Azure PowerShell est installée. Pour plus d’informations sur la version la plus récente, consultez les [Notes de publication](./release-notes-azureps.md).
 
 1. [Installez Azure PowerShell](install-azurerm-ps.md).
 
@@ -64,7 +64,7 @@ Nous devons d’abord créer un groupe de ressources. Les groupes de ressources 
 
 Nous allons créer un groupe de ressources nommé « MyResourceGroup » dans la région westeurope d’Azure. Pour ce faire, tapez la commande suivante :
 
-```powershell
+```powershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
@@ -84,7 +84,7 @@ Maintenant que nous avons notre groupe de ressources, nous allons y créer une m
 
 Nous devons tout d’abord créer la configuration de sous-réseau à utiliser pour le processus de création du réseau virtuel. Nous créons également une adresse IP publique pour pouvoir nous connecter à cette machine virtuelle. Nous créons un groupe de sécurité réseau pour sécuriser l’accès à l’adresse publique. Enfin, nous créons la carte réseau virtuelle à l’aide de toutes les ressources créées.
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -120,14 +120,14 @@ $nic = New-AzureRmNetworkInterface -Name myNic1 -ResourceGroupName $resourceGrou
 
 Tout d’abord, obtenons des informations d’identification pour le système d’exploitation.
 
-```powershell
+```powershell-interactive
 # Create user object
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
 Maintenant que nous avons les ressources nécessaires, nous pouvons créer la machine virtuelle. Pour cette étape, nous créons un objet de configuration de machine virtuelle, puis nous utilisons la configuration pour créer la machine virtuelle.
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred |
@@ -148,7 +148,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 
 Connectez-vous maintenant à la nouvelle machine virtuelle Windows Server à l’aide du Bureau à distance et de l’adresse IP publique de la machine virtuelle. La commande suivante affiche l’adresse IP publique ayant été créée dans le script précédent.
 
-```powershell
+```powershell-interactive
 $publicIp | Select-Object Name,IpAddress
 ```
 
@@ -160,7 +160,7 @@ mypublicdns1400512543 xx.xx.xx.xx
 
 Sur un système Windows, vous pouvez vous connecter en exécutant la commande mstsc à partir de la ligne de commande :
 
-```powershell
+```powershell-interactive
 mstsc /v:xx.xxx.xx.xxx
 ```
 
@@ -174,7 +174,7 @@ Pour créer une machine virtuelle Linux, nous devons d’abord créer les autres
 
 Nous devons tout d’abord créer la configuration de sous-réseau à utiliser pour le processus de création du réseau virtuel. Nous créons également une adresse IP publique pour pouvoir nous connecter à cette machine virtuelle. Nous créons un groupe de sécurité réseau pour sécuriser l’accès à l’adresse publique. Enfin, nous créons la carte réseau virtuelle à l’aide de toutes les ressources créées.
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -214,7 +214,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
 
 Maintenant que nous avons les ressources nécessaires, nous pouvons créer la machine virtuelle. Pour cette étape, nous créons un objet de configuration de machine virtuelle, puis nous utilisons la configuration pour créer la machine virtuelle.
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -272,13 +272,13 @@ Nous avons vu comment créer un groupe de ressources, une machine virtuelle Linu
 
 Par exemple, nous pouvons créer un équilibrage de la charge réseau Azure, pour l’associer ensuite à nos nouvelles machines virtuelles, en utilisant la commande create suivante :
 
-```powershell
+```powershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
 Nous pouvons aussi créer un réseau privé virtuel (communément appelé « VNet » dans Azure) pour notre infrastructure à l’aide de la commande suivante :
 
-```powershell
+```powershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
@@ -288,7 +288,7 @@ Ce qui rend Azure et Azure PowerShell si puissants, c’est que nous pouvons les
 
 Par exemple, utilisez Azure PowerShell pour créer un service Azure App Service. Azure App Service est un service de plateforme géré qui offre un excellent moyen d’héberger des applications web sans avoir à se soucier de l’infrastructure. Après avoir créé le service App Service, vous pouvez y créer deux applications Azure Web Apps à l’aide des commandes suivantes :
 
-```powershell
+```powershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -301,7 +301,7 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 Vous pouvez utiliser l’applet de commande `Get-AzureRmResource` pour répertorier les ressources actuellement exécutées dans Azure. L’exemple ci-dessous affiche les ressources que nous venons de créer dans le nouveau groupe de ressources.
 
-```powershell
+```powershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
@@ -330,7 +330,7 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 
 Pour nettoyer votre compte Azure, vous souhaitez supprimer les ressources que nous avons créées dans cet exemple. Utilisez les applets de commande `Remove-AzureRm*` pour supprimer les ressources dont vous n’avez plus besoin. Pour supprimer la machine virtuelle Windows que nous avons créée, exécutez la commande suivante :
 
-```powershell
+```powershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
@@ -344,7 +344,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 Vous pouvez aussi supprimer de nombreuses ressources à la fois. Par exemple, la commande suivante supprime tout le groupe de ressources « MyResourceGroup » que nous avons utilisé dans l’ensemble des exemples de ce didacticiel. Cette commande supprime le groupe de ressources et toutes les ressources qu’il contient.
 
-```powershell
+```powershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 

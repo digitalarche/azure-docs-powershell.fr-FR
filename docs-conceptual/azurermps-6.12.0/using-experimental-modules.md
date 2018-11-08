@@ -6,23 +6,23 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: 09858da9981c1136e2a39a079962c5b8fc39bde9
+ms.date: 09/11/2018
+ms.openlocfilehash: 245d69d3bcee3c502babe82395341efad2bc96d0
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211908"
+ms.locfileid: "51212777"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>Utilisation des modules Azure PowerShell expérimentaux
+# <a name="use-experimental-azure-powershell-modules"></a>Utiliser des modules Azure PowerShell expérimentaux
 
 En mettant l’accent sur les outils de développement (surtout les CLI) dans Azure, l’équipe Azure PowerShell peut apporter de nombreuses améliorations de l’expérience d’utilisation d’Azure PowerShell.
 
 ## <a name="experimentation-methodology"></a>Méthodologie d’expérimentation
 
-Pour faciliter l’expérimentation, nous créons des modules Azure PowerShell qui implémentent les fonctionnalités existantes de Microsoft Azure SDK grâce à de nouvelles méthodes, plus simples. Dans la plupart des cas, les cmdlets reflètent exactement les cmdlets existantes. Toutefois, les cmdlets expérimentales fournissent une notation abrégée et des valeurs par défaut plus intelligentes, qui facilitent la création et la gestion des ressources Azure.
+Pour faciliter l’expérimentation, nous créons des modules Azure PowerShell qui implémentent des fonctionnalités déjà existantes de Microsoft Azure SDK avec de nouvelles méthodes, plus simples d’utilisation. Dans la plupart des cas, les cmdlets reflètent exactement les cmdlets existantes. Toutefois, les cmdlets expérimentales fournissent une notation abrégée et des valeurs par défaut plus intelligentes, qui facilitent la création et la gestion des ressources Azure.
 
-Ces modules peuvent être installés en parallèle avec des modules Azure PowerShell existants. Les noms de cmdlet ont été raccourcis, de manière à éviter les conflits de noms avec des cmdlets existantes, non expérimentales.
+Ces modules peuvent être installés côte à côte avec des modules Azure PowerShell existants. Les noms de cmdlet ont été raccourcis, de manière à éviter les conflits de noms avec des cmdlets existantes, non expérimentales.
 
 Les modules expérimentaux utilisent la convention d’affectation de noms suivante : `AzureRM.*.Experiments`. Cette convention d’affectation de noms est similaire à la dénomination des modules de préversion : `AzureRM.*.Preview`. Les modules de préversion diffèrent des modules expérimentaux. Ils implémentent de nouvelles fonctionnalités des services Azure qui sont uniquement disponibles en tant qu’offre de préversion. Les modules de préversion remplacent les modules Azure PowerShell existants et utilisent les mêmes noms de paramètre et de cmdlet.
 
@@ -30,11 +30,11 @@ Les modules expérimentaux utilisent la convention d’affectation de noms suiva
 
 Les modules expérimentaux sont publiés dans PowerShell Gallery, comme les modules Azure PowerShell existants. Pour consulter une liste de modules expérimentaux, exécutez la commande suivante :
 
-```powershell-interactive
+```azurepowershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```Output
+```output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -43,7 +43,7 @@ Version Name                         Repository Description
 
 Pour installer le module expérimental, utilisez les commandes suivantes à partir d’une session PowerShell avec élévation de privilèges :
 
-```powershell-interactive
+```azurepowershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
@@ -80,7 +80,7 @@ Les améliorations expérimentales présentent une modification importante que l
 
 - « Création intelligente » : tous les scénarios de création qui implémentent la fonction de « création intelligente » ne disposent d’_aucun_ paramètre requis ; toutes les informations requises sont choisies par Azure PowerShell de manière répétée.
 
-- Paramètres « gris » : dans de nombreux cas, certains paramètres peuvent être « gris », ou semi-facultatifs. Si le paramètre n’est pas spécifié, l’utilisateur est invité à indiquer s’il veut qu’il soit généré pour lui. Il est également judicieux pour les paramètres « gris » de déduire une valeur en fonction du contexte, avec le consentement de l’utilisateur.
+- Paramètres « gris » : dans de nombreux cas, certains paramètres peuvent être « gris », ou semi-facultatifs. Si le paramètre n’est pas spécifié, l’utilisateur est invité à indiquer s’il souhaite qu’il soit généré pour lui. Il est également judicieux pour les paramètres « gris » de déduire une valeur en fonction du contexte, avec le consentement de l’utilisateur.
   Par exemple, il peut être judicieux de faire en sorte que le paramètre « gris » suggère la valeur utilisée le plus récemment.
 
 - Commutateur `-Auto` : le commutateur `-Auto` doit fournir une option d’abonnement pour permettre aux utilisateurs _de définir tous les éléments sur leur valeur par défaut_ tout en gérant l’intégrité des paramètres requis dans le chemin principal.
@@ -89,8 +89,8 @@ Les améliorations expérimentales présentent une modification importante que l
 
 Par exemple, le scénario de « Création d’application web » peut avoir un commutateur `-Git` ou `-AddRemote` qui ajoutera automatiquement un élément « azure » distant à un référentiel git existant.
 
-- Valeurs par défaut définissables : les utilisateurs doivent être à même de définir certains paramètres omniprésents sur la valeur par défaut, tels que `-ResourceGroupName` et `-Location`.
+- Valeurs par défaut définissables : les utilisateurs doivent être en mesure de définir les valeurs par défaut pour les paramètres communs tels que `-ResourceGroupName` et `-Location`.
 
-- Valeurs par défaut de la taille : les « tailles » des ressources peuvent être difficiles à comprendre pour les utilisateurs, car de nombreux fournisseurs de ressources utilisent des noms différents (par exemple, « Standard\_DS1\_v2 » ou « S1 »). Toutefois, la plupart des utilisateurs se préoccupent surtout des coûts. Pour cette raison, il est judicieux de définir des tailles « universelles » selon un calendrier de tarification. Les utilisateurs peuvent choisir une taille spécifique, ou laisser à Azure PowerShell le soin de choisir le _meilleure option_ en fonction de la ressource et du budget.
+- Valeurs par défaut de la taille : les « tailles » des ressources peuvent être difficiles à comprendre pour les utilisateurs, car de nombreux fournisseurs de ressources utilisent des noms différents (par exemple, « Standard\_DS1\_v2 » ou « S1 »). Toutefois, la plupart des utilisateurs se préoccupent surtout des coûts. C’est pourquoi il est judicieux de définir des tailles « universelles » basées sur un programme de tarification. Les utilisateurs peuvent choisir une taille spécifique, ou laisser à Azure PowerShell le soin de choisir le _meilleure option_ en fonction de la ressource et du budget.
 
-- Format de sortie : actuellement, Azure PowerShell renvoie des éléments `PSObject` et la sortie de console est limitée. Azure PowerShell peut avoir besoin d’afficher certaines informations à l’utilisateur concernant les « valeurs par défaut intelligentes » utilisées.
+- Format de sortie : Azure PowerShell renvoie actuellement des éléments `PSObject` et la sortie de console est limitée. Azure PowerShell peut avoir besoin d’afficher certaines informations à l’utilisateur concernant les « valeurs par défaut intelligentes » utilisées.

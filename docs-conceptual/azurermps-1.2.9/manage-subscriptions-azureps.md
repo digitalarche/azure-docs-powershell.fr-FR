@@ -8,12 +8,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 00f346c2e90fb6615dd9eac96e13f4cfc243d204
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 8869b700e513d6fc07e69de1dbfe852bd2a52df1
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024475"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211058"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gérer plusieurs abonnements Azure
 
@@ -21,7 +21,7 @@ Si vous débutez avec Azure, vous avez probablement un seul abonnement. Si vous 
 
 1. Obtenez la liste de tous les abonnements créés dans votre compte.
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +50,13 @@ Si vous débutez avec Azure, vous avez probablement un seul abonnement. Si vous 
 
 2. Définissez l’abonnement par défaut.
 
-    ```powershell
+    ```powershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. Vérifiez que cette modification a été prise en compte en exécutant l’applet de commande `Get-AzureRmContext`.
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmContext
     ```
 

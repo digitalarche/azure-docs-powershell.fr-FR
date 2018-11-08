@@ -8,12 +8,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 1a4d24b6c772da7b5846c72cf26b457e8ce3d90b
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 19379a57e2ed369f75b2f02c73c00c1fbe02213e
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025087"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51210990"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Créer un principal du service Azure avec Azure PowerShell
 
@@ -43,7 +43,7 @@ Une fois que vous êtes connecté à votre compte Azure, vous pouvez créer le p
 
 Vous pouvez utiliser l’applet de commande `Get-AzureRmADApplication` pour obtenir des informations sur votre application.
 
-```powershell
+```powershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
 ```
 
@@ -63,7 +63,7 @@ ReplyUrls               : {}
 
 Utilisez l’applet de commande `New-AzureRmADServicePrincipal` pour créer le principal du service.
 
-```powershell
+```powershell-interactive
 Add-Type -Assembly System.Web
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
 New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $password
@@ -77,7 +77,7 @@ MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738
 
 ### <a name="get-information-about-the-service-principal"></a>Obtenir des informations sur le principal du service
 
-```powershell
+```powershell-interactive
 $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 $svcprincipal | Select-Object *
 ```
@@ -94,7 +94,7 @@ Type                  : ServicePrincipal
 
 Vous pouvez maintenant vous connecter en tant que nouveau principal du service pour votre application en utilisant les valeurs *appId* et *password* que vous avez fournies. Vous devez fournir l’ID de locataire (TenantId) pour votre compte. Cet ID s’affiche quand vous vous connectez à Azure avec vos informations d’identification personnelles.
 
-```powershell
+```powershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
 Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
@@ -128,7 +128,7 @@ Le rôle **Reader** (Lecteur) étant plus restrictif, il peut être un bon choix
 
 Dans cet exemple, nous ajoutons le rôle **Reader** à notre exemple précédent, et nous supprimons le rôle **Contributor** :
 
-```powershell
+```powershell-interactive
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
@@ -143,13 +143,13 @@ ObjectId           : 698138e7-d7b6-4738-a866-b4e3081a69e4
 ObjectType         : ServicePrincipal
 ```
 
-```powershell
+```powershell-interactive
 Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
 Pour afficher les rôles actuellement attribués :
 
-```powershell
+```powershell-interactive
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
@@ -177,7 +177,7 @@ Nous vous recommandons de vérifier les autorisations et de mettre à jour le mo
 
 ### <a name="add-a-new-password-for-the-service-principal"></a>Ajouter un nouveau mot de passe pour le principal du service
 
-```powershell
+```powershell-interactive
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
 New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -Password $password
 ```
@@ -190,7 +190,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>Obtenir la liste des informations d’identification pour le principal du service
 
-```powershell
+```powershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
@@ -203,7 +203,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="remove-the-old-password-from-the-service-principal"></a>Supprimer l’ancien mot de passe du principal du service
 
-```powershell
+```powershell-interactive
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
@@ -216,7 +216,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 
 ### <a name="verify-the-list-of-credentials-for-the-service-principal"></a>Vérifier la liste des informations d’identification pour le principal du service
 
-```powershell
+```powershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 

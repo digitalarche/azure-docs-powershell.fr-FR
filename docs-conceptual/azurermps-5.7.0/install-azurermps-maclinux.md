@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 47611281f67d68c9fc2686e0c6156b060a225158
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024917"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51210956"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Installer Azure PowerShell sur macOS ou Linux
 
@@ -43,7 +43,7 @@ sudo pwsh
 
 Pour installer Azure PowerShell, exécutez la commande suivante :
 
-```powershell
+```powershell-interactive
 Install-Module AzureRM.NetCore
 ```
 
@@ -59,7 +59,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 Répondez `Yes` ou `Yes to All` pour procéder à l’installation.
@@ -68,7 +68,7 @@ Répondez `Yes` ou `Yes to All` pour procéder à l’installation.
 
 Pour commencer à utiliser Azure PowerShell, vous devez charger `AzureRM.Netcore` dans votre session PowerShell avec la cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), puis vous connecter avec vos informations d’identification Azure. L’importation d’un module ne nécessite __pas__ de privilèges élevés.
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module AzureRM.Netcore
 # Connect to Azure with an interactive dialog for sign-in
@@ -91,7 +91,7 @@ Les modules Azure PowerShell pour .NET Core sont en cours de développement. Ces
 * Applets de commande de plan de gestion pour les services Azure avec les interfaces Resource Manager et Gestion des services.
   * Machine virtuelle
   * App Service (sites web)
-  * SQL Database
+  * Base de données SQL
   * Stockage
   * Réseau
 
