@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100489"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274923"
 ---
 # <a name="release-notes"></a>Notes de publication
 
@@ -262,14 +262,15 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
       - Remove-AzureRMRoleDefinition
       - Set-AzureRMRoleDefinition
 * ServiceBus
-    * Ajout ci-dessous de nouvelles applets de commande pour AuthorizationRules pour NameSpace, Queue et Topic. En fonction du jeu de paramètres, les opérations de règle d’autorisation sont effectuées.
-     - New-AzureRmServiceBusAuthorizationRule - Ajoute une nouvelle règle AuthorizationRule au NameSpace/Queue/Topic ServiceBus existant.
-     - Get-AzureRmServiceBusAuthorizationRule - Obtient une règle AuthorizationRule / la liste des AuthorizationRules pour le NameSpace/Queue/Topic ServiceBus existant.
-     - Set-AzureRmServiceBusAuthorizationRule - Met à jour les propriétés de la règle AuthorizationRule existante du NameSpace/Queue/Topic ServiceBus.
-     - New-AzureRmServiceBusKey - Génère une nouvelle clé principale/secondaire pour la règle AuthorizationRule du NameSpace/Queue/Topic ServiceBus existant.
-     - Get-AzureRmServiceBusKey - Obtient une clé principale/secondaire pour la règle AuthorizationRule du NameSpace/Queue/Topic ServiceBus existant.
-     - Remove-AzureRmServiceBusNameSpaceAuthorizationRule - Supprime la règle AuthorizationRule existante du NameSpace/Queue/Topic ServiceBus existant.
-    * Ajout de la propriété ResourceGroup à NamespaceAttributes
+  * Ajout ci-dessous de nouvelles applets de commande pour AuthorizationRules pour NameSpace, Queue et Topic. En fonction du jeu de paramètres, les opérations de règle d’autorisation sont effectuées.
+    - New-AzureRmServiceBusAuthorizationRule - Ajoute une nouvelle règle AuthorizationRule au NameSpace/Queue/Topic ServiceBus existant.
+    - Get-AzureRmServiceBusAuthorizationRule - Obtient une règle AuthorizationRule / la liste des AuthorizationRules pour le NameSpace/Queue/Topic ServiceBus existant.
+    - Set-AzureRmServiceBusAuthorizationRule - Met à jour les propriétés de la règle AuthorizationRule existante du NameSpace/Queue/Topic ServiceBus.
+    - New-AzureRmServiceBusKey - Génère une nouvelle clé principale/secondaire pour la règle AuthorizationRule du NameSpace/Queue/Topic ServiceBus existant.
+    - Get-AzureRmServiceBusKey - Obtient une clé principale/secondaire pour la règle AuthorizationRule du NameSpace/Queue/Topic ServiceBus existant.
+    - Remove-AzureRmServiceBusNameSpaceAuthorizationRule - Supprime la règle AuthorizationRule existante du NameSpace/Queue/Topic ServiceBus existant.
+  * Ajout de la propriété ResourceGroup à NamespaceAttributes
+
 * SQL
     * Mise à jour de Set-AzureRmSqlServerTransparentDataEncryptionProtector pour afficher un avertissement et demander confirmation que le Type du protecteur de chiffrement est bien défini sur AzureKeyVault
     * Ajout de nouvelles applets de commande mises à jour pour les paramètres d’audit
@@ -297,15 +298,16 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 
 ## <a name="20170717---version-421"></a>17/07/2017 - Version 4.2.1
 * Calcul
-    - Correction d’un problème avec le disque de machine virtuelle et les applets de commande create et update de capture instantanée de disque de machine virtuelle, (lien) [https://github.com/azure/azure-powershell/issues/4309]
-      - New-AzureRmDisk
-      - New-AzureRmSnapshot
-      - Update-AzureRmDisk
-      - Update-AzureRmSnapshot
+  - Correction d’un problème avec le disque de machine virtuelle et les applets de commande create et update de capture instantanée de disque de machine virtuelle, (lien) [<https://github.com/azure/azure-powershell/issues/4309>]
+    - New-AzureRmDisk
+    - New-AzureRmSnapshot
+    - Update-AzureRmDisk
+    - Update-AzureRmSnapshot
 * Profil
-    - Correction d’un problème avec l’authentification utilisateur non interactive dans RDFE (lien) [https://github.com/Azure/azure-powershell/issues/4299]
+  - Correction d’un problème avec l’authentification utilisateur non interactive dans RDFE (lien) [<https://github.com/Azure/azure-powershell/issues/4299>]
+
 * ServiceManagement
-    - Correction d’un problème avec l’authentification utilisateur non interactive (lien) [https://github.com/Azure/azure-powershell/issues/4299]
+  - Correction d’un problème avec l’authentification utilisateur non interactive (lien) [<https://github.com/Azure/azure-powershell/issues/4299>]
 
 ## <a name="2017711---version-420"></a>11/07/2017 - Version 4.2.0
 * AnalysisServices
@@ -660,7 +662,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 * ServiceBus
 
   - Correctif de bogue : les valeurs de propriété de file d’attente de ServiceBus étaient définies sur null, l’objet est utilisé en tant que paramètre d’entrée dans l’applet de commande Set-AzureRmServiceBusQueue pour mettre à jour la file d’attente.
-   - Les propriétés affectées sont LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount et MessageCount
+    - Les propriétés affectées sont LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount et MessageCount
 * ServiceFabric
 
   - Applets de commande ajoutées pour Service Fabric
