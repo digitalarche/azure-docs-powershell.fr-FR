@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: c60bc9197266cc1da37cc9af7baf03e7ba8fb7ac
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 8a7b184ed06eb078956229fa67d02840014e3aaf
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212717"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51275518"
 ---
 # <a name="release-notes"></a>Notes de publication
 
@@ -164,7 +164,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Modifications mineures du code commun de stockage
 * Mise à jour des fichiers d’aide pour inclure des types de paramètre complet.
-- Modification de -ServicePrincipal en non obligatoire dans l’ensemble de paramètres ServicePrincipalCertificateWithSubscriptionId 
+* Modification de -ServicePrincipal en non obligatoire dans l’ensemble de paramètres ServicePrincipalCertificateWithSubscriptionId 
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Prise en charge du contexte de stockage avec OAuth. 
@@ -403,7 +403,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Suppression de la limite de 5 To pour le quota de partage de fichiers Azure.
-- Set-AzureStorageShareQuota
+* Set-AzureStorageShareQuota
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * Mise à jour vers la dernière version d’Azure ClientRuntime.
@@ -680,8 +680,8 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Prise en charge du chargement de l’objet blob ou du fichier avec un jeton SAS en écriture seule
-- Set-AzureStorageBlobContent
-- Set-AzureStorageFileContent
+* Set-AzureStorageBlobContent
+* Set-AzureStorageFileContent
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * Ajout de la propriété ResourceGroupName requise au système autonome.
