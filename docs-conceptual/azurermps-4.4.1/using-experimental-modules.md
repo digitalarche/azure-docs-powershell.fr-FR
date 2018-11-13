@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 09858da9981c1136e2a39a079962c5b8fc39bde9
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 30e57805dd59bd60d10c52422fcb68686563fadf
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211908"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274668"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Utilisation des modules Azure PowerShell expérimentaux
 
@@ -63,7 +63,7 @@ Azure CLI 2.0 utilise différentes valeurs par défaut intelligentes, qui faci
 
 Les améliorations principales sont considérées comme des optimisations de « bon sens », et l’implémentation de ces mises à jour requiert une expérimentation limitée.
 
-- Cmdlets basées sur des scénarios : - **toutes* les cmdlets doivent être conçues sur la base de scénarios, et non du service REST Azure.
+- Cmdlets basées sur des scénarios : <em>*toutes</em> les cmdlets doivent être conçues sur la base de scénarios, et non du service REST Azure.
 
 - Noms plus courts : cela inclut les noms des cmdlets (par exemple, `New-AzureRmVM` => `New-AzVm`) et les noms des paramètres (par exemple, `-ResourceGroupName` => `-Rg`). Utilisez des alias pour assurer la compatibilité avec les « anciennes » cmdlets. Fournissez des ensembles de paramètres _à compatibilité descendante_.
 
