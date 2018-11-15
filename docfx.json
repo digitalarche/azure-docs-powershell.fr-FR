@@ -464,6 +464,7 @@
         },
         "globalMetadata": {
             "apiPlatform": "powershell",
+            "bilingual_type": "hover over",
             "brand": "azure",
             "searchScope": [
                 "Azure"
