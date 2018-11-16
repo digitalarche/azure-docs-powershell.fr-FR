@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 85e4612146c07b963ca51a7203ea7782d058b93d
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274311"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51576196"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Applets de commande en cours d’exécution en parallèle à l’aide de travaux PowerShell
 
