@@ -8,17 +8,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
 ms.openlocfilehash: 6cc6d9984e49c0cbc23c7ef3a77b98c0b7f3a8e0
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828329"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217777"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Installer le module Azure PowerShell Service Management
 
 La méthode recommandée est d’installer Azure PowerShell à partir de [PowerShell Gallery](https://www.powershellgallery.com/).
 
-## <a name="step-1-install-powershellget"></a>Étape 1 : Installer PowerShellGet
+## <a name="step-1-install-powershellget"></a>Étape 1 : Installer PowerShellGet
 
 Pour installer des éléments à partir de PowerShell Gallery, vous avez besoin du module PowerShellGet. Vérifiez que votre système a la version appropriée de PowerShellGet et qu’il présente toute la configuration requise. Exécutez la commande suivante pour vérifier que PowerShellGet est installé sur votre système.
 
@@ -36,7 +36,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 Si PowerShellGet n’est pas installé, consultez [Comment obtenir PowerShellGet](#how-to-get-powershellget).
 
-## <a name="step-2-install-azure-powershell"></a>Étape 2 : Installer Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>Étape 2 : Installation d’Azure PowerShell
 
 Exécutez la commande suivante à partir de la console Windows PowerShell en tant qu’administrateur :
 

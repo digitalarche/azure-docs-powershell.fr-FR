@@ -9,11 +9,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 2db1ada32e5a9285c27ec3f569b622c9c33a06b0
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826627"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216141"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Créer un principal du service Azure avec Azure PowerShell
 
@@ -110,7 +110,7 @@ Félicitations ! Vous pouvez utiliser ces informations d’identification pour e
 ## <a name="managing-roles"></a>Gestion des rôles
 
 > [!NOTE]
-> Le contrôle d’accès en fonction du rôle (RBAC) dans Azure est un modèle utilisé pour définir et gérer les rôles des principaux de l’utilisateur et du service. Les rôles sont associés à des ensembles d’autorisations, qui déterminent les ressources qu’un principal peut lire, écrire ou gérer, ou auxquelles il peut accéder. Pour plus d’informations sur le contrôle d’accès en fonction du rôle et sur les différents rôles, consultez [Rôles intégrés pour le contrôle d’accès en fonction du rôle Azure](/azure/active-directory/role-based-access-built-in-roles).
+> Le contrôle d’accès en fonction du rôle (RBAC) dans Azure est un modèle utilisé pour définir et gérer les rôles des principaux de l’utilisateur et du service. Les rôles sont associés à des ensembles d’autorisations, qui déterminent les ressources qu’un principal peut lire, écrire ou gérer, ou auxquelles il peut accéder. Pour plus d’informations sur le contrôle d’accès en fonction du rôle (RBAC) et sur les différents rôles, consultez [Rôles intégrés pour le contrôle d’accès en fonction du rôle Azure](/azure/active-directory/role-based-access-built-in-roles).
 
 Azure PowerShell fournit les applets de commande suivantes pour gérer les attributions de rôle :
 

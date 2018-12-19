@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
 ms.openlocfilehash: 7f517f0b3768a2075557b131158ee1264ea9ab3f
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826729"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218219"
 ---
 # <a name="release-notes"></a>Notes de publication
 
@@ -166,10 +166,10 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Ajout de la prise en charge des règles de réseau virtuel
-    - Get-AzureRmDataLakeStoreVirtualNetworkRule : obtient ou liste la règle de réseau virtuel d’Azure Data Lake Store.
-    - Add-AzureRmDataLakeStoreVirtualNetworkRule : ajoute une règle de réseau virtuel au compte Data Lake Store spécifié.
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule : modifie la règle de réseau virtuel spécifiée dans le compte Data Lake Store spécifié.
-    - Remove-AzureRmDataLakeStoreVirtualNetworkRule : supprime une règle de réseau virtuel d’Azure Data Lake Store.
+    - Get-AzureRmDataLakeStoreVirtualNetworkRule : Obtient ou liste la règle de réseau virtuel Azure Data Lake Store.
+    - Add-AzureRmDataLakeStoreVirtualNetworkRule : Ajoute une règle de réseau virtuel au compte Data Lake Store spécifié.
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule : Modifie la règle de réseau virtuel spécifiée dans le compte Data Lake Store spécifié.
+    - Remove-AzureRmDataLakeStoreVirtualNetworkRule : Supprime une règle de réseau virtuel Azure Data Lake Store.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Mise à jour de l’applet de commande Test-AzureRmNetworkWatcherConnectivity, passage de la valeur du protocole au serveur principal.
@@ -271,7 +271,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
   - Set-AzureRmLoadBalancerOutboundRuleConfig
   - Remove-AzureRmLoadBalancerOutboundRuleConfig
 * Ajout d’une nouvelle propriété HostedWorkloads pour PSNetworkInterface
-* Ajouté de nouvelles cmdlets pour la fonctionnalité : Pare-feu Azure via ARM
+* Ajout de nouvelles applets de commande pour la fonctionnalité : Pare-feu Azure via ARM
   - Ajout de Get-AzureRmFirewall
   - Ajout de Set-AzureRmFirewall
   - Ajout de New-AzureRmFirewall
@@ -283,7 +283,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
   - Ajout de New-AzureRmFirewallNetworkRuleCollection
   - Ajout de New-AzureRmFirewallNetworkRule
 * Ajout de la prise en charge du certificat racine approuvé et de la configuration de mise à l’échelle automatique dans Application Gateway
-  - Nouvelles cmdlets ajoutées :
+  - Nouvelles applets de commande ajoutées :
       - Add-AzureRmApplicationGatewayTrustedRootCertificate
       - Get-AzureRmApplicationGatewayTrustedRootCertificate
       - New-AzureRmApplicationGatewayTrustedRootCertificate
@@ -293,16 +293,16 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
       - New-AzureRmApplicationGatewayAutoscaleConfiguration
       - Remove-AzureRmApplicationGatewayAutoscaleConfiguration
       - Set-AzureRmApplicationGatewayAutoscaleConfiguration
-  - Cmdlets mises à jour avec le paramètre facultatif -TrustedRootCertificate
+  - Applets de commande mises à jour avec le paramètre facultatif -TrustedRootCertificate
       - New-AzureRmApplicationGateway
       - Set-AzureRmApplicationGateway
       - New-AzureRmApplicationGatewayBackendHttpSetting
       - Set-AzureRmApplicationGatewayBackendHttpSetting
-  - Cmdlets mises à jour avec le paramètre facultatif -AutoscaleConfiguration
+  - Applets de commande mises à jour avec le paramètre facultatif -AutoscaleConfiguration
       - New-AzureRmApplicationGateway
       - Set-AzureRmApplicationGateway
-* Ajout d’une cmdlet pour le point de terminaison d’interface Get-AzureInterfaceEndpoint
-* Ajout de la prise en charge de plusieurs préfixes d’adresse dans un sous-réseau. Cmdlets mises à jour :
+* Ajout d’une applet de commande pour le point de terminaison d’interface Get-AzureInterfaceEndpoint
+* Ajout de la prise en charge de plusieurs préfixes d’adresse dans un sous-réseau. Applets de commande mises à jour :
   - New-AzureRmVirtualNetworkSubnetConfig
   - Set-AzureRmVirtualNetworkSubnetConfig
   - Add-AzureRmVirtualNetworkSubnetConfig
@@ -322,10 +322,10 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
   - Add-AzureRmLoadBalancerFrontendIpConfig
   - New-AzureRmLoadBalancerFrontendIpConfig
   - New-AzureRmNetworkInterface
-* Ajout de cmdlets pour la délégation de sous-réseau.
-  - New-AzureRmDelegation : crée une nouvelle délégation, celle-ci peut être ajoutée à un sous-réseau
-  - Remove-AzureRmDelegation : accepte un sous-réseau et supprime le nom de délégation fourni de ce sous-réseau
-  - Add-AzureRmDelegation : accepte un sous-réseau et ajoute le nom de service fourni en tant que délégation à ce sous-réseau
+* Ajout d’applets de commande pour la délégation de sous-réseau.
+  - New-AzureRmDelegation : Crée une délégation, pouvant être ajoutée à un sous-réseau.
+  - Remove-AzureRmDelegation : Accepte un sous-réseau et supprime le nom de délégation fourni de ce sous-réseau.
+  - Add-AzureRmDelegation : Accepte un sous-réseau et ajoute le nom de service fourni en tant que délégation à ce sous-réseau.
   - Get-AzureRmDelegation
   - Get-AzureRmAvailableServiceDelegations
 
@@ -340,7 +340,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - Ajout de la prise en charge d’OnErrorDeployment avec le nouveau paramètre.
 * Prise en charge des identités managées sur les affectations de stratégies.
 * Des paramètres avec des valeurs par défaut ne sont plus requis lors de l’affectation d’une stratégie avec « New-AzureRmPolicyAssignment »
-* Ajout de la nouvelle cmdlet Get-AzureRmPolicyAlias pour récupérer les alias de stratégie
+* Ajout de la nouvelle applet de commande Get-AzureRmPolicyAlias pour récupérer les alias de stratégie
 
 #### <a name="azurermservicebus"></a>AzureRM.ServiceBus
 * Résolution du problème #7161
@@ -364,7 +364,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - Lock-AzureRmStorageContainerImmutabilityPolicy
 
 #### <a name="azurermwebsites"></a>AzureRM.Websites
-* Ajout de deux nouvelles cmdlets : Get-AzureRmDeletedWebApp et Restore-AzureRmDeletedWebApp
+* Ajout de deux nouvelles applets de commande : Get-AzureRmDeletedWebApp et Restore-AzureRmDeletedWebApp
 * New-AzureRmAppServicePlan : le commutateur HyperV est ajouté pour créer un plan App Service avec conteneur Windows
 * New-AzureRmWebApp/New-AzureRmWebAppSlot/Set-AzureRmWebApp/Set-AzureRmWebAppSlot : les nouveaux paramètres (la chaîne -ContainerRegistryUser -ContainerRegistryPassword secureString -EnableContainerContinuousDeployment) ajoutés pour créer et gérer l’application de conteneur Windows
 
@@ -376,7 +376,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 #### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
 * Résolution du problème relatif aux groupes de ressources par défaut non définis.
 * Problème résolu https://github.com/Azure/azure-powershell/issues/6603
-    - Les cmdlets Import-AzureRmApiManagementApi et *-AzureRmApiManagementCertificate peuvent maintenant gérer les chemins d’accès relatifs
+    - Les applets de commande Import-AzureRmApiManagementApi et *-AzureRmApiManagementCertificate peuvent maintenant gérer les chemins d’accès relatifs
 * Problème résolu https://github.com/Azure/azure-powershell/issues/6879
     - CertificateInformation est une propriété définissable permettant à la cmdlet Set-AzureRmApiManagement de fonctionner correctement. Résolu en passant au nuget 4.0.4-preview
 * Problème résolu https://github.com/Azure/azure-powershell/issues/6853
@@ -776,9 +776,9 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Activer l’homologation entre des réseaux virtuels dans plusieurs locataires pour Set/Add-AzureRmVirtualNetworkPeering
 * Mise à jour des applets de commande ci-dessous pour Application Gateway
-    - New-AzureRmApplicationGateway : ajout de la prise en charge des zones et de l’indicateur EnableFIPS
-    - New-AzureRmApplicationGatewaySku : ajout des nouvelles références (SKU) Standard_v2 et WAF_v2
-    - Set-AzureRmApplicationGatewaySku : ajout des nouvelles références (SKU) Standard_v2 et WAF_v2
+    - New-AzureRmApplicationGateway : Ajout d’un indicateur EnableFIPS et prise en charge de Zones
+    - New-AzureRmApplicationGatewaySku : Ajout de nouvelles références (SKU) Standard_v2 et WAF_v2
+    - Set-AzureRmApplicationGatewaySku : Ajout de nouvelles références (SKU) Standard_v2 et WAF_v2
 * Régénération des applets de commande RouteTable avec la dernière version du Générateur
 
 #### <a name="azurermrelay"></a>AzureRM.Relay
@@ -852,7 +852,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Exposer les nouvelles références SKU pour les passerelles de réseau virtuel redondantes interzone
-* Ajout de nouvelles commandes pour la fonctionnalité : API de partenaire ExpressRoute via ARM
+* Ajout de nouvelles commandes pour la fonctionnalité : API de partenaire ExpressRoute via ARM
     - Ajout de Get-AzureRmExpressRouteCrossConnection
     - Ajout de Set-AzureRmExpressRouteCrossConnection
     - Ajout de Add-AzureRmExpressRouteCrossConnectionPeering
@@ -1006,7 +1006,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 * Ajout de la prise en charge de l’installation des certificats émis par une autorité de certification privée en tant que certificats racine ou d’autorité de certification
 * Ajout de la prise en charge des certificats SSL personnalisés via KeyVault et de plusieurs noms d’hôte de proxy
 * Ajout de la prise en charge de l’identité MSI
-* Ajout de la prise en charge des stratégies via une URL. REMARQUE : les cmdlet suivantes seront déconseillées dans une version ultérieure :
+* Ajout de la prise en charge des stratégies par le biais d’une URL REMARQUE : Les applets de commande suivantes seront dépréciées dans une version ultérieure
    - Import-AzureRmApiManagementHostnameCertificate
    - New-AzureRmApiManagementHostnameConfiguration
    - Set-AzureRmApiManagementHostnames

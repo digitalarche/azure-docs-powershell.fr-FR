@@ -8,20 +8,20 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826542"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217743"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Installation et configuration d'Azure PowerShell
 
 Cet article explique les étapes permettant d’installer les modules Azure PowerShell dans un environnement Windows.
-Si vous voulez utiliser Azure PowerShell sur macOS ou Linux, consultez l’article suivant : [Installer et configurer Azure PowerShell sur macOS et Linux](install-azurermps-maclinux.md).
+Si vous souhaitez utiliser Azure PowerShell sur macOS ou Linux, consultez l’article suivant : [Installer et configurer Azure PowerShell sur macOS et Linux](install-azurermps-maclinux.md).
 
 La méthode recommandée est d’installer Azure PowerShell à partir de PowerShell Gallery.
 
-## <a name="step-1-install-powershellget"></a>Étape 1 : Installer PowerShellGet
+## <a name="step-1-install-powershellget"></a>Étape 1 : Installer PowerShellGet
 
 Pour installer des éléments à partir de PowerShell Gallery, vous avez besoin du module PowerShellGet. Vérifiez que votre système a la version appropriée de PowerShellGet et qu’il présente toute la configuration requise. Exécutez la commande suivante pour vérifier que PowerShellGet est installé sur votre système.
 
@@ -54,7 +54,7 @@ Si PowerShellGet n’est pas installé, consultez la section [Comment obtenir Po
 > [!IMPORTANT]
 > Le module décrit dans ce document, AzureRM, utilise .NET Framework. Cela le rend incompatible avec PowerShell 6.0, qui utilise .NET Core. Si vous utilisez PowerShell 6.0, suivez les [instructions d’installation pour macOS et Linux](install-azurermps-maclinux.md).
 
-## <a name="step-2-install-azure-powershell"></a>Étape 2 : Installer Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>Étape 2 : Installation d’Azure PowerShell
 
 L’installation d’Azure PowerShell à partir de PowerShell Gallery nécessite des privilèges élevés. Exécutez la commande suivante à partir d’une session PowerShell avec élévation de privilèges :
 
@@ -84,7 +84,7 @@ Le module AzureRM est un module cumulatif pour les applets de commande Azure Res
 
 Si vous disposez d’une version précédente d’Azure PowerShell, vous pourriez recevoir une erreur. Pour résoudre ce problème, consultez la section [Mise à jour vers une nouvelle version d’Azure PowerShell](#update-azps) de cet article.
 
-## <a name="step-3-load-the-azurerm-module"></a>Étape 3 : Charger le module AzureRM
+## <a name="step-3-load-the-azurerm-module"></a>Étape 3 : Charger le module AzureRM
 
 Une fois le module installé, vous devez le charger dans votre session PowerShell. Vous devez le faire dans une session PowerShell normale (sans élévation de privilèges). Les modules sont chargés à l’aide de l’applet de commande `Import-Module`, comme suit :
 

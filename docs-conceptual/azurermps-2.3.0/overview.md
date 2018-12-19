@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: cd415e862bfaa2b767cce108689ebaf34ef74305
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826848"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218151"
 ---
 # <a name="azurerm-module-230"></a>Module AzureRM 2.3.0
 
 ## <a name="requirements"></a>Requirements:
 La version minimale d’Azure Stack prise en charge est la version 1808.
 
-Remarque : si vous utilisez une version antérieure, installez la version 1.2.11.
+Remarque : Si vous utilisez une version antérieure, installez la version 1.2.11.
 
 
 ## <a name="install"></a>Installer

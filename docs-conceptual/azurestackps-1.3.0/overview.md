@@ -8,19 +8,19 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.openlocfilehash: 3add10651334a9c8a1e4ebfd5c8b9cfbf0cc7981
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828890"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218015"
 ---
 # <a name="azure-stack-module-130"></a>Module Azure Stack 1.3.0
 
 ## <a name="requirements"></a>Requirements:
 La version minimale d’Azure Stack prise en charge est la version 1804.
 
-Remarque : si vous utilisez une version antérieure, installez la version 1.2.11.
+Remarque : Si vous utilisez une version antérieure, installez la version 1.2.11.
 
 ## <a name="known-issues"></a>Problèmes connus :
 

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828074"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218100"
 ---
 # <a name="release-notes"></a>Notes de publication
 
@@ -137,17 +137,17 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
     - Ajoute la possibilité de créer des zones DNS qui sont visibles uniquement pour les réseaux virtuels associés
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
-* Mise à jour des types de modèles pour assurer la compatibilité avec les cmdlet DNS.
+* Mise à jour des types de modèles pour assurer la compatibilité avec les applets de commande DNS.
 
 #### <a name="azurermrecoveryservicessiterecovery"></a>AzureRM.RecoveryServices.SiteRecovery
-* Modifications pour ASR Azure vers Azure Site Recovery (les cmdlets prennent actuellement en charge des opérations pour Enterprise vers Enterprise, Enterprise vers Azure, HyperV vers Azure, VMware vers Azure)
+* Modifications pour ASR Azure vers Azure Site Recovery (les applets de commande prennent actuellement en charge des opérations pour Enterprise vers Enterprise, Enterprise vers Azure, HyperV vers Azure, VMware vers Azure)
     - New-AzureRmRecoveryServicesAsrProtectionContainer
     - New-AzureRmRecoveryServicesAsrAzureToAzureDiskReplicationConfig
     - Remove-AzureRmRecoveryServicesAsrProtectionContainer
     - Update-AzureRmRecoveryServicesAsrProtectionDirection
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Les paramètres EnableEncryptionService et DisableEncryptionService sont obsolètes dans les cmdlets de compte de stockage nouvelles et définies, car le chiffrement des données au repos est activé par défaut et ne peut pas être désactivé.
+* Les paramètres suivants sont obsolètes dans les applets de commande de compte de stockage New et Set : EnableEncryptionService et DisableEncryptionService, puisque le chiffrement au repos est activé par défaut et ne peut pas être désactivé.
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -182,9 +182,9 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
 * ’New-AzureRmVMSS’ imprime les chaînes de connexion en mode détaillé.
 * ’New-AzureRmVmss’ prend en charge l’adresse IP publique, les règles d’équilibrage de charge, et les règles NAT de trafic entrant.
 * Fonctionnalité WriteAccelerator
-    - Ajout du paramètre de commutateur WriteAccelerator aux applets de commande suivantes : Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
-    - Ajout du paramètre de commutateur OsDiskWriteAccelerator à l’applet de commande suivante : Set-AzureRmVmssStorageProfile.
-    - Ajout du paramètre booléen OsDiskWriteAccelerator aux applets de commande suivantes :     Update-AzureRmVM     Update-AzureRmVmss
+    - Paramètre de commutateur WriteAccelerator ajouté aux applets de commande suivantes : Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
+    - Paramètre de commutateur OsDiskWriteAccelerator ajouté à l’applet de commande suivante :     Set-AzureRmVmssStorageProfile.
+    - Paramètre booléen OsDiskWriteAccelerator ajouté aux applets de commande suivantes :     Update-AzureRmVM     Update-AzureRmVmss
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
 * Résoudre le problème de chiffrement des informations d’identification qui n’est à l’origine d’aucune erreur explicite pour certaines opérations de chiffrement
@@ -273,18 +273,18 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
     - Remove-AzureRmNetworkWatcherConnectionMonitor
 * Mise à jour de la documentation relative à Set-AzureRmApplicationGatewayBackendAddressPool pour supprimer un exemple déconseillé
 * Ajout de l’indicateur EnableHttp2 à Application Gateway
-    - Mise à jour de l’élément New-AzureRmApplicationGateway : ajout d’un paramètre -EnableHttp2 facultatif
+    - Mise à jour de New-AzureRmApplicationGateway : Ajout du paramètre facultatif -EnableHttp2
 * Ajouter un élément IpTags à PublicIpAddress
-    - Mise à jour de l’élément New-AzureRmPublicIpAddress : ajout du paramètre IpTags
+    - Mise à jour de New-AzureRmPublicIpAddress : Ajout d’IpTags
     - New-AzureRmPublicIpTag pour ajouter un paramètre Iptag
 * Ajoutez une propriété DisableBgpRoutePropagation dans les éléments RouteTable et effectiveRoute.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* Register-AzureRmProviderFeature : ajout d’un exemple manquant dans la documentation
-* Register-AzureRmResourceProvider : ajout d’un exemple manquant dans la documentation
+* Register-AzureRmProviderFeature : Ajout d’un exemple manquant dans la documentation
+* Register-AzureRmResourceProvider : Ajout d’un exemple manquant dans la documentation
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Les paramètres EnableEncryptionService et DisableEncryptionService sont obsolètes dans les cmdlets de compte de stockage nouvelles et définies, car le chiffrement des données au repos est activé par défaut et ne peut pas être désactivé.
+* Les paramètres suivants sont obsolètes dans les applets de commande de compte de stockage New et Set : EnableEncryptionService et DisableEncryptionService, puisque le chiffrement au repos est activé par défaut et ne peut pas être désactivé.
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -491,7 +491,7 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
 * Ajout de Location Completer aux paramètres -Location pour permettre la saisie semi-automatique via la touche Tab dans les emplacements valides
 * Ajout de ResourceGroup Completer aux paramètres -ResourceGroup pour permettre la saisie semi-automatique via la touche Tab dans les groupes de ressources de l’abonnement actuel
 * Ajout de la prise en charge d’-AsJob pour les applets de commande de coffre de clés longues. Permet aux applets de commande sélectionnées de s’exécuter en arrière-plan et de retourner une tâche pour suivre et contrôler la progression.
-  * L’applet de commande affecté est : Remove-AzureRmKeyVault
+  * L’applet de commande concernée est : Remove-AzureRmKeyVault
 * Correction du bogue dans Set-AzureRmKeyVaultAccessPolicy dans lequel le filtre AAD définissait le SPN sur le nom d’utilisateur principal fourni, plutôt que de définir le nom d’utilisateur principal
   - Pour plus d’informations, consultez le problème suivant : https://github.com/Azure/azure-powershell/issues/5201
 
@@ -623,7 +623,7 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
   - Get-AzureRmComputeResourceSku affiche des informations de zone.
   - Mettre à jour Disable-AzureRmVmssDiskEncryption pour résoudre le problème https://github.com/Azure/azure-powershell/issues/5038
   - Ajout - Prise en charge AsJob pour les applets de commande de calcul longs. Permet aux applets de commande sélectionnées de s’exécuter en arrière-plan et de retourner une tâche pour suivre et contrôler la progression.
-    - Les applets de commande affectées incluent : les applets de commande New-, Update-, Set-, Remove-, Start-, Restart-, Stop- pour les machines virtuelles et les groupes de machines virtuelles identiques
+    - Les applets de commande concernées sont : les applets de commande New-, Update-, Set-, Remove-, Start-, Restart-, Stop- pour les machines virtuelles et les groupes de machines virtuelles identiques
     - Ajout du jeu de paramètre simplifié à New-AzureRmVM, ce qui crée une machine virtuelle et toutes les ressources nécessaires utilisant des valeurs par défaut intelligentes
 * ContainerInstance
   - Appliquer Azure Container Instances SDK 2017-10-01
@@ -637,20 +637,20 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
 * DataFactories
     - La fonctionnalité de chiffrement des informations d’identification fonctionne désormais avec « Accès à distance » activé (sur le réseau) et « Accès à distance » désactivé (ordinateur local).
 * DataFactoryV2
-  - Ajout de deux nouvelles applets de commande : Update-AzureRmDataFactoryV2 et Stop-AzureRmDataFactoryV2PipelineRun
+  - Ajout de deux nouvelles applets de commande : Update-AzureRmDataFactoryV2 et Stop-AzureRmDataFactoryV2PipelineRun
 * DataLakeAnalytics
   - Ajout d’un paramètre appelé ScriptParameter à Submit-AzureRmDataLakeAnalyticsJob
     - Des informations détaillées sur ScriptParameter sont accessibles en utilisant Get-Help sur Submit-AzureRmDataLakeAnalyticsJob
   - Pour New-AzureRmDataLakeAnalyticsAccount, modification du paramètre MaxDegreeOfParallelism en MaxAnalyticsUnits
-    - Ajout d’un alias pour le paramètre MaxAnalyticsUnits : MaxDegreeOfParallelism
+    - Ajout d’un alias pour le paramètre MaxAnalyticsUnits : MaxDegreeOfParallelism
   - Pour New-AzureRmDataLakeAnalyticsComputePolicy, modification du paramètre MaxDegreeOfParallelismPerJob en MaxAnalyticsUnitsPerJob
-    - Ajout d’un alias pour le paramètre MaxAnalyticsUnitsPerJob : MaxDegreeOfParallelismPerJob
+    - Ajout d’un alias pour le paramètre MaxAnalyticsUnitsPerJob : MaxDegreeOfParallelismPerJob
   - Pour Set-AzureRmDataLakeAnalyticsAccount, modification du paramètre MaxDegreeOfParallelism en MaxAnalyticsUnits
-    - Ajout d’un alias pour le paramètre MaxAnalyticsUnits : MaxDegreeOfParallelism
+    - Ajout d’un alias pour le paramètre MaxAnalyticsUnits : MaxDegreeOfParallelism
   - Pour Submit-AzureRmDataLakeAnalyticsJob, modification du paramètre DegreeOfParallelism en AnalyticsUnits
-    - Ajout d’un alias pour le paramètre AnalyticsUnits : DegreeOfParallelism
+    - Ajout d’un alias pour le paramètre AnalyticsUnits : DegreeOfParallelism
   - Pour Update-AzureRmDataLakeAnalyticsComputePolicy, modification du paramètre MaxDegreeOfParallelismPerJob en MaxAnalyticsUnitsPerJob
-    - Ajout d’un alias pour le paramètre MaxAnalyticsUnitsPerJob : MaxDegreeOfParallelismPerJob
+    - Ajout d’un alias pour le paramètre MaxAnalyticsUnitsPerJob : MaxDegreeOfParallelismPerJob
 * MachineLearningCompute
   - Ajouter Set-AzureRmMlOpCluster
     - Mettre à jour le nombre d’agents ou la configuration SSL d’un cluster
@@ -721,8 +721,8 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>8/11/2017 - Version 5.0.0
-* Remarque : Il s’agit d’une modification critique. Veuillez consulter le guide de migration (https://aka.ms/azps-migration-guide) pour une liste complète des modifications critiques introduites.
-* Toutes les cmdlets contenus dans AzureRM prennent désormais en charge l’aide en ligne
+* REMARQUE :  Il s’agit d’une modification critique. Veuillez consulter le guide de migration (https://aka.ms/azps-migration-guide) pour une liste complète des modifications critiques introduites.
+* Toutes les applets de commande contenues dans AzureRM prennent désormais en charge l’aide en ligne
   - Exécutez Get-Help avec le paramètre -Online pour ouvrir l’aide en ligne dans votre navigateur Internet par défaut
 * AnalysisServices
   * Correction de la commande Synchronize-AzureAsInstance pour utiliser la nouvelle API REST AsAzure pour la synchronisation
@@ -750,9 +750,9 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
     - Remove-AzureRmApplicationInsightsApiKey
 * AzureBatch
   * Ajout de nouveaux paramètres à `New-AzureRmBatchAccount`.
-    - `PoolAllocationMode` : Le mode d’allocation à utiliser pour créer des pools dans le compte Batch. Pour créer un compte Batch qui alloue des nœuds de pool dans l’abonnement de l’utilisateur, configurez sur `UserSubscription`.
-    - `KeyVaultId` : L’ID de ressource du coffre Azure Key Vault associé au compte Batch.
-    - `KeyVaultUrl` : L’URL du coffre Azure Key Vault associé au compte Batch.
+    - `PoolAllocationMode`: Mode d’allocation à utiliser pour créer des pools dans le compte Batch. Pour créer un compte Batch qui alloue des nœuds de pool dans l’abonnement de l’utilisateur, configurez sur `UserSubscription`.
+    - `KeyVaultId`: ID de ressource du coffre de clés Azure associé au compte Batch.
+    - `KeyVaultUrl`: URL du coffre de clés Azure associé au compte Batch.
   * Mise à jour des paramètres de `New-AzureBatchTask`.
     - Suppression du commutateur `RunElevated`. Le paramètre `UserIdentity` a été ajouté pour remplacer `RunElevated`, et un comportement équivalent peut être obtenu en construisant un `PSUserIdentity` comme indiqué ci-dessous :
       - $autoUser = New-Object Microsoft.Azure.Commands.Batch.Models.PSAutoUserSpecification -ArgumentList @("Task", "Admin")
