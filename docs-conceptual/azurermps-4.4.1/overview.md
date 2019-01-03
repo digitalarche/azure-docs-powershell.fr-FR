@@ -8,18 +8,20 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: ff5ee02b11b6f0649e20b056c14fc8a9b3ba6276
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 5ee8572ccb8e9fc2de11c2253a1815a666e038a7
+ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024696"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53736493"
 ---
 # <a name="overview-of-azure-powershell"></a>Vue d’ensemble d’Azure PowerShell
 
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
+
 Azure PowerShell fournit un ensemble d’applets de commande qui utilisent le modèle [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) pour gérer vos ressources Azure. Vous pouvez l’ouvrir dans le navigateur avec [Azure Cloud Shell](/azure/cloud-shell/overview), ou vous pouvez l’installer sur votre ordinateur local et l’utiliser dans une session PowerShell.
 
-Utilisez [Cloud Shell](/azure/cloud-shell/overview) pour exécuter Microsoft Azure PowerShell dans votre navigateur ou [l’installer](install-azurerm-ps.md) sur votre ordinateur. Lisez ensuite l’article [Bien démarrer avec Azure PowerShell](get-started-azureps.md) pour commencer à utiliser Azure PowerShell. Pour plus d’informations sur la version la plus récente, consultez les [notes de publication](release-notes-azureps.md).
+Utilisez [Cloud Shell](/azure/cloud-shell/overview) pour exécuter Microsoft Azure PowerShell dans votre navigateur ou [l’installer](install-azurerm-ps.md) sur votre ordinateur. Lisez ensuite l’article [Bien démarrer avec Azure PowerShell](get-started-azureps.md) pour commencer à utiliser Azure PowerShell. Pour plus d’informations sur la version la plus récente, consultez les [Notes de publication](release-notes-azureps.md).
 
 Les exemples suivants peuvent vous aider à comprendre comment utiliser Azure PowerShell dans certains scénarios courants :
 
@@ -28,9 +30,6 @@ Les exemples suivants peuvent vous aider à comprendre comment utiliser Azure Po
 * [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [Bases de données SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
-> [!NOTE]
-> Si vous avez des déploiements qui utilisent le modèle de déploiement Classic non convertible, vous pouvez installer la version Service Management d’Azure PowerShell. Pour plus d’informations, consultez [Installer le module Azure PowerShell Service Management](/powershell/azure/servicemanagement/install-azure-ps).
-
 ## <a name="learn-powershell-basics"></a>Découvrir les notions de base de PowerShell
 
 Si vous n’êtes pas encore familiarisé avec PowerShell, commencez par lire un article d’introduction à PowerShell.
@@ -38,7 +37,7 @@ Si vous n’êtes pas encore familiarisé avec PowerShell, commencez par lire un
 * [Installation de PowerShell](/powershell/scripting/installing-windows-powershell)
 * [Scripts avec PowerShell](/powershell/scripting/scripting-with-windows-powershell)
 
-Vous pouvez également regarder la vidéo [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1) (Notions de base de PowerShell : (Partie 1) Bien démarrer avec PowerShell).
+Vous pouvez également regarder cette vidéo : [Notions de base de PowerShell : (Première partie) Prise en main de PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
 Ou bien participer la [Prise en main rapide de PowerShell](https://mva.microsoft.com/liveevents/powershell-jumpstart) de Microsoft Virtual Academy.
 
