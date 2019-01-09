@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/09/2018
-ms.openlocfilehash: 92d9f7ed3c3cc111683fb6bf0f66107b73b7e96c
-ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
+ms.date: 10/29/2018
+ms.openlocfilehash: 8b085720aeabe26c1293ece193e050b31f99a693
+ms.sourcegitcommit: ae81b08a45d8729fc8d40156422e3eb2e94de8c7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53982890"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53786677"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Se connecter avec Azure PowerShell
 
@@ -20,16 +20,18 @@ Azure PowerShell prend en charge plusieurs méthodes d’authentification. La m�
 
 ## <a name="sign-in-interactively"></a>Connexion interactive
 
-Pour se connecter de manière interactive, utilisez l’applet de commande [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
+Pour vous connecter de manière interactive, utilisez la cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount).
 
 ```azurepowershell-interactive
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
 
-L’exécution de cette applet de commande permet d’afficher une boîte de dialogue vous invitant à entrer votre adresse de messagerie et le mot de passe associé à votre compte Azure. Cette authentification est valable pour la session PowerShell en cours.
+Lorsque vous l’exécutez, cette cmdlet présente une chaîne de jeton. Pour vous connecter, copiez cette chaîne et collez-la dans https://microsoft.com/devicelogin dans un navigateur. Votre session PowerShell sera ensuite authentifiée pour vous connecter à Azure. Cette authentification est valable pour la session PowerShell en cours.
 
 > [!IMPORTANT]
-> À compter d’Azure PowerShell 6.3.0, vos informations d’identification sont partagées entre plusieurs sessions PowerShell tant que vous restez connecté à Windows. Pour plus d’informations, consultez l’article sur les [informations d’identification persistantes](context-persistence.md).
+>
+> Vos informations d’identification sont partagées entre plusieurs sessions PowerShell tant que vous restez connecté.
+> Pour plus d’informations, consultez l’article sur les [informations d’identification persistantes](context-persistence.md).
 
 ## <a name="sign-in-with-a-service-principal"></a>Connexion avec un principal de service
 
@@ -37,11 +39,11 @@ Les principaux de service sont des comptes Azure non interactifs. À l’instar 
 
 Pour savoir comment créer un principal de service à utiliser avec Azure PowerShell, voir [Créer un principal du service Azure avec Azure PowerShell](create-azure-service-principal-azureps.md).
 
-Pour se connecter avec un principal de service, utilisez l’argument `-ServicePrincipal` avec l’applet de commande `Connect-AzureRmAccount`. Vous aurez également besoin des informations d’identification de connexion du principal de service, ainsi que de l’ID du locataire associé au principal de service. Pour obtenir les informations d’identification du principal de service en tant qu’objet approprié, utilisez la cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential). Cette applet de commande affiche une boîte de dialogue permettant d’entrer l’ID utilisateur du principal de service et le mot de passe associé.
+Pour se connecter avec un principal de service, utilisez l’argument `-ServicePrincipal` avec l’applet de commande `Connect-AzAccount`. Vous aurez également besoin de l’ID d’application du principal de service, des informations d’identification de connexion ainsi que de l’ID du locataire associé au principal du service. Pour obtenir les informations d’identification du principal de service en tant qu’objet approprié, utilisez la cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential). Cette cmdlet présente une invite de commande pour l’ID d’utilisateur de principal du service et le mot de passe.
 
 ```azurepowershell-interactive
 $pscredential = Get-Credential
-Connect-AzureRmAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantid
+Connect-AzAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
 ## <a name="sign-in-using-an-azure-managed-service-identity"></a>Connexion à l’aide d’Azure Managed Service Identity
@@ -55,7 +57,7 @@ Pour plus d’informations concernant les identités managées pour les ressourc
 Une connexion en tant que [fournisseur de solutions Cloud (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) nécessite l’utilisation de `-TenantId`. Normalement, ce paramètre peut être spécifié comme un ID de locataire ou un nom de domaine. Toutefois, pour les connexions en tant que CSP, un **ID de locataire** doit être fourni.
 
 ```azurepowershell-interactive
-Connect-AzureRmAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
+Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
 ```
 
 ## <a name="sign-in-to-another-cloud"></a>Connexion à un autre cloud
@@ -65,13 +67,13 @@ Pour les comptes situés dans un cloud régional, définissez l’environnement 
 Par exemple, si votre compte se trouve dans le cloud situé en Chine :
 
 ```azurepowershell-interactive
-Connect-AzureRmAccount -Environment AzureChinaCloud
+Connect-AzAccount -Environment AzureChinaCloud
 ```
 
 Pour obtenir une liste des environnements disponibles, utilisez la commande suivante :
 
 ```azurepowershell-interactive
-Get-AzureRmEnvironment | Select-Object Name
+Get-AzEnvironment | Select-Object Name
 ```
 
 ## <a name="learn-more-about-managing-azure-role-based-access"></a>En savoir plus sur la gestion de l’accès en fonction du rôle dans Azure
@@ -80,10 +82,10 @@ Pour plus d’informations sur la gestion de l’authentification et de l’abon
 
 Applets de commande Azure PowerShell pour la gestion des rôles :
 
-* [Get-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
-* [Get-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
-* [New-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)
-* [New-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
-* [Remove-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
-* [Remove-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
-* [Set-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Set-AzureRmRoleDefinition)
+* [Get-AzRoleAssignment](/powershell/module/az.Resources/Get-azRoleAssignment)
+* [Get-AzRoleDefinition](/powershell/module/az.Resources/Get-azRoleDefinition)
+* [New-AzRoleAssignment](/powershell/module/az.Resources/New-azRoleAssignment)
+* [New-AzRoleDefinition](/powershell/module/az.Resources/New-azRoleDefinition)
+* [Remove-AzRoleAssignment](/powershell/module/az.Resources/Remove-azRoleAssignment)
+* [Remove-AzRoleDefinition](/powershell/module/az.Resources/Remove-azRoleDefinition)
+* [Set-AzRoleDefinition](/powershell/module/az.Resources/Set-azRoleDefinition)
