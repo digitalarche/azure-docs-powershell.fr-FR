@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: cff9a6ef64907c7ff493dbc9c83dd20a82f297d9
-ms.sourcegitcommit: 797c18f93aaa495ef005993b2e202d7378588dfa
+ms.openlocfilehash: d08bca962b6ff65d25135150824b7c24fbd20103
+ms.sourcegitcommit: 007a733342f37894d4aaec7a859dc1ca93c00c92
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53594744"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012344"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Présentation du nouveau module Azure PowerShell Az
 
@@ -42,4 +42,4 @@ Pour obtenir une description complète du processus de migration, consultez [Mig
 
 ## <a name="the-future-of-support-for-azurerm"></a>La prise en charge d’AzureRM dans le futur
 
-Le module AzureRM existant ne recevra plus les nouvelles fonctionnalités ou cmdlets. Toutefois, AzureRM dispose encore d’une maintenance officielle et recevra des corrections de bogues. Pour vous tenir informé des derniers services et fonctionnalités d’Azure, nous vous conseillons de passer au module Az.
+Le module AzureRM existant ne recevra plus les nouvelles fonctionnalités ou cmdlets. Toutefois, AzureRM dispose encore d’une maintenance officielle et recevra des corrections de bogues jusqu’en décembre 2020. Pour vous tenir informé des derniers services et fonctionnalités d’Azure, passez au module Az.

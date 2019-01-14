@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 8777662b7cfd3948f0e4bd91b0a85cc25bc97285
-ms.sourcegitcommit: 797c18f93aaa495ef005993b2e202d7378588dfa
+ms.openlocfilehash: 8702de48429482748939fb1a43ff911bed15f6c0
+ms.sourcegitcommit: c0f1ef7fd165e5f57dd2b753265510f111356c5f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53594820"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54071911"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Conserver les informations d’identification d’utilisateur sur plusieurs sessions PowerShell
 
@@ -42,7 +42,7 @@ Azure PowerShell conserve vos informations de contexte automatiquement entre les
 
 Pour permettre à Azure PowerShell de se rappeler de votre contexte après la fermeture d’une session, utilisez `Enable-AzContextAutosave`. Le contexte et les informations d’identification sont enregistrés automatiquement dans un dossier spécial caché dans votre répertoire utilisateur (`$env:USERPROFILE\.Azure` sous Windows et `$HOME/.Azure` sous les autres plateformes). Chaque nouvelle session PowerShell cible le contexte utilisé lors de la dernière session.
 
-Les cmdlets qui vous permettent de gérer des contextes Azure vous offrent aussi un contrôle affiné. Si vous souhaitez que les modifications ne s’appliquent qu’à la session PowerShell actuelle (étendue `Process`) ou à chaque session PowerShell (étendue `CurrentUser`). Ces options sont détaillées dans les détails du mode dans [Utilisation des étendues de contexte](#Using-Context-Scopes).
+Les cmdlets qui vous permettent de gérer des contextes Azure vous offrent aussi un contrôle affiné. Si vous souhaitez que les modifications ne s’appliquent qu’à la session PowerShell actuelle (étendue `Process`) ou à chaque session PowerShell (étendue `CurrentUser`). Ces options sont abordées en détail dans [Utilisation des étendues de contexte](#Using-Context-Scopes).
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Exécution de cmdlets Azure PowerShell en tant que tâche en arrière-plan
 
