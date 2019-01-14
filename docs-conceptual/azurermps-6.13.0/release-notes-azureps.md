@@ -161,7 +161,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 * Applets de commande Sauvegarde Azure déconseillés.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* Ajout de nouvelles tailles à la liste blanche des tailles de machine virtuelle pour lesquelles une mise en réseau accélérée sera activée lors de l’utilisation de l’ensemble de paramètres simple pour « New-AzureRmVm »
+* Ajout de nouvelles tailles à la liste verte des tailles de machine virtuelle pour lesquelles une mise en réseau accélérée sera activée lors de l’utilisation de l’ensemble de paramètres simple pour « New-AzureRmVm »
 * Ajout d’un complémenteur d’argument ResourceName pour tous les applets de commande.
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
