@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53218100"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56153370"
 ---
 # <a name="release-notes"></a>Notes de publication
 
@@ -137,10 +137,10 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
     - Ajoute la possibilité de créer des zones DNS qui sont visibles uniquement pour les réseaux virtuels associés
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
-* Mise à jour des types de modèles pour assurer la compatibilité avec les applets de commande DNS.
+* Mise à jour des types de modèles pour assurer la compatibilité avec les cmdlet DNS.
 
 #### <a name="azurermrecoveryservicessiterecovery"></a>AzureRM.RecoveryServices.SiteRecovery
-* Modifications pour ASR Azure vers Azure Site Recovery (les applets de commande prennent actuellement en charge des opérations pour Enterprise vers Enterprise, Enterprise vers Azure, HyperV vers Azure, VMware vers Azure)
+* Modifications pour ASR Azure vers Azure Site Recovery (les cmdlets prennent actuellement en charge des opérations pour Enterprise vers Enterprise, Enterprise vers Azure, HyperV vers Azure, VMware vers Azure)
     - New-AzureRmRecoveryServicesAsrProtectionContainer
     - New-AzureRmRecoveryServicesAsrAzureToAzureDiskReplicationConfig
     - Remove-AzureRmRecoveryServicesAsrProtectionContainer
@@ -722,7 +722,7 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
 
 ## <a name="2017118---version-500"></a>8/11/2017 - Version 5.0.0
 * REMARQUE :  Il s’agit d’une modification critique. Veuillez consulter le guide de migration (https://aka.ms/azps-migration-guide) pour une liste complète des modifications critiques introduites.
-* Toutes les applets de commande contenues dans AzureRM prennent désormais en charge l’aide en ligne
+* Toutes les cmdlets contenus dans AzureRM prennent désormais en charge l’aide en ligne
   - Exécutez Get-Help avec le paramètre -Online pour ouvrir l’aide en ligne dans votre navigateur Internet par défaut
 * AnalysisServices
   * Correction de la commande Synchronize-AzureAsInstance pour utiliser la nouvelle API REST AsAzure pour la synchronisation

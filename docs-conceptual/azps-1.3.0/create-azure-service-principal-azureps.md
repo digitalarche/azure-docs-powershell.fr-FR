@@ -7,24 +7,21 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/09/2018
-ms.openlocfilehash: 2db1ada32e5a9285c27ec3f569b622c9c33a06b0
+ms.date: 12/13/2018
+ms.openlocfilehash: 3e1c5ad280bdb29ce479dd0a478d0ed58237f969
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144271"
+ms.locfileid: "56153355"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Créer un principal du service Azure avec Azure PowerShell
 
 Si vous prévoyez de gérer votre application ou service avec Azure PowerShell, vous devez l’exécuter avec un principal du service Azure Active Directory (AAD) plutôt qu’avec vos informations d’identification personnelles. Cet article vous explique pas à pas comment créer un principal de sécurité avec Azure PowerShell.
 
-> [!NOTE]
-> Vous pouvez également créer un principal du service par l’intermédiaire du portail Azure. Pour plus d’informations, consultez [Utiliser le portail pour créer une application et un principal du service Active Directory pouvant accéder aux ressources](/azure/azure-resource-manager/resource-group-create-service-principal-portal).
+## <a name="what-is-a-service-principal"></a>Qu’est-ce qu’un principal de service ?
 
-## <a name="what-is-a-service-principal"></a>Qu’est-ce qu’un « principal du service » ?
-
-Un principal du service Azure est une identité de sécurité utilisée par les applications, les services et les outils d’automatisation créés par l’utilisateur pour accéder à des ressources Azure spécifiques. Il équivaut un peu à une identité d’utilisateur (nom d’utilisateur et mot de passe ou certificat) avec un rôle spécifique et des autorisations étroitement contrôlées. Un principal du service doit uniquement effectuer des opérations spécifiques, contrairement à une identité d’utilisateur générale. Il améliore la sécurité si vous lui octroyez seulement le niveau d’autorisation minimal nécessaire pour effectuer ses tâches de gestion.
+Un principal du service Azure est une identité de sécurité utilisée par les applications, les services et les outils d’automatisation créés par l’utilisateur pour accéder à des ressources Azure spécifiques. Les principaux de service reçoivent des autorisations spécifiques liées à leurs tâches, ce qui vous donne un meilleur contrôle sur la sécurité. Contrairement à une identité d’utilisateur, qui est généralement autorisée à apporter des modifications.
 
 ## <a name="verify-your-own-permission-level"></a>Vérifier votre propre niveau d’autorisation
 
@@ -36,15 +33,16 @@ Le moyen le plus simple de vous assurer que votre compte dispose des autorisatio
 
 Une fois que vous êtes connecté à votre compte Azure, vous pouvez créer le principal de service. Vous devez identifier votre application déployée par l’une des informations suivantes :
 
-* Le nom unique de votre application déployée (par exemple, « MyDemoWebApp » dans les exemples suivants)
+* Le nom unique de votre application déployée (par exemple, « MyDemoWebApp » dans les exemples suivants)
 * L’ID de l’application, le GUID unique associé à votre application, service ou objet déployé
 
 ### <a name="get-information-about-your-application"></a>Obtenir des informations sur votre application
 
-Vous pouvez utiliser la cmdlet `Get-AzureRmADApplication` pour obtenir des informations à propos de votre application.
+Vous pouvez utiliser la cmdlet `Get-AzADApplication` pour obtenir des informations à propos de votre application.
 
 ```azurepowershell-interactive
-Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
+$app = Get-AzADApplication -DisplayNameStartWith MyDemoWebApp
+$app
 ```
 
 ```output
@@ -61,10 +59,10 @@ ReplyUrls               : {}
 
 ### <a name="create-a-service-principal-for-your-application"></a>Créer un principal du service pour votre application
 
-Utilisez l’applet de commande `New-AzureRmADServicePrincipal` pour créer le principal du service.
+Utilisez l’applet de commande `New-AzADServicePrincipal` pour créer le principal du service.
 
 ```azurepowershell-interactive
-$servicePrincipal = New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4
+$servicePrincipal = New-AzADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4
 ```
 
 ```output
@@ -77,7 +75,7 @@ AdfsId                :
 Type                  : ServicePrincipal
 ```
 
-Vous pouvez alors utiliser directement la propriété $servicePrincipal.Secret dans Connect-AzureRmAccount (voir « Connexion à l’aide du principal de service » ci-dessous), ou convertir la chaîne SecureString en chaîne de texte brut pour une utilisation ultérieure :
+À ce stade, vous pouvez directement utiliser la propriété `$servicePrincipal.Secret` en tant qu’argument pour `Connect-AzAccount` (voir « Connexion à l’aide du principal de service »), ou vous pouvez convertir `SecureString` en une chaîne de texte brut :
 
 ```azurepowershell-interactive
 $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($servicePrincipal.Secret)
@@ -87,11 +85,12 @@ $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
 ### <a name="sign-in-using-the-service-principal"></a>Se connecter en tant que principal du service
 
-Vous pouvez maintenant vous connecter en tant que nouveau principal du service pour votre application en utilisant la valeur *appId* que vous avez renseignée, et la valeur *password* générée automatiquement. Vous allez également avoir besoin de l’ID de locataire pour le principal de service. Votre ID de locataire s’affiche lorsque vous vous connectez à Azure avec vos informations d’identification personnelles. Pour vous connecter avec un principal du service, utilisez les commandes suivantes :
+Vous pouvez maintenant vous connecter en tant que nouveau principal du service pour votre application en utilisant la valeur `appId` que vous avez fournie et `password` qui a été  
+généré. Vous allez également avoir besoin de l’ID de locataire pour le principal de service. Votre ID de locataire s’affiche lorsque vous vous connectez à Azure avec vos informations d’identification personnelles. Pour vous connecter avec un principal de service, utilisez les commandes :
 
 ```azurepowershell-interactive
 $cred = New-Object System.Management.Automation.PSCredential ("00c01aaa-1603-49fc-b6df-b78c4e5138b4", $servicePrincipal.Secret)
-Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Connect-AzAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
 Lorsque la connexion aboutit, la sortie est semblable à ce qui suit :
@@ -114,9 +113,9 @@ Félicitations ! Vous pouvez utiliser ces informations d’identification pour e
 
 Azure PowerShell fournit les applets de commande suivantes pour gérer les attributions de rôle :
 
-* [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment)
-* [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment)
-* [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment)
+* [Get-AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment)
+* [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)
+* [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment)
 
 Un principal du service a le rôle **Contributor** (Collaborateur) par défaut. En raison des autorisations générales qu’il inclut, ce rôle n’est pas forcément le meilleur choix en fonction de l’étendue des interactions de votre application avec les services Azure.
 Le rôle **Reader** (Lecteur) étant plus restrictif, il peut être un bon choix pour les applications en lecture seule. Vous pouvez afficher les détails des autorisations propres à chaque rôle ou créer des autorisations personnalisées par le biais du portail Azure.
@@ -124,7 +123,7 @@ Le rôle **Reader** (Lecteur) étant plus restrictif, il peut être un bon choix
 Dans cet exemple, nous ajoutons le rôle **Reader** à notre exemple précédent, et nous supprimons le rôle **Contributor** :
 
 ```azurepowershell-interactive
-New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
+New-AzRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
 ```output
@@ -139,13 +138,13 @@ ObjectType         : ServicePrincipal
 ```
 
 ```azurepowershell-interactive
-Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
+Remove-AzRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
 Pour afficher les rôles actuellement attribués :
 
 ```azurepowershell-interactive
-Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
+Get-AzRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
 ```output
@@ -161,10 +160,10 @@ ObjectType         : ServicePrincipal
 
 Autres applets de commande Azure PowerShell pour la gestion des rôles :
 
-* [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/Get-AzureRmRoleDefinition)
-* [New-AzureRmRoleDefinition](/powershell/module/azurerm.resources/New-AzureRmRoleDefinition)
-* [Remove-AzureRmRoleDefinition](/powershell/module/azurerm.resources/Remove-AzureRmRoleDefinition)
-* [Set-AzureRmRoleDefinition](/powershell/module/azurerm.resources/Set-AzureRmRoleDefinition)
+* [Get-AzRoleDefinition](/powershell/module/az.resources/Get-azRoleDefinition)
+* [New-AzRoleDefinition](/powershell/module/az.resources/New-azRoleDefinition)
+* [Remove-AzRoleDefinition](/powershell/module/az.resources/Remove-azRoleDefinition)
+* [Set-AzRoleDefinition](/powershell/module/az.resources/Set-azRoleDefinition)
 
 ## <a name="change-the-credentials-of-the-security-principal"></a>Changer les informations d’identification du principal de sécurité
 
@@ -173,7 +172,7 @@ Nous vous recommandons de vérifier les autorisations et de mettre à jour le mo
 ### <a name="add-a-new-password-for-the-service-principal"></a>Ajouter un nouveau mot de passe pour le principal du service
 
 ```azurepowershell-interactive
-New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
+New-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
 ```output
@@ -187,7 +186,7 @@ Type      : Password
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>Obtenir la liste des informations d’identification pour le principal du service
 
 ```azurepowershell-interactive
-Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
+Get-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
 ```output
@@ -200,7 +199,7 @@ StartDate           EndDate             KeyId                                Typ
 ### <a name="remove-the-old-password-from-the-service-principal"></a>Supprimer l’ancien mot de passe du principal du service
 
 ```azurepowershell-interactive
-Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
+Remove-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
 ```output
@@ -213,7 +212,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 ### <a name="verify-the-list-of-credentials-for-the-service-principal"></a>Vérifier la liste des informations d’identification pour le principal du service
 
 ```azurepowershell-interactive
-Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
+Get-AzADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
 ```output
@@ -225,7 +224,7 @@ StartDate           EndDate             KeyId                                Typ
 ### <a name="get-information-about-the-service-principal"></a>Obtenir des informations sur le principal du service
 
 ```azurepowershell-interactive
-$svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
+$svcprincipal = Get-AzADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 $svcprincipal | Select-Object *
 ```
 

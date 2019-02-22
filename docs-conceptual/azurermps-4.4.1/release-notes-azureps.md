@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217301"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56153274"
 ---
 # <a name="release-notes"></a>Notes de publication
 
@@ -88,7 +88,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
   * Nouvelle cmdlet New-AzureRmActionGroupReceiver
     - Nouvelle cmdlet permettant de créer un récepteur de groupe d’action dans la mémoire.
 * KeyVault
-  * Applets de commande nouvelles ou mises à jour permettant de prendre en charge la suppression réversible des certificats KeyVault
+  * Cmdlets nouvelles ou mises à jour permettant de prendre en charge la suppression réversible des certificats KeyVault
     * Get-AzureKeyVaultCertificate
     * Remove-AzureKeyVaultCertificate
     * Undo-AzureKeyVaultCertificateRemoval
@@ -97,13 +97,13 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - Mise à jour d’Add-AzureRmVirtualSubnetConfig : Ajout du paramètre facultatif -ServiceEndpoint
     - Mise à jour de New-AzureRmVirtualSubnetConfig : Ajout du paramètre facultatif -ServiceEndpoint
     - Mise à jour de Set-AzureRmVirtualSubnetConfig : Ajout du paramètre facultatif -ServiceEndpoint
-  * Ajout d’une applet de commande pour lister les services de point de terminaison disponibles à l’emplacement
+  * Ajout d’une cmdlet pour répertorier les services de point de terminaison disponibles à l’emplacement
     - Get-AzureRmVirtualNetworkAvailableEndpointService
   * Ajout de la possibilité de configurer une authentification P2S basée sur un serveur RADIUS externe pour les commandlets suivantes
     - New-AzureVirtualNetworkGateway
     - Set-AzureVirtualNetworkGateway
     - Set-AzureRmVirtualNetworkGatewayVpnClientConfig
-  * Ajout d’une applet de commande pour permettre la génération de profils VPN pour une authentification P2S basée sur un serveur RADIUS externe
+  * Ajout d’une cmdlet pour permettre la génération de profils VPN pour une authentification P2S basée sur un serveur RADIUS externe
     - New-AzureRmVpnClientConfiguration
     - Get-AzureRmVpnClientConfiguration
   * Ajout de la prise en charge de paramètre SKU pour les adresses IP publiques et les équilibreurs de charge

@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/09/2018
-ms.openlocfilehash: a07b5fe8cd532f99038d7f0ce10b3b891c896da1
+ms.date: 12/13/2018
+ms.openlocfilehash: 8702de48429482748939fb1a43ff911bed15f6c0
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153379"
+ms.locfileid: "56153349"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Conserver les informations d’identification d’utilisateur sur plusieurs sessions PowerShell
 
@@ -34,16 +34,15 @@ Un *contexte Azure* est un ensemble d’informations qui définit la cible des c
   Toutefois, la configuration de l’environnement vous permet aussi de cibler les clouds nationaux, gouvernementaux et locaux (Azure Stack).
 - *Informations d’identification* : les informations dont Azure se sert pour vérifier votre identité et pour confirmer votre autorisation d’accès à des ressources dans Azure.
 
-Dans les versions précédentes, il fallait créer un contexte Azure à chaque ouverture d’une nouvelle session PowerShell. Depuis Azure PowerShell version 4.4.0, les contextes Azure peuvent être automatiquement enregistrés à chaque ouverture d’une nouvelle session PowerShell.
+Depuis la dernière version d’Azure PowerShell, les contextes Azure peuvent être automatiquement enregistrés à chaque ouverture d’une nouvelle session PowerShell.
 
 ## <a name="automatically-save-the-context-for-the-next-sign-in"></a>Sauvegarde automatique du contexte pour la connexion suivante
 
-Depuis la version 6.3.0, Azure PowerShell conserve vos informations de contexte automatiquement d’une session à l’autre. Pour configurer PowerShell de sorte qu’il oublie votre contexte et les informations d’identification, utilisez `Disable-AzureRmContextAutoSave`. Vous devez vous connecter à Azure chaque fois que vous ouvrez une session PowerShell.
+Azure PowerShell conserve vos informations de contexte automatiquement entre les sessions. Pour configurer PowerShell de sorte qu’il oublie votre contexte et les informations d’identification, utilisez `Disable-AzContextAutoSave`. Si l’enregistrement du contexte est désactivé, vous devez vous connecter à Azure chaque fois que vous ouvrez une session PowerShell.
 
-Pour permettre à Azure PowerShell de se rappeler de votre contexte après la fermeture d’une session, utilisez `Enable-AzureRmContextAutosave`. Le contexte et les informations d’identification sont sauvegardés automatiquement dans un dossier spécial caché dans votre répertoire utilisateur (`%AppData%\Roaming\Windows Azure PowerShell`).
-Chaque nouvelle session PowerShell cible le contexte utilisé lors de la dernière session.
+Pour permettre à Azure PowerShell de se rappeler de votre contexte après la fermeture d’une session, utilisez `Enable-AzContextAutosave`. Le contexte et les informations d’identification sont enregistrés automatiquement dans un dossier spécial caché dans votre répertoire utilisateur (`$env:USERPROFILE\.Azure` sous Windows et `$HOME/.Azure` sous les autres plateformes). Chaque nouvelle session PowerShell cible le contexte utilisé lors de la dernière session.
 
-Les cmdlets qui vous permettent de gérer des contextes Azure vous offrent aussi un contrôle affiné. Si vous souhaitez que les modifications ne s’appliquent qu’à la session PowerShell actuelle (étendue `Process`) ou à chaque session PowerShell (étendue `CurrentUser`). Ces options sont détaillées dans les détails du mode dans [Utilisation des étendues de contexte](#Using-Context-Scopes).
+Les cmdlets qui vous permettent de gérer des contextes Azure vous offrent aussi un contrôle affiné. Si vous souhaitez que les modifications ne s’appliquent qu’à la session PowerShell actuelle (étendue `Process`) ou à chaque session PowerShell (étendue `CurrentUser`). Ces options sont abordées en détail dans [Utilisation des étendues de contexte](#Using-Context-Scopes).
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Exécution de cmdlets Azure PowerShell en tant que tâche en arrière-plan
 
@@ -54,7 +53,7 @@ La fonctionnalité **Azure Context Autosave** vous permet aussi de partager votr
   La plupart des cmdlets AzureRM vous permettent de transmettre le contexte en tant que paramètre à la cmdlet. Vous pouvez transmettre un contexte à une tâche en arrière-plan, comme montré dans l’exemple suivant :
 
   ```powershell-interactive
-  PS C:\> $job = Start-Job { param ($ctx) New-AzureRmVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzureRmContext)
+  PS C:\> $job = Start-Job { param ($ctx) New-AzVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzContext)
   ```
 
 - En utilisant le contexte par défaut avec la sauvegarde automatique activée
@@ -62,45 +61,45 @@ La fonctionnalité **Azure Context Autosave** vous permet aussi de partager votr
   Si vous avez activé la fonctionnalité **Context Autosave**, les tâches en arrière-plan utiliseront automatiquement le contexte par défaut sauvegardé.
 
   ```powershell-interactive
-  PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
+  PS C:\> $job = Start-Job { New-AzVm [... Additional parameters ...]}
   ```
 
 Lorsque vous avez besoin de connaître le résultat de la tâche en arrière-plan, utilisez `Get-Job` pour vérifier son état et `Wait-Job` pour attendre qu’elle soit terminée. Utilisez `Receive-Job` pour capturer ou afficher la sortie de la tâche en arrière-plan. Pour plus d’informations, consultez [à propos des_tâches](/powershell/module/microsoft.powershell.core/about/about_jobs).
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>Création, sélection, changement de nom et suppression de contextes
 
-Pour créer un contexte, vous devez être connecté à Azure. La cmdlet `Connect-AzureRmAccount` (ou son alias, `Login-AzureRmAccount`) définit le contexte par défaut utilisé par les cmdlets Azure PowerShell, et vous permet d’accéder à n’importe quel locataire ou abonnement autorisé par vos informations d’identification.
+Pour créer un contexte, vous devez être connecté à Azure. La cmdlet `Connect-AzAccount` (ou son alias, `Login-AzAccount`) définit le contexte par défaut utilisé par les cmdlets Azure PowerShell, et vous permet d’accéder à n’importe quel locataire ou abonnement autorisé par vos informations d’identification.
 
-Pour ajouter un nouveau contexte après la connexion, utilisez `Set-AzureRmContext` (ou son alias, `Select-AzureRmSubscription`).
+Pour ajouter un nouveau contexte après la connexion, utilisez `Set-AzContext` (ou son alias, `Select-AzSubscription`).
 
 ```azurepowershell-interactive
-PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
+PS C:\> Set-AzContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
 ```
 
 L’exemple précédent ajoute un nouveau contexte qui cible « Contoso Subscription 1 » en utilisant vos informations d’identification actuelles. Le nouveau contexte est nommé « Contoso1 ». Si vous ne fournissez aucun nom pour le contexte, un nom par défaut est utilisé, constitué de l’ID du compte et de l’ID de l’abonnement.
 
-Pour renommer un contexte existant, utilisez la cmdlet `Rename-AzureRmContext`. Par exemple : 
+Pour renommer un contexte existant, utilisez la cmdlet `Rename-AzContext`. Par exemple : 
 
 ```azurepowershell-interactive
-PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
+PS C:\> Rename-AzContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
 ```
 
 Cet exemple change le nom `[user1@contoso.org; 123456-7890-1234-564321]` automatiquement attribué au contexte par le nom « Contoso2 ». Les cmdlets qui gèrent les contextes utilisent aussi la saisie automatique via la touche Tab, ce qui vous permet de sélectionner rapidement le contexte.
 
-Enfin, pour supprimer un contexte, utilisez la cmdlet `Remove-AzureRmContext`.  Par exemple : 
+Enfin, pour supprimer un contexte, utilisez la cmdlet `Remove-AzContext`.  Par exemple : 
 
 ```azurepowershell-interactive
-PS C:\> Remove-AzureRmContext Contoso2
+PS C:\> Remove-AzContext Contoso2
 ```
 
-Oublie le contexte nommé « Contoso2 ». Vous pouvez recréer ce contexte à l’aide de `Set-AzureRmContext`.
+Oublie le contexte nommé « Contoso2 ». Vous pouvez recréer ce contexte à l’aide de `Set-AzContext`.
 
 ## <a name="removing-credentials"></a>Suppression des informations d’identification
 
-Vous pouvez supprimer toutes les informations d’identification et les contextes associés à un utilisateur ou un principal du service à l’aide de `Disconnect-AzureRmAccount` (aussi appelé `Logout-AzureRmAccount`). Si vous l’exécutez sans paramètres, la cmdlet `Disconnect-AzureRmAccount` supprime toutes les informations d’identification et les contextes associés à un utilisateur ou un principal du service dans le contexte actuel. Vous pouvez, si vous le souhaitez, transmettre un nom d’utilisateur, un nom de principal du service ou un contexte pour cibler un principal spécifique.
+Vous pouvez supprimer toutes les informations d’identification et les contextes associés à un utilisateur ou un principal du service à l’aide de `Disconnect-AzAccount` (aussi appelé `Logout-AzAccount`). Si vous l’exécutez sans paramètres, la cmdlet `Disconnect-AzAccount` supprime toutes les informations d’identification et les contextes associés à un utilisateur ou un principal du service dans le contexte actuel. Vous pouvez, si vous le souhaitez, transmettre un nom d’utilisateur, un nom de principal du service ou un contexte pour cibler un principal spécifique.
 
 ```azurepowershell-interactive
-Disconnect-AzureRmAccount user1@contoso.org
+Disconnect-AzAccount user1@contoso.org
 ```
 
 ## <a name="using-context-scopes"></a>Utilisation des étendues de contexte
@@ -110,12 +109,12 @@ Vous pouvez de temps en temps sélectionner, modifier ou supprimer un contexte d
 Par exemple, pour modifier le contexte par défaut de la session PowerShell actuelle sans impacter d’autres fenêtres ni le contexte utilisé lors de la prochaine ouverture de session, utilisez :
 
 ```azurepowershell-interactive
-PS C:\> Select-AzureRmContext Contoso1 -Scope Process
+PS C:\> Select-AzContext Contoso1 -Scope Process
 ```
 
 ## <a name="how-the-context-autosave-setting-is-remembered"></a>Mémorisation du paramètre de sauvegarde automatique du contexte
 
-Le paramètre de sauvegarde automatique du contexte est sauvegardé dans le répertoire Azure PowerShell de l’utilisateur (`%AppData%\Roaming\Windows Azure PowerShell`). Certains types de comptes d’ordinateur peuvent ne pas être capables d’accéder à ce répertoire. Dans ce cas, vous pouvez utiliser la variable d’environnement
+Le paramètre de sauvegarde automatique du contexte est enregistré dans le répertoire Azure PowerShell de l’utilisateur (`$env:USERPROFILE\.Azure` sous Windows et `$HOME/.Azure` sous les autres plateformes). Certains types de comptes d’ordinateur peuvent ne pas être capables d’accéder à ce répertoire. Dans ce cas, vous pouvez utiliser la variable d’environnement
 
 ```azurepowershell-interactive
 $env:AzureRmContextAutoSave="true" | "false"
@@ -123,34 +122,29 @@ $env:AzureRmContextAutoSave="true" | "false"
 
 Si la valeur est définie sur « True », le contexte est automatiquement sauvegardé. Si la valeur est définie sur « False », le contexte n’est pas sauvegardé.
 
-## <a name="changes-to-the-azurermprofile-module"></a>Modifications apportées au module AzureRM.Profile
+## <a name="context-management-cmdlets"></a>Cmdlets de gestion de contexte
 
-Nouvelles cmdlets pour la gestion de contexte
-
-- [Enable-AzureRmContextAutosave][enable] : permet la sauvegarde de contexte entre les sessions PowerShell.
+- [Enable-AzContextAutosave][enable] : permet la sauvegarde de contexte entre les sessions PowerShell.
   Toutes modifications altèrent le contexte global.
-- [Disable-AzureRmContextAutosave][disable] : désactive la sauvegarde automatique du contexte. Vous devez vous connecter à chaque nouvelle session PowerShell.
-- [Select-AzureRmContext][select] : sélectionne un contexte par défaut. Toutes les cmdlets utilisent les informations d’identification de ce contexte pour l’authentification.
-- [Disconnect-AzureRmAccount][remove-cred] : supprime toutes les informations d’identification et les contextes associés à un compte.
-- [Remove-AzureRmContext][remove-context] : supprime un contexte nommé.
-- [Remove-AzureRmContext][rename] : renomme un contexte existant.
-
-Modifications apportées à des cmdlets de profil existantes
-
-- [Add-AzureRmAccount][login] : permet d’étendre la portée de la connexion au processus ou à l’utilisateur actuel.
+- [Disable-AzContextAutosave][disable] : désactive la sauvegarde automatique du contexte. Vous devez vous connecter à chaque nouvelle session PowerShell.
+- [Select-AzContext][select] : sélectionne un contexte par défaut. Toutes les cmdlets utilisent les informations d’identification de ce contexte pour l’authentification.
+- [Disconnect-AzAccount][remove-cred] : supprime toutes les informations d’identification et les contextes associés à un compte.
+- [Remove-AzContext][remove-context] : supprime un contexte nommé.
+- [Rename-AzContext][rename] : renomme un contexte existant.
+- [Add-AzAccount][login] : permet d’étendre la portée de la connexion au processus ou à l’utilisateur actuel.
   Permet de renommer le contexte par défaut après authentification.
-- [Import-AzureRmContext][import] : permet d’étendre la portée de la connexion au processus ou à l’utilisateur actuel.
-- [Set-AzureRmContext][set-context] : permet la sélection de contextes nommés existants, et d’étendre les modifications au processus ou à l’utilisateur actuel.
+- [Import-AzContext][import] : permet d’étendre la portée de la connexion au processus ou à l’utilisateur actuel.
+- [Set-AzContext][set-context] : permet la sélection de contextes nommés existants, et d’étendre les modifications au processus ou à l’utilisateur actuel.
 
 <!-- Hyperlinks -->
-[enable]: /powershell/module/azurerm.profile/Enable-AzureRmContextAutosave
-[disable]: /powershell/module/azurerm.profile/Disable-AzureRmContextAutosave
-[select]: /powershell/module/azurerm.profile/Select-AzureRmContext
-[remove-cred]: /powershell/module/azurerm.profile/Disconnect-AzureRmAccount
-[remove-context]: /powershell/module/azurerm.profile/Remove-AzureRmContext
-[rename]: /powershell/module/azurerm.profile/Rename-AzureRmContext
+[enable]: /powershell/module/az.accounts/Enable-AzureRmContextAutosave
+[disable]: /powershell/module/az.accounts/Disable-AzContextAutosave
+[select]: /powershell/module/az.accounts/Select-AzContext
+[remove-cred]: /powershell/module/az.accounts/Disconnect-AzAccount
+[remove-context]: /powershell/module/az.accounts/Remove-AzContext
+[rename]: /powershell/module/az.accounts/Rename-AzContext
 
 <!-- Updated cmdlets -->
-[login]: /powershell/module/azurerm.profile/Connect-AzureRmAccount
-[import]:  /powershell/module/azurerm.profile/Import-AzureRmContext
-[set-context]: /powershell/module/azurerm.profile/Set-AzureRmContext
+[login]: /powershell/module/az.accounts/Connect-AzAccount
+[import]:  /powershell/module/az.accounts/Import-AzContext
+[set-context]: /powershell/module/az.accounts/Set-AzContext
