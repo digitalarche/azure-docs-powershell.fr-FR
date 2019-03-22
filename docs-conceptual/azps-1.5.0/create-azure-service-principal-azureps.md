@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: ae8bb8341209fedc3fadf8137f4faaf1ad3fe686
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 3ce1135cc81d11ce6faa62c790cb4358b5fceda4
+ms.sourcegitcommit: 32dad89878c7e728f740936f5f338b8ae878a6a1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882258"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58192920"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Créer un principal du service Azure avec Azure PowerShell
 
@@ -88,7 +88,7 @@ L’objet retourné par `New-AzADServicePrincipal` contient les membres `Id` et 
 
 ## <a name="get-an-existing-service-principal"></a>Obtenir un principal de service existant
 
-Vous pouvez récupérer la liste des principaux de service du locataire actif à l’aide de [Get-AzADServicePrincipal](/module/az.resources/get-azadserviceprincipal). Par défaut, cette commande retourne __tous__ les principaux de service d’un locataire. Pour les grandes organisations, les résultats peuvent donc mettre du temps à s’afficher. Pour cette raison, il est recommandé d’utiliser l’un des arguments de filtrage côté serveur facultatifs :
+Vous pouvez récupérer la liste des principaux de service du locataire actif à l’aide de [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal). Par défaut, cette commande retourne __tous__ les principaux de service d’un locataire. Pour les grandes organisations, les résultats peuvent donc mettre du temps à s’afficher. Pour cette raison, il est recommandé d’utiliser l’un des arguments de filtrage côté serveur facultatifs :
 
 * `-DisplayNameBeginsWith` demande les principaux de service ayant un _préfixe_ qui correspond à la valeur fournie. Le nom d’affichage d’un principal de service correspond à la valeur définie avec `-DisplayName` lors de la création.
 * `-DisplayName` demande une _correspondance exacte_ du nom du principal de service.
@@ -121,7 +121,7 @@ L’ajout d’un rôle ne restreint _pas_ les autorisations précédemment assig
 Les modifications peuvent être vérifiées en répertoriant les rôles attribués :
 
 ```azurepowershell-interactive
-Get-AzRoleAssignment -ServicePrinicpalName ServicePrincipalName
+Get-AzRoleAssignment -ServicePrincipalName ServicePrincipalName
 ```
 
 ## <a name="sign-in-using-a-service-principal"></a>Se connecter en tant que principal du service
