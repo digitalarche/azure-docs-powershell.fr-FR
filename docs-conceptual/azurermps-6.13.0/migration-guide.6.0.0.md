@@ -151,7 +151,7 @@ New-AzureRmAvailabilitySet -ResourceGroupName "MyRG" -Name "MyAvailabilitySet" -
 
 **Set-AzureRmVMAEMExtension**
 - Le paramètre `DisableWAD` a été supprimé
-    -  Les diagnostics Microsoft Azure ont été désactivés par défaut
+    -  Diagnostics Azure pour Windows est désactivé par défaut
 
 **Set-AzureRmVMDataDisk**
 - Les valeurs acceptées pour le paramètre `StorageAccountType` ont été remplacées, respectivement de`StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
