@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.openlocfilehash: be3e19dc4b689adbc63b933dd9f3454122d5344a
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364048"
 ---
 # <a name="migration-guide-for-az-100"></a>Guide de migration pour Az 1.0.0
@@ -21,7 +21,7 @@ Ce document décrit les modifications apportées entre les versions 6.x d’Azu
 ## <a name="table-of-contents"></a>Sommaire
 - [Dernières modifications générales](#general-breaking-changes)
   - [Modifications de préfixe de nom de cmdlet](#cmdlet-noun-prefix-changes)
-  - [Changements de nom de module](#module-name-changes)
+  - [Modifications de nom de module](#module-name-changes)
   - [Modules supprimés](#removed-modules)
   - [Windows PowerShell 5.1 et .NET 4.7.2](#windows-powershell-51-and-net-472)
   - [Suppression temporaire de la connexion de l’utilisateur à l’aide de PSCredential](#temporary-removal-of-user-login-using-pscredential)
@@ -187,9 +187,9 @@ Les outils destinés à ces services ne sont plus activement pris en charge.  Le
 
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (précédemment AzureRM.Compute)
 - `IdentityIds` sont supprimés de la propriété `Identity` dans les objets `PSVirtualMachine` et `PSVirtualMachineScaleSet`. Les scripts ne doivent plus utiliser la valeur de ce champ pour prendre des décisions de traitement.
-- Le type de la propriété `InstanceView` de l’objet `PSVirtualMachineScaleSetVM` passe de `VirtualMachineInstanceView` à `VirtualMachineScaleSetVMInstanceView`
-- `AutoOSUpgradePolicy` et les propriétés `AutomaticOSUpgrade` sont supprimées de la propriété `UpgradePolicy`
-- Le type de la propriété `Sku` de l’objet `PSSnapshotUpdate` passe de `DiskSku` à `SnapshotSku`
+- Le type de la propriété `InstanceView` de l’objet `PSVirtualMachineScaleSetVM` passe de `VirtualMachineInstanceView` à `VirtualMachineScaleSetVMInstanceView`.
+- Les propriétés `AutoOSUpgradePolicy` et `AutomaticOSUpgrade` sont supprimées de la propriété `UpgradePolicy`.
+- Le type de la propriété `Sku` de l’objet `PSSnapshotUpdate` passe de `DiskSku` à `SnapshotSku`.
 - `VmScaleSetVMParameterSet` est supprimé de la cmdlet `Add-AzVMDataDisk`. Vous ne pouvez plus ajouter un disque de données individuellement à une machine virtuelle ScaleSet.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (précédemment AzureRM.DataFactories et AzureRM.DataFactoryV2)
@@ -198,7 +198,7 @@ Les outils destinés à ces services ne sont plus activement pris en charge.  Le
 - Paramètre `LinkedServiceName` supprimé de la cmdlet `Get-AzDataFactoryV2ActivityRun`. Les scripts ne doivent plus utiliser la valeur de ce champ pour prendre des décisions de traitement.
 
 ### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a>Az.DataLakeAnalytics (précédemment AzureRM.DataLakeAnalytics)
-- Suppression des cmdlets dépréciées : `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret` et `Set-AzDataLakeAnalyticsCatalogSecret`
+- Suppression des cmdlets déconseillées : `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret`, et `Set-AzDataLakeAnalyticsCatalogSecret`
 
 ### <a name="azdatalakestore-previously-azurermdatalakestore"></a>Az.DataLakeStore (précédemment AzureRM.DataLakeStore)
 - Dans les cmdlets suivantes, le paramètre `Encoding` est passé du type `FileSystemCmdletProviderEncoding` à `System.Text.Encoding`. Cette modification supprime les valeurs de codage `String` et `Oem`. Toutes les autres valeurs de codage préalables demeurent identiques.
@@ -264,7 +264,7 @@ Les scripts ne doivent plus prendre de décisions de traitement reposant sur les
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (précédemment AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup et AzureRM.RecoveryServices.SiteRecovery)
 - Suppression du paramètre `Encryption` dans la cmdlet `New/Set-AzRecoveryServicesAsrPolicy`
-- `TargetStorageAccountName` Le paramètre est maintenant obligatoire pour les restaurations de disque managé dans la cmdlet `Restore-AzRecoveryServicesBackupItem`
+- Le paramètre `TargetStorageAccountName` est maintenant obligatoire pour les restaurations de disque managé dans la cmdlet `Restore-AzRecoveryServicesBackupItem`.
 - Suppression des paramètres `StorageAccountName` et `StorageAccountResourceGroupName` dans la cmdlet `Restore-AzRecoveryServicesBackupItem`
 - Suppression du paramètre `Name` dans la cmdlet `Get-AzRecoveryServicesBackupContainer`
 
@@ -304,14 +304,14 @@ Les scripts ne doivent plus prendre de décisions de traitement reposant sur les
 
 ### <a name="azsql-previously-azurermsql"></a>Az.Sql (précédemment AzureRM.Sql)
 - Suppression des paramètres `State` et `ResourceId` dans la cmdlet `Set-AzSqlDatabaseBackupLongTermRetentionPolicy`
-- Suppression des cmdlets dépréciées : `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`
+- Suppression des cmdlets déconseillées : `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`
 - Suppression du paramètre déconseillé `Current` de la cmdlet `Get-AzSqlDatabaseBackupLongTermRetentionPolicy`
 - Suppression du paramètre déconseillé `DatabaseName` de la cmdlet `Get-AzSqlServerServiceObjective`
 - Suppression du paramètre déconseillé `PrivilegedLogin` de la cmdlet `Set-AzSqlDatabaseDataMaskingPolicy`
 
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (précédemment Azure.Storage et AzureRM.Storage)
-- Pour prendre en charge la création d’un contexte de stockage Oauth avec uniquement le nom du compte de stockage, le jeu de paramètres par défaut a été remplacé par `OAuthParameterSet`
-  - Exemple : `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
+- Pour prendre en charge la création d’un contexte de stockage Oauth avec uniquement le nom du compte de stockage, le jeu de paramètres par défaut a été remplacé par `OAuthParameterSet`.
+  - Exemple : `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
 - Le paramètre `Location` est devenu obligatoire dans la cmdlet `Get-AzStorageUsage`.
 - Les méthodes d’API de stockage utilisent maintenant le modèle asynchrone basé sur des tâches (TAP), au lieu d’appels d’API synchrones.
 #### <a name="1-blob-snapshot"></a>1. Instantané d’objet blob

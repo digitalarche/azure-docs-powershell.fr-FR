@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 825a07e01194a07b747712a62384c7f162e63d7d
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364022"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Applets de commande en cours d’exécution en parallèle à l’aide de travaux PowerShell
@@ -66,7 +66,7 @@ MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Crea
 Lorsque la tâche est terminée, consultez le résultat avec `Receive-Job`.
 
 > [!NOTE]
-> `Receive-Job` retourne le résultat à partir de l’applet de commande comme si l’indicateur `-AsJob` n’était pas présent.
+> `Receive-Job` renvoie le résultat à partir de l’applet de commande comme si l’indicateur `-AsJob` n’était pas présent.
 > Par exemple, le résultat `Receive-Job` de `Do-Action -AsJob` est du même type que le résultat de `Do-Action`.
 
 ```azurepowershell-interactive

@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
 ms.openlocfilehash: 0c3b749cb2ac7f11dacafca76b65944f523f727d
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364036"
 ---
 # <a name="get-started-with-azure-powershell"></a>Prise en main de Microsoft Azure PowerShell
@@ -82,10 +82,10 @@ Pour prendre en main Azure PowerShell, essayez un tutoriel approfondi pour confi
 
 Il existe aussi des guides de démarrage rapide Azure PowerShell pour d’autres services Azure populaires :
 
-* [Créez un compte de stockage.](/azure/storage/common/storage-quickstart-create-account?tabs=azure-powershell)
-* [Transférer des objets vers/à partir du stockage Blob Azure](/azure/storage/blobs/storage-quickstart-blobs-powershell)
+* [Créez un compte de stockage](/azure/storage/common/storage-quickstart-create-account?tabs=azure-powershell)
+* [Transférer des objets vers/à partir de Stockage Blob Azure](/azure/storage/blobs/storage-quickstart-blobs-powershell)
 * [Créer et récupérer des données secrètes depuis Azure Key Vault](/azure/key-vault/quick-create-powershell)
-* [Créer un pare-feu et une base de données Azure SQL](/azure/sql-database/scripts/sql-database-create-and-configure-database-powershell)
+* [Créer un pare-feu et une base de données SQL Azure](/azure/sql-database/scripts/sql-database-create-and-configure-database-powershell)
 * [Exécuter un conteneur dans Azure Container Instances](/azure/container-instances/container-instances-quickstart-powershell)
 * [Créer un groupe de machines virtuelles identiques](/azure/virtual-machine-scale-sets/quick-create-powershell)
 * [Créer un équilibreur de charge standard](/azure/load-balancer/quickstart-create-standard-load-balancer-powershell)
@@ -96,5 +96,5 @@ Il existe aussi des guides de démarrage rapide Azure PowerShell pour d’autres
 * [Gérer les abonnements Azure avec Azure PowerShell](manage-subscriptions-azureps.md)
 * [Créer des principaux du service avec Azure PowerShell](create-azure-service-principal-azureps.md)
 * Obtenir de l’aide de la communauté :
-  * [Forum Azure sur MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [Forum Azure sur MSDN (en anglais)](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [Stack Overflow](http://go.microsoft.com/fwlink/?LinkId=320213)

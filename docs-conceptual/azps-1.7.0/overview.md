@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
 ms.openlocfilehash: 45ab083dd133c8c7b8dbe902484c92564bc216b9
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364054"
 ---
 # <a name="overview-of-azure-powershell"></a>Vue d’ensemble d’Azure PowerShell
@@ -48,7 +48,7 @@ Consultez l’article de [Prise en main d’Azure PowerShell](get-started-azurep
 
 * [Installer PowerShell](/powershell/scripting/install/installing-powershell)
 * [Scripts avec PowerShell](/powershell/scripting/powershell-scripting)
-* [Notions de base de PowerShell : (Première partie) Bien démarrer avec PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)
+* [Notions de base de PowerShell : (Première partie) Prise en main de PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)
 * [Prise en main rapide de PowerShell](https://mva.microsoft.com/liveevents/powershell-jumpstart) de Microsoft Virtual Academy
 
 Les exemples suivants peuvent vous aider pour certaines utilisations courantes d’Azure :
@@ -56,7 +56,7 @@ Les exemples suivants peuvent vous aider pour certaines utilisations courantes d
 * [Machines virtuelles Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
 * [Machines virtuelles Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
 * [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
-* [BASES DE DONNÉES SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
+* [Bases de données SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
 ## <a name="build-your-skills-with-microsoft-learn"></a>Développer vos compétences avec Microsoft Learn
 
