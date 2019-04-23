@@ -463,7 +463,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 * CognitiveServices
     * Mise à jour de l’affichage détaillé des contrats de licence lors de la création de ressources Cognitive Services
 * Calcul
-    * Correction de Test-AzureRmVMAEMExtension pour les machines virtuelles avec plusieurs disques gérés
+    * Correction de Test-AzureRmVMAEMExtension pour les machines virtuelles avec plusieurs disques managés
     * Mise à jour de Set-AzureRmVMAEMExtension : Ajout d’informations de mise en cache pour les disques managés Premium
     * Add-AzureRmVhd : La limite de taille sur le disque dur virtuel a été augmentée à 4 To.
     * Stop-AzureRmVM : Clarification de la documentation pour le paramètre STayProvisioned
@@ -548,7 +548,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
   - nouvelle propriété BillingPeriodNames
   - sortie dans affichage de liste
 * Calcul
-  - Mise à jour des applets de commande Set-AzureRmVMAEMExtension et Test-AzureRmVMAEMExtension pour prendre en charge les disques gérés Premium
+  - Mise à jour des applets de commande Set-AzureRmVMAEMExtension et Test-AzureRmVMAEMExtension pour prendre en charge les disques managés Premium
   - Paramètres de chiffrement de sauvegarde pour les machines virtuelles IaaS et restauration en cas d’échec
   - L’option ChefServiceInterval est renommée en ChefDaemonInterval maintenant. L’ancien continuera à fonctionner, cependant.
   - Suppression des propriétés DataDiskNames et NetworkInterfaceIDs en double de l’objet de machine virtuelle PS.
