@@ -184,7 +184,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - Set-AzureRmManagedApplicationDefinition : cmdlet pour mettre à jour une définition d’application gérée existante
 * SQL
   * Ajout de la prise en charge des règles de réseau virtuel
-    - Ajout de la cmdlet Get-AzureRmSqlServerVirtualNetworkRule qui obtient les règles de réseau virtuel par un nom de règle spécifique ou une liste de règles de réseau virtuel dans un serveur Azure SQL.
+    - Ajout de l’applet de commande Get-AzureRmSqlServerVirtualNetworkRule qui obtient les règles de réseau virtuel par un nom de règle spécifique ou une liste de règles de réseau virtuel dans un serveur Azure SQL.
     - Ajout de la cmdlet Set-AzureRmSqlServerVirtualNetworkRule qui modifie le réseau virtuel visé par la règle.
     - Ajout de la cmdlet Remove-AzureRmSqlServerVirtualNetworkRule qui supprime une règle de réseau virtuel d’un serveur Azure SQL.
     - Ajout de la cmdlet New-AzureRmSqlServerVirtualNetworkRule qui crée une règle de réseau virtuel pour un serveur Azure SQL.
