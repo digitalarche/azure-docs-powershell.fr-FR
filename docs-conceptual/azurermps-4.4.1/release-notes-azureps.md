@@ -274,9 +274,9 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 * SQL
     * Mise à jour de Set-AzureRmSqlServerTransparentDataEncryptionProtector pour afficher un avertissement et demander confirmation que le Type du protecteur de chiffrement est bien défini sur AzureKeyVault
     * Ajout de nouvelles applets de commande mises à jour pour les paramètres d’audit
-      - L’applet de commande Get-AzureRmSqlDatabaseAuditing qui obtient les paramètres d’audit d’une base de données SQL Azure.
+      - L’applet de commande Get-AzureRmSqlDatabaseAuditing qui obtient les paramètres d’audit d’une base de données Azure SQL.
       - L’applet de commande Get-AzureRmSqlServerAuditing qui obtient les paramètres d’audit d’un serveur SQL Azure.
-      - L’applet de commande Set-AzureRmSqlDatabaseAuditing qui modifie les paramètres d’audit pour une base de données SQL Azure.
+      - L’applet de commande Set-AzureRmSqlDatabaseAuditing qui modifie les paramètres d’audit pour une base de données Azure SQL.
       - L’applet de commande Set-AzureRmSqlServerAuditing qui modifie les paramètres d’audit d’un serveur SQL Azure.
     * Dépréciation des applets de commande de stratégie d’audit existantes
       - Get-AzureRmSqlDatabaseAuditingPolicy

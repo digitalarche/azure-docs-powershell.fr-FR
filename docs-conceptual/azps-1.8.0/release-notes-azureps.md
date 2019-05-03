@@ -702,7 +702,7 @@ Ajout de la prise en charge de la configuration de RewriteRuleSets dans Applicat
 * Ajout de messages d’obsolescence pour les changements cassants à venir
 
 ### <a name="azsql"></a>Az.Sql
-* Ajout de nouvelles cmdlets pour les opérations CRUD sur Azure Sql Database Managed Instance et Azure Sql Managed Database
+* Ajout de nouvelles applets de commande pour les opérations CRUD sur Azure Sql Database Managed Instance et Azure Sql Managed Database
     - Get-AzureRmSqlInstance
     - New-AzureRmSqlInstance
     - Set-AzureRmSqlInstance

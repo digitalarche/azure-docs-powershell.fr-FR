@@ -70,7 +70,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 * Ajout de messages d’obsolescence pour les changements cassants à venir
 
 #### <a name="azurermsql"></a>AzureRM.Sql
-* Ajout de nouvelles cmdlets pour les opérations CRUD sur Azure Sql Database Managed Instance et Azure Sql Managed Database
+* Ajout de nouvelles applets de commande pour les opérations CRUD sur Azure Sql Database Managed Instance et Azure Sql Managed Database
     - Get-AzureRmSqlInstance
     - New-AzureRmSqlInstance
     - Set-AzureRmSqlInstance
@@ -1041,7 +1041,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 #### <a name="azurermsql"></a>AzureRM.Sql
 * Mise à jour des cmdlets d’audit pour permettre la suppression des éléments AuditAction ou AuditActionGroup
 * Correction d’un problème concernant Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy lors de la définition d’une nouvelle stratégie de rétention flexible, où la commande échouait avec le message d’erreur « Configure long term retention policy with azure recovery service vault and policy is no longer supported. Please submit request with the new flexible retention policy » (La configuration d’une stratégie de rétention à long terme avec un coffre et une stratégie Azure Recovery Services n’est plus prise en charge. Veuillez soumettre une demande avec la nouvelle stratégie de rétention flexible.).
-* Mise à jour de toutes les cmdlets liées à la création/mise à jour de bases de données/pools élastiques Azure SQL pour utiliser la nouvelle API Base de données, qui prend en charge la propriété Sku pour les propriétés liées à la mise à l’échelle et au niveau.
+* Mise à jour de toutes les applets de commande liées à la création/mise à jour de bases de données/pools élastiques Azure SQL pour utiliser la nouvelle API Base de données, qui prend en charge la propriété Sku pour les propriétés liées à la mise à l’échelle et au niveau.
 * Les cmdlets mises à jour incluent : 
     - New-AzureRmSqlDatabase ; Set-AzureRmSqlDatabase
     - New-AzureRmSqlElasticPool ; Set-AzureRmSqlElasticPool
