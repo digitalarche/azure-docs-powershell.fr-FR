@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: 836b586f9b537d5ca4147cea01f9192f890bb544
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 8049b156e1c881ed2d4fe35a0d29c9dcd48e6e97
+ms.sourcegitcommit: b37b8bb6f8e39ecea5b50ceec48601eed313add7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144383"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65511605"
 ---
 # <a name="other-installation-methods"></a>Autres méthodes d’installation
 
@@ -30,7 +30,7 @@ Téléchargez le [package Azure PowerShell WebPI](http://aka.ms/webpi-azps) et d
 >
 > PowerShell Gallery installe les modules dans `$env:ProgramFiles\WindowsPowerShell\Modules`. Le programme d’installation WebPI installe les modules Azure dans `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.
 >
-> Si une erreur se produit pendant l’installation, vous pouvez supprimer manuellement les dossiers Azure* de votre dossier `$env:ProgramFiles\WindowsPowerShell\Modules`, puis réessayer l’installation.
+> Si une erreur se produit pendant l’installation, vous pouvez supprimer manuellement les dossiers Azure\* de votre dossier `$env:ProgramFiles\WindowsPowerShell\Modules`, puis relancer l’installation.
 
 Une fois l’installation terminée, votre paramètre `$env:PSModulePath` doit inclure les répertoires contenant les applets de commande Azure PowerShell. Vous pouvez exécuter la commande suivante pour vérifier qu’Azure PowerShell a bien été installé.
 
