@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: 827bf06cfafc43e6cabdd504b7cfff5ce353072c
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: d2ffd6cc4c5e70c53ab60b1280384faac9b45867
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156225"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534723"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Applets de commande en cours d’exécution en parallèle à l’aide de travaux PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 PowerShell prend en charge les actions asynchrones avec les [travaux PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).
 Azure PowerShell dépend fortement du passage et de l’attente d’appels réseau vers Azure. En tant que développeur, il se peut que vous cherchiez souvent à passer plusieurs appels non bloquants vers Azure dans un script, ou que vous vouliez créer des ressources Azure dans la boucle REPL sans bloquer la session actuelle. Pour répondre à ces besoins, Azure PowerShell assure la prise en charge haut de gamme de [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs).

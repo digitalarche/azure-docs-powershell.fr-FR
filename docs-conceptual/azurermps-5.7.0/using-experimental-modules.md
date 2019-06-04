@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 9cd88919b51f24d19579b865d9f3d5cc779b62d9
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153263"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534796"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Utilisation des modules Azure PowerShell expérimentaux
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 En mettant l’accent sur les outils de développement (surtout les CLI) dans Azure, l’équipe Azure PowerShell peut apporter de nombreuses améliorations de l’expérience d’utilisation d’Azure PowerShell.
 
@@ -67,7 +69,7 @@ Les améliorations principales sont considérées comme des optimisations de «�
 
 - Noms plus courts : cela inclut les noms des cmdlets (par exemple, `New-AzureRmVM` => `New-AzVm`) et les noms des paramètres (par exemple, `-ResourceGroupName` => `-Rg`). Utilisez des alias pour assurer la compatibilité avec les « anciennes » cmdlets. Fournissez des ensembles de paramètres _à compatibilité descendante_.
 
-- Valeurs par défaut intelligentes : créez des valeurs par défaut intelligentes pour indiquer les informations « requises ». Par exemple : 
+- Valeurs par défaut intelligentes : créez des valeurs par défaut intelligentes pour indiquer les informations « requises ». Par exemple :
   - Groupe de ressources
   - Lieu
   - Ressources dépendantes

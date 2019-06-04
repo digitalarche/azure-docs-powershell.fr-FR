@@ -6,19 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/11/2018
-ms.openlocfilehash: 11847ca2fe09ebeb48f962eab6dac2be06bd8805
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.date: 12/13/2018
+ms.openlocfilehash: ae2fecf73271a34a08ac66de03962a7a529e353b
+ms.sourcegitcommit: 0c012450805bef75472f48c74fe488baf6ba53bb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534345"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66498605"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Utiliser des modules Azure PowerShell expérimentaux
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
-
-En mettant l’accent sur les outils de développement (surtout les CLI) dans Azure, l’équipe Azure PowerShell peut apporter de nombreuses améliorations de l’expérience d’utilisation d’Azure PowerShell.
+En mettant l’accent sur les outils de développement dans Azure, l’équipe Azure PowerShell apporte de nombreuses améliorations à l’expérience d’utilisation d’Azure PowerShell. Cet article décrit comment participer à des expériences avec Azure PowerShell et envoyer des commentaires à l’équipe de développement.
 
 ## <a name="experimentation-methodology"></a>Méthodologie d’expérimentation
 
@@ -26,29 +24,17 @@ Pour faciliter l’expérimentation, nous créons des modules Azure PowerShell q
 
 Ces modules peuvent être installés côte à côte avec des modules Azure PowerShell existants. Les noms de cmdlet ont été raccourcis, de manière à éviter les conflits de noms avec des cmdlets existantes, non expérimentales.
 
-Les modules expérimentaux utilisent la convention d’affectation de noms suivante : `AzureRM.*.Experiments`. Cette convention d’affectation de noms est similaire à la dénomination des modules de préversion : `AzureRM.*.Preview`. Les modules de préversion diffèrent des modules expérimentaux. Ils implémentent de nouvelles fonctionnalités des services Azure qui sont uniquement disponibles en tant qu’offre de préversion. Les modules de préversion remplacent les modules Azure PowerShell existants et utilisent les mêmes noms de paramètre et de cmdlet.
+Les modules expérimentaux utilisent la convention d’affectation de noms suivante : `Az.*.Experiments`. Cette convention d’affectation de noms est similaire à la dénomination des modules de préversion : `Az.*.Preview`. Les modules de préversion diffèrent des modules expérimentaux. Ils implémentent de nouvelles fonctionnalités des services Azure qui sont uniquement disponibles en tant qu’offre de préversion. Les modules de préversion remplacent les modules Azure PowerShell existants et utilisent les mêmes noms de paramètre et de cmdlet.
 
 ## <a name="how-to-install-an-experimental-module"></a>Comment installer un module expérimental
 
 Les modules expérimentaux sont publiés dans PowerShell Gallery, comme les modules Azure PowerShell existants. Pour consulter une liste de modules expérimentaux, exécutez la commande suivante :
 
 ```azurepowershell-interactive
-Find-Module AzureRM.*.Experiments
+Find-Module Az.*.Experiments
 ```
 
-```output
-Version Name                         Repository Description
-------- ----                         ---------- -----------
-1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
-1.0.0   AzureRM.Websites.Experiments PSGallery  Create and deploy web applications using Azure App Services.
-```
-
-Pour installer le module expérimental, utilisez les commandes suivantes à partir d’une session PowerShell avec élévation de privilèges :
-
-```azurepowershell-interactive
-Install-Module AzureRM.Compute.Experiments
-Install-Module AzureRM.Websites.Experiments
-```
+Pour installer un module expérimental, utilisez la cmdlet `Install-Module`.
 
 ### <a name="documentation-and-support"></a>Documentation et support
 
@@ -58,16 +44,17 @@ Nous vous encourageons à tester ces modules. Vos commentaires nous permettent d
 
 ## <a name="experiments-and-areas-of-improvement"></a>Expérimentation et domaines à améliorer
 
-Ces améliorations ont été sélectionnées en fonction des principaux atouts des produits concurrents. Par exemple, Azure CLI 2.0 s’efforce de baser ses commandes sur des _scénarios_ plutôt que sur _une surface d’exposition des API_.
-Azure CLI 2.0 utilise différentes valeurs par défaut intelligentes, qui facilitent la compréhension des scénarios de démarrage par les utilisateurs.
+Ces améliorations ont été sélectionnées en fonction des principaux atouts des produits concurrents. Par exemple, Azure CLI s’efforce de baser ses commandes sur des _scénarios_ plutôt que sur une _surface d’exposition des API_.
+Azure CLI utilise différentes valeurs par défaut intelligentes, qui facilitent la compréhension des scénarios de démarrage par les utilisateurs.
 
 ### <a name="core-improvements"></a>Améliorations principales
 
 Les améliorations principales sont considérées comme des optimisations de « bon sens », et l’implémentation de ces mises à jour requiert une expérimentation limitée.
 
-- Cmdlets basées sur des scénarios : <em>*toutes</em> les cmdlets doivent être conçues sur la base de scénarios, et non du service REST Azure.
+- Cmdlets basées sur des scénarios : - **toutes* les cmdlets doivent être conçues sur la base de scénarios, et non du service REST Azure.
 
-- Noms plus courts : cela inclut les noms des cmdlets (par exemple, `New-AzureRmVM` => `New-AzVm`) et les noms des paramètres (par exemple, `-ResourceGroupName` => `-Rg`). Utilisez des alias pour assurer la compatibilité avec les « anciennes » cmdlets. Fournissez des ensembles de paramètres _à compatibilité descendante_.
+- Noms plus courts : cela inclut les noms des cmdlets et les noms des paramètres.
+  Utilisez des alias pour assurer la compatibilité avec les « anciennes » cmdlets. Fournissez des ensembles de paramètres _à compatibilité descendante_.
 
 - Valeurs par défaut intelligentes : créez des valeurs par défaut intelligentes pour indiquer les informations « requises ». Par exemple :
   - Groupe de ressources

@@ -8,14 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 7f517f0b3768a2075557b131158ee1264ea9ab3f
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: eecd66ddf433cc2543ceeaef1519d69179f2f099
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153171"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534452"
 ---
 # <a name="release-notes"></a>Notes de publication
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Il s’agit de la liste des modifications apportées à Azure PowerShell dans cette version.
 
@@ -892,13 +894,13 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 ## <a name="630---june-2018"></a>6.3.0 - juin 2018
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Mise à jour des messages d’erreur pour la commande Enable-AzureRmContextAutoSave
-* Création d’un contexte pour chaque abonnement lors de l’exécution de la commande Connect-AzureRmAccount sans contexte précédent
+* Création d’un contexte pour chaque abonnement lors de l’exécution de la commande « Connect-AzureRmAccount » sans contexte précédent
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Ajout d’informations supplémentaires sur le paramètre -Permissions dans les fichiers d’aide.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* Get-AzureRmVmDiskEncryptionStatus résout un problème rencontré sur les machines virtuelles sans disques de données 
+* « Get-AzureRmVmDiskEncryptionStatus » résout un problème rencontré sur les machines virtuelles sans disques de données 
 * Mise à jour de la version de la bibliothèque de client Compute pour résoudre les cmdlets suivantes
     - Grant-AzureRmDiskAccess
     - Grant-AzureRmSnapshotAccess
@@ -936,7 +938,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - Ajout de PolicyDefinitionReferenceId aux résultats de la commande Get-AzureRmPolicyStateSummary
 
 #### <a name="azurermrecoveryservicesbackup"></a>AzureRM.RecoveryServices.Backup
-* Ajout du paramètre -Vault aux cmdlets RecoveryServices.Backup. Une fois envoyé, il écrasera la cmdlet Set-AzureRmRecoveryServicesContext.
+* Ajout de paramètre de coffre aux cmdlets RecoveryServices.Backup. Lorsqu’envoyé, il écrasera la cmdlet Set-AzureRmRecoveryServicesContext.
 
 #### <a name="azurermsql"></a>AzureRM.Sql
 * Mise à jour d’un exemple dans le fichier d’aide de la commande Get-AzureRmSqlDatabaseExpanded

@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 39d9fa6e354c3c3448053c9cdc98fdc7f55b068d
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 1fbd24996da2fbc7d4e95c2a63f828aea6cb3145
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153226"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534935"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Dernières modifications de Microsoft Azure PowerShell 6.0.0
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Ce document fait office de notification des dernières modifications et de guide de migration pour les consommateurs des applets de commande Microsoft Azure PowerShell. Chaque section décrit la dynamique sous-jacente aux dernières modifications et le chemin de migration à moindre résistance. Pour bénéficier d’un contexte détaillé, référez-vous à la requête de tirage associée à chaque modification.
 
@@ -121,7 +123,7 @@ $vm.StorageProfile.DataDisks[0].ManagedDisk.StorageAccountType   # This will now
 - Les valeurs acceptées pour le paramètre `StorageAccountType` ont été remplacées, respectivement de `StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
 
 **Add-AzureRmVmssDataDisk**
-- Les valeurs acceptées pour le paramètre `StorageAccountType` ont été remplacées, respectivement de`StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
+- Les valeurs acceptées pour le paramètre `StorageAccountType` ont été remplacées, respectivement de `StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
 
 **New-AzureRmAvailabilitySet**
 - Le paramètre `Managed` a été supprimé en faveur de `Sku`
@@ -147,17 +149,17 @@ New-AzureRmAvailabilitySet -ResourceGroupName "MyRG" -Name "MyAvailabilitySet" -
 - Les valeurs acceptées pour le paramètre `SkuName` ont été remplacées, respectivement de`StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
 
 **Set-AzureRmImageOsDisk**
-- Les valeurs acceptées pour le paramètre `StorageAccountType` ont été remplacées, respectivement de`StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
+- Les valeurs acceptées pour le paramètre `StorageAccountType` ont été remplacées, respectivement de `StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
 
 **Set-AzureRmVMAEMExtension**
 - Le paramètre `DisableWAD` a été supprimé
     -  Diagnostics Azure pour Windows est désactivé par défaut
 
 **Set-AzureRmVMDataDisk**
-- Les valeurs acceptées pour le paramètre `StorageAccountType` ont été remplacées, respectivement de`StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
+- Les valeurs acceptées pour le paramètre `StorageAccountType` ont été remplacées, respectivement de `StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
 
 **Set-AzureRmVMOSDisk**
-- Les valeurs acceptées pour le paramètre `StorageAccountType` ont été remplacées, respectivement de`StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
+- Les valeurs acceptées pour le paramètre `StorageAccountType` ont été remplacées, respectivement de `StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
 
 **Set-AzureRmVmssStorageProfile**
 - Les valeurs acceptées pour le paramètre `ManagedDisk` ont été remplacées, respectivement de`StandardLRS` et `PremiumLRS` vers `Standard_LRS` et `Premium_LRS`
@@ -365,7 +367,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
 - Le paramètre `ProbeEnabled` a été supprimé
 
 **Add-AzureRmVirtualNetworkPeering**
-- L’alias des paramètres `AlloowGatewayTransit` a été supprimé
+- L’alias du paramètre `AlloowGatewayTransit` a été supprimé
 
 **New-AzureRmApplicationGatewayBackendHttpSettings**
 - Le paramètre `ProbeEnabled` a été supprimé
