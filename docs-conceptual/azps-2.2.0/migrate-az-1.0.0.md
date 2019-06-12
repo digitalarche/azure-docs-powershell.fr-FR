@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: de07565efa98409c6b00cf5fda3417c618d6586b
-ms.sourcegitcommit: 0c012450805bef75472f48c74fe488baf6ba53bb
+ms.openlocfilehash: 1d99f04525a33f03f859bfb4abe263b12ca6add9
+ms.sourcegitcommit: 492e21ce65bd5782c65171ff93522c6366818060
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66498220"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66814379"
 ---
 # <a name="breaking-changes-for-az-100"></a>Changements cassants pour Az 1.0.0
 
@@ -65,14 +65,14 @@ Get-AzureRMVM
 Get-AzureKeyVaultSecret
 ```
 
-A été changé en :
+A été remplacé par :
 
 ```azurepowershell-interactive
 Get-AzVM
 Get-AzKeyVaultSecret
 ```
 
-Pour simplifier la transition vers ces nouveaux noms des applets de commande, Az introduit deux nouvelles applets de commande : [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) et [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).  `Enable-AzureRmAlias` crée des alias pour les anciens noms des applets de commande dans AzureRM qui font le mappage avec leurs nouveaux noms dans Az. L’utilisation de l’argument `-Scope` avec `Enable-AzureRmAlias` vous permet de choisir où les alias sont activés.
+Pour simplifier la transition vers ces nouveaux noms des applets de commande, Az introduit deux nouvelles applets de commande : [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) et [Disable-AzureRmAlias](/powershell/module/az.accounts/disable-azurermalias).  `Enable-AzureRmAlias` crée des alias pour les anciens noms des applets de commande dans AzureRM qui établissent la correspondance avec leurs nouveaux noms dans Az. L’utilisation de l’argument `-Scope` avec `Enable-AzureRmAlias` vous permet de choisir où les alias sont activés.
 
 Par exemple, le script suivant dans AzureRM :
 
@@ -131,7 +131,7 @@ Les scripts qui utilisent `#Requires`ou `Import-Module` pour déclarer une dépe
 #Requires -Module AzureRM.Compute
 ```
 
-Doit être changé en :
+Doit être remplacé par :
 
 ```azurepowershell-interactive
 #Requires -Module Az.Compute
@@ -143,7 +143,7 @@ Pour `Import-Module` :
 Import-Module -Name AzureRM.Compute
 ```
 
-Doit être changé en :
+Doit être remplacé par :
 
 ```azurepowershell-interactive
 Import-Module -Name Az.Compute
@@ -171,7 +171,7 @@ Pour les modules qui expriment des dépendances vis-à-vis de modules AzureRM vi
 RequiredModules = @(@{ModuleName="AzureRM.Profile"; ModuleVersion="5.8.2"})
 ```
 
-Doit être changé en :
+Doit être remplacé par :
 
 ```powershell
 RequiredModules = @(@{ModuleName="Az.Profile"; ModuleVersion="1.0.0"})
@@ -189,15 +189,15 @@ Les outils pour ces services ne sont plus activement pris en charge.  Les client
 
 ### <a name="windows-powershell-51-and-net-472"></a>Windows PowerShell 5.1 et .NET 4.7.2
 
-L’utilisation d’Az avec PowerShell 5.1 pour Windows nécessite l’installation du .NET Framework 4.7.2. L’utilisation de PowerShell Core 6.x ou ultérieur ne nécessite pas le .NET Framework.
+L’utilisation d’Az avec PowerShell 5.1 pour Windows nécessite l’installation de .NET Framework 4.7.2. L’utilisation de PowerShell Core 6.x ou ultérieur ne nécessite pas le .NET Framework.
 
 ### <a name="temporary-removal-of-user-login-using-pscredential"></a>Suppression temporaire de la connexion de l’utilisateur à l’aide de PSCredential
 
-En raison de modifications dans le flux d’authentification pour .NET Standard, nous supprimons temporairement la connexion utilisateur via PSCredential. Cette fonctionnalité sera réintroduite dans la version du 15/1/2019 pour PowerShell 5.1 pour Windows. Les détails sont abordés dans [ce problème GitHub.](https://github.com/Azure/azure-powershell/issues/7430)
+En raison de modifications dans le flux d’authentification pour .NET Standard, nous supprimons temporairement la connexion utilisateur via PSCredential. Cette fonctionnalité sera réintroduite dans la version du 15/01/2019 pour PowerShell 5.1 pour Windows. Les détails sont abordés dans [ce problème GitHub.](https://github.com/Azure/azure-powershell/issues/7430)
 
 ### <a name="default-device-code-login-instead-of-web-browser-prompt"></a>Connexion via le code d’appareil par défaut au lieu de l’invite du navigateur web
 
-En raison de modifications dans le flux d’authentification pour .NET Standard, nous utilisons la connexion à l’appareil en tant que flux de connexion par défaut lors de la connexion interactive. La connexion basée sur un navigateur web sera réintroduite pour PowerShell 5.1 pour Windows comme option par défaut dans la version du 15/1/2019. À ce moment, les utilisateurs seront en mesure de se connecter à l’appareil à l’aide d’un paramètre de commutateur.
+En raison de modifications dans le flux d’authentification pour .NET Standard, nous utilisons la connexion à l’appareil en tant que flux de connexion par défaut lors de la connexion interactive. La connexion basée sur un navigateur web sera réintroduite pour PowerShell 5.1 pour Windows comme option par défaut dans la version du 15/01/2019. À ce moment, les utilisateurs seront en mesure de se connecter à l’appareil à l’aide d’un paramètre de commutateur.
 
 ## <a name="module-breaking-changes"></a>Changements cassants de module
 
@@ -275,7 +275,7 @@ Cette section détaille les changements cassants spécifiques à des applets de 
 
   Doit être remplacé par
   ```azurepowershell-interactive
-  New-AzMMediaService -Tag @{TagName="TagValue"}
+  New-AzMediaService -Tag @{TagName="TagValue"}
   ```
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (précédemment AzureRM.Insights)
@@ -384,7 +384,7 @@ $b.ICloudBlob.Snapshot()
 Az :
 
 ```azurepowershell-interactive
-$b = Get-AzureStorageBlob -Container $containerName -Blob $blobName -Context $ctx
+$b = Get-AzStorageBlob -Container $containerName -Blob $blobName -Context $ctx
 $task = $b.ICloudBlob.SnapshotAsync()
 $task.Wait()
 $snapshot = $task.Result
@@ -402,7 +402,7 @@ $snapshot = $Share.Snapshot()
 Az :
 
 ```azurepowershell-interactive
-$Share = Get-AzureStorageShare -Name $containerName -Context $ctx
+$Share = Get-AzStorageShare -Name $containerName -Context $ctx
 $task = $Share.SnapshotAsync()
 $task.Wait()
 $snapshot = $task.Result
@@ -420,7 +420,7 @@ $b.ICloudBlob.Undelete()
 Az :
 
 ```azurepowershell-interactive
-$b = Get-AzureStorageBlob -Container $containerName -Blob $blobName -IncludeDeleted -Context $ctx
+$b = Get-AzStorageBlob -Container $containerName -Blob $blobName -IncludeDeleted -Context $ctx
 $task = $b.ICloudBlob.UndeleteAsync()
 $task.Wait()
 ```
@@ -440,11 +440,11 @@ $pageBlob.ICloudBlob.SetPremiumBlobTier("P4")
 Az :
 
 ```azurepowershell-interactive
-$blockBlob = Get-AzureStorageBlob -Container $containerName -Blob $blockBlobName -Context $ctx
+$blockBlob = Get-AzStorageBlob -Container $containerName -Blob $blockBlobName -Context $ctx
 $task = $blockBlob.ICloudBlob.SetStandardBlobTierAsync("hot")
 $task.Wait()
 
-$pageBlob = Get-AzureStorageBlob -Container $containerName -Blob $pageBlobName -Context $ctx
+$pageBlob = Get-AzStorageBlob -Container $containerName -Blob $pageBlobName -Context $ctx
 $task = $pageBlob.ICloudBlob.SetPremiumBlobTierAsync("P4")
 $task.Wait()
 ```
