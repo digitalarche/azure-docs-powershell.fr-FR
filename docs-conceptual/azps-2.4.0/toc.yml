@@ -74,7 +74,7 @@
       displayName: 'database, nosql, mongodb, couchdb'
 - name: Notes de publication
   items:
-    - name: "Notes de publication Az\_2.1.0"
+    - name: Notes de publication
       href: release-notes-azureps.md
     - name: "Changements cassants Az\_2.0.0"
       href: migrate-az-2.0.0.md
