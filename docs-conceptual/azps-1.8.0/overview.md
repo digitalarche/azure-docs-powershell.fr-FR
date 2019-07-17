@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
-ms.openlocfilehash: 710decaf8fcc0ba57e1e978a665474047393adc7
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 1978ba5415a27349ac68175144cca0d89fa26d96
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345249"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863885"
 ---
 # <a name="overview-of-azure-powershell"></a>Vue d’ensemble d’Azure PowerShell
 
@@ -49,7 +49,6 @@ Consultez l’article de [Prise en main d’Azure PowerShell](get-started-azurep
 * [Installer PowerShell](/powershell/scripting/install/installing-powershell)
 * [Scripts avec PowerShell](/powershell/scripting/powershell-scripting)
 * [Notions de base de PowerShell : (Première partie) Prise en main de PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)
-* [Prise en main rapide de PowerShell](https://mva.microsoft.com/liveevents/powershell-jumpstart) de Microsoft Virtual Academy
 
 Les exemples suivants peuvent vous aider pour certaines utilisations courantes d’Azure :
 
