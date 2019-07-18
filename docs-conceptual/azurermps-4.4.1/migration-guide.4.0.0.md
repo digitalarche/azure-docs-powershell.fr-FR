@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: b966025532a3bb4d4423ac1a7a6d398988758043
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 2f61e41b701dfc263df18064f6ac2cc4c6e4021e
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534602"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863554"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Dernières modifications de Microsoft Azure PowerShell 4.0.0
 
@@ -93,7 +93,7 @@ $s = $s1.StatusCode
 - Cette applet de commande a été dépréciée.
     
 ### <a name="get-azurermalertrule"></a>Get-AzureRmAlertRule
-- Chaque élément de la sortie (une liste d’objets) de cette applet de commande est déprécié, autrement dit au lieu de renvoyer des objets avec la structure `{ Id, Location, Name, Tags, Properties }`, ils renverront des objets présentant la structure `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}`, ce qui correspond à l’ensemble des attributs d’une ressource Azure, auxquels s’ajoutent les attributs d’une instance AlertRuleResource au niveau supérieur.
+- Chaque élément de la sortie (une liste d’objets) de cette applet de commande est déprécié, autrement dit au lieu de retourner des objets avec la structure `{ Id, Location, Name, Tags, Properties }`, ils retourneront des objets présentant la structure `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}`, ce qui correspond à l’ensemble des attributs d’une ressource Azure, auxquels s’ajoutent les attributs d’une instance AlertRuleResource au niveau supérieur.
     
 ```powershell-interactive
 # Old
@@ -180,7 +180,7 @@ $a = $s1.NewResource.ServiceBusRuleId
 ```
     
 ### <a name="set-azurermdiagnosticsettings"></a>Set-AzureRmDiagnosticSettings
-- La commande sera renommée en `Update-AzureRmDiagnsoticSettings`.
+- La commande sera renommée en `Update-AzureRmDiagnosticSettings`.
 
 ```powershell-interactive
 # Old
