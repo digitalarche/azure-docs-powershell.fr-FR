@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: abb85d3d3f6a20697510447cda2c02b2703ef921
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 6d9df4a62238f1e3b9cc9a62864f5d4d9337d6a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345358"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807382"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Créer un principal du service Azure avec Azure PowerShell
 
@@ -40,7 +40,14 @@ Sans autres paramètres d’authentification, l’authentification par mot de pa
 $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
 ```
 
-L’objet retourné contient le membre `Secret`, qui est un `SecureString` contenant le mot de passe généré. Veillez à stocker cette valeur dans un endroit sécurisé pour vous authentifier auprès du principal de service. Sa valeur __ne s’affichera pas__ dans la console. Si vous perdez le mot de passe, effectuez une [réinitialisation des informations d’identification du principal de service](#reset-credentials). 
+L’objet retourné contient le membre `Secret`, qui est un `SecureString` contenant le mot de passe généré. Veillez à stocker cette valeur dans un endroit sécurisé pour vous authentifier auprès du principal de service. Sa valeur __ne s’affichera pas__ dans la console. Si vous perdez le mot de passe, effectuez une [réinitialisation des informations d’identification du principal de service](#reset-credentials).
+
+Le code suivant vous permet d’exporter le secret :
+
+```azurepowershell-interactive
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
+$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+```
 
 Pour les mots de passe fournis par l’utilisateur, l’argument `-PasswordCredential` accepte les objets `Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential`. Ces objets doivent avoir un `StartDate` et un `EndDate` valides, et accepter un `Password` en texte en clair. Lorsque vous créez un mot de passe, assurez-vous de suivre les [règles et restrictions relatives aux mots de passe Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). N’utilisez pas de mot de passe faible. Ne réutilisez pas de mot de passe.
 
