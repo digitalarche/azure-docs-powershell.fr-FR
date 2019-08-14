@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: 1e25d4650cc20d7b6613e0efb12ec60d424608c4
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 0b7a6fa4278d95a69b21f570ac6fb22b70f073f6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658094"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861328"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Se connecter avec Azure PowerShell
 
@@ -110,7 +110,7 @@ Pour en savoir plus sur les identités managées des ressources Azure, consultez
 
 Si votre compte est associé à plusieurs locataires, l’utilisation du paramètre `-TenantId` est nécessaire au moment de la connexion. Ce paramètre fonctionne avec n’importe quelle autre méthode de connexion. Lors de la connexion, cette valeur de paramètre peut être l’ID d’objet Azure du locataire (ID de locataire) ou le nom de domaine complet du client.
 
-Si vous êtes [fournisseur de solutions cloud (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/), la valeur `-TenantId` **doit** être un ID de locataire.
+Si vous êtes [fournisseur de solutions cloud (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), la valeur `-TenantId` **doit** être un ID de locataire.
 
 ```azurepowershell-interactive
 Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'

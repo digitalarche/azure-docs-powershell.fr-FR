@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
-ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
+ms.openlocfilehash: 21345445efc89ab54bb7483cfe81f439f0a887a3
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807466"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861208"
 ---
 # <a name="install-the-azure-powershell-module"></a>Installer le module Azure PowerShell
 
@@ -38,7 +38,7 @@ Il n’existe aucune exigence supplémentaire pour Azure PowerShell lors de l’
 ## <a name="install-the-azure-powershell-module"></a>Installer le module Azure PowerShell
 
 > [!WARNING]
-> Vous __ne pouvez pas__ avoir en même temps les modules AzureRM et Az installés pour PowerShell 5.1 pour Windows installés. Si vous avez besoin de conserver AzureRM disponible sur votre système, installez le module Az pour PowerShell Core 6.x ou ultérieur. Pour cela, [installez PowerShell Core 6.x ou ultérieur](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows) et suivez ces instructions dans un terminal PowerShell Core.
+> Vous __ne pouvez pas__ avoir en même temps les modules AzureRM et Az installés pour PowerShell 5.1 pour Windows installés. Si vous avez besoin de conserver AzureRM disponible sur votre système, installez le module Az pour PowerShell Core 6.x ou ultérieur. Pour cela, [installez PowerShell Core 6.x ou ultérieur](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows) et suivez ces instructions dans un terminal PowerShell Core.
 
 La méthode d’installation recommandée consiste seulement à installer pour l’utilisateur actif :
 

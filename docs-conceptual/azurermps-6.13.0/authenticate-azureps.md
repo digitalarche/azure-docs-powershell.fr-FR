@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: d6545f18115e4162bb716def79f6b4cae8953a9c
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 464d7efa640f1d1ffd1c34bfbe6cf13cbe5202b6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534707"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863237"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Se connecter avec Azure PowerShell
 
@@ -54,7 +54,7 @@ Pour plus d’informations concernant les identités managées pour les ressourc
 
 ## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>Se connecter en tant que fournisseur de solutions cloud (CSP)
 
-Une connexion en tant que [fournisseur de solutions Cloud (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) nécessite l’utilisation de `-TenantId`. Normalement, ce paramètre peut être spécifié comme un ID de locataire ou un nom de domaine. Toutefois, pour les connexions en tant que CSP, un **ID de locataire** doit être fourni.
+Une connexion en tant que [fournisseur de solutions Cloud (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/) nécessite l’utilisation de `-TenantId`. Normalement, ce paramètre peut être spécifié comme un ID de locataire ou un nom de domaine. Toutefois, pour les connexions en tant que CSP, un **ID de locataire** doit être fourni.
 
 ```azurepowershell-interactive
 Connect-AzureRmAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'

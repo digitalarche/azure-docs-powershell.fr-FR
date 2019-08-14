@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e72aae940b48543d6a99801032186112748ea48b
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 77cb28e47d8dddcf3936edff23f794de3b78442b
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657958"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861187"
 ---
 ## <a name="250---july-2019"></a>2.5.0 - Juillet 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -536,7 +536,7 @@ ms.locfileid: "68657958"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [Plus d’informations](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules) sur l’API SQR
+    - [Plus d’informations](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) sur l’API SQR
     - Mise à jour d’Az.Monitor.md de manière à inclure des applets de commande pour la règle d’alerte basée sur des métriques GenV2 (non classique)
 
 #### <a name="aznetwork"></a>Az.Network
@@ -589,7 +589,7 @@ ms.locfileid: "68657958"
 ### <a name="highlights-since-the-last-major-release"></a>Points importants depuis la dernière version majeure
 * Disponibilité générale du module `Az`
 * Pour plus d’informations sur le module `Az`, consultez https://aka.ms/azps-announce
-* Ajouts des compléments Location, ResourceGroup et ResourceName : https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Ajouts des compléments Location, ResourceGroup et ResourceName : https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Ajout de la prise en charge des caractères génériques dans les applets de commande Get pour Az.Compute et Az.Network
 * Ajout de l’authentification interactive et par nom d’utilisateur/mot de passe pour Windows PowerShell 5.1 uniquement
 * Ajout de la prise en charge des runbooks Python 2 dans Az.Automation
@@ -693,7 +693,7 @@ ms.locfileid: "68657958"
 ### <a name="highlights-since-the-last-major-release"></a>Points importants depuis la dernière version majeure
 * Disponibilité générale du module `Az`
 * Pour plus d’informations sur le module `Az`, consultez https://aka.ms/azps-announce
-* Ajouts des compléments Location, ResourceGroup et ResourceName : https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Ajouts des compléments Location, ResourceGroup et ResourceName : https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Ajout de la prise en charge des caractères génériques dans les applets de commande Get pour Az.Compute et Az.Network
 * Ajout de l’authentification interactive et par nom d’utilisateur/mot de passe pour Windows PowerShell 5.1 uniquement
 * Ajout de la prise en charge des runbooks Python 2 dans Az.Automation
@@ -750,7 +750,7 @@ ms.locfileid: "68657958"
 ### <a name="highlights-since-the-last-major-release"></a>Points importants depuis la dernière version majeure
 * Disponibilité générale du module `Az`
 * Pour plus d’informations sur le module `Az`, consultez https://aka.ms/azps-announce
-* Ajouts des compléments Location, ResourceGroup et ResourceName : https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Ajouts des compléments Location, ResourceGroup et ResourceName : https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Ajout de la prise en charge des caractères génériques dans les applets de commande Get pour Az.Compute et Az.Network
 * Ajout de l’authentification interactive et par nom d’utilisateur/mot de passe pour Windows PowerShell 5.1 uniquement
 * Ajout de la prise en charge des runbooks Python 2 dans Az.Automation

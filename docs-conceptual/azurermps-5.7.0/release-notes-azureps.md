@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: ee9fb7e777d06f50514c6b4ba39805936b867045
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535070"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863295"
 ---
 # <a name="release-notes"></a>Notes de publication
 
@@ -613,7 +613,7 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
 * Ajout de la prise en charge d’-AsJob pour les applets de commande de sites web longues. Permet aux applets de commande sélectionnées de s’exécuter en arrière-plan et de retourner une tâche pour suivre et contrôler la progression.
      - Les applets de commande affectées sont New-, Remove-, Add-, et Set- pour WebApps, AppServicePlan et Slots
 
-## <a name="2017128-version-511"></a>8.12.2017 Version 5.1.1
+## <a name="2017128-version-511"></a>8\.12.2017 Version 5.1.1
 * AnalysisServices
   - Modification de l’ensemble de l’emplacement valide de recherche dynamique afin que tous les clouds soient pris en charge.
 * Automatisation
@@ -669,7 +669,7 @@ Modifications apportées depuis la dernière version : https://github.com/Azure/
   - Nouvelle applet de commande Update-AzureRmPowerBIEmbeddedCapacity - Modifie une instance de capacité Power BI Embedded
 * Profil
   - Mise à jour de USGovernmentActiveDirectoryEndpoint pour https://login.microsoftonline.us/
-    - Pour plus d’informations sur les mappages de point de terminaison Azure Government, consultez la rubrique suivante : https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
+    - Pour plus d’informations sur les mappages de point de terminaison Azure Government, consultez la rubrique suivante : https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
     - Ajout - Prise en charge AsJob pour les applets de commande, permettant aux applets de commande sélectionnées de s’exécuter en arrière-plan et de retourner une tâche pour suivre et contrôler la progression
     - Ajout - Paramètre AsJob à l’applet de commande Get-AzureRmSubscription
 * RecoveryServices.Backup
