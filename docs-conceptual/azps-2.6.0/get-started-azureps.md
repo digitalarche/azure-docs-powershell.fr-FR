@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: c60036ba8be6282007aa34a0bb9c0d9e33197072
-ms.sourcegitcommit: abca342d8687ca638679c049792d0cef6045837d
+ms.openlocfilehash: a4c8792f2ff27e1b6d3cee97144c26455356b7fd
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70052921"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386737"
 ---
 # <a name="get-started-with-azure-powershell"></a>Prise en main de Microsoft Azure PowerShell
 
@@ -43,7 +43,8 @@ Si vous vous trouvez dans une région en dehors des États-Unis, utilisez le par
 Connect-AzAccount -Environment AzureChinaCloud
 ```
 
-Vous obtenez un jeton à utiliser sur https://microsoft.com/devicelogin. Ouvrez cette page dans votre navigateur et entrez le jeton, puis connectez-vous avec les informations d’identification de votre compte Azure et autorisez Azure PowerShell. 
+Dans les environnements PowerShell 5.1, vous verrez une boîte de dialogue de connexion vous demandant de fournir un nom d’utilisateur et un mot de passe pour votre compte Azure. Toutes les deux versions de PowerShell, vous aurez un jeton à utiliser sur [https://microsoft.com/devicelogin ].
+Ouvrez cette page dans votre navigateur et entrez le jeton, puis connectez-vous avec les informations d’identification de votre compte Azure et autorisez Azure PowerShell.
 
 Une fois connecté, vous verrez des informations indiquant lequel de vos abonnements Azure est actif. Si vous avez plusieurs abonnements Azure dans votre compte et souhaitez en sélectionner un autre, affichez vos abonnements disponibles avec l’applet de commande [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription), puis utilisez l’applet de commande [Set-AzContext](/powershell/module/az.accounts/set-azcontext) avec votre ID d’abonnement.
 Pour plus d’informations sur la gestion de vos abonnements Azure dans Azure PowerShell, consultez [Utiliser plusieurs abonnements Azure](manage-subscriptions-azureps.md).
