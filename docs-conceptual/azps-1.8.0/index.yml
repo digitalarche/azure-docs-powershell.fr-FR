@@ -1,0 +1,87 @@
+###YamlMime:Landing
+title: Documentation Azure PowerShell
+summary: "Azure PowerShell est un ensemble d’applets de commande qui permettent de gérer des ressources Azure directement à partir de la ligne de commande PowerShell. Azure PowerShell est conçu pour être facile à apprendre et à utiliser tout en fournissant des fonctionnalités puissantes d’automatisation. Écrit en .NET Standard, Azure PowerShell fonctionne avec PowerShell\_5.1 sur Windows et avec PowerShell\_6.x et ultérieur sur toutes les plateformes.\n"
+metadata:
+  title: Vue d’ensemble d’Azure PowerShell
+  description: Commencez à utiliser Azure PowerShell en installant et en découvrant ses fonctionnalités et capacités.
+  ms.topic: landing-page
+  author: sptramer
+  ms.author: sttramer
+  ms.date: 9/19/2019
+landingContent:
+  - title: "Prise en main de Microsoft\_Azure PowerShell"
+    linkLists:
+      - linkListType: download
+        links:
+          - text: Installation d’Azure PowerShell
+            url: install-az-ps.md
+          - text: Installer PowerShell
+            url: /powershell/scripting/install/installing-powershell
+          - text: Exécuter dans Azure Cloud Shell
+            url: 'https://shell.azure.com'
+      - linkListType: get-started
+        links:
+          - text: Prise en main
+            url: get-started-azureps.md
+          - text: Découvrir les concepts PowerShell
+            url: /powershell/scripting/overview
+      - linkListType: how-to-guide
+        links:
+          - text: S’authentifier avec Azure PowerShell
+            url: authenticate-azureps.md
+          - text: Créer un principal du service
+            url: create-azure-service-principal-azureps.md
+          - text: Filtrer les résultats des applets de commande
+            url: queries-azureps.md
+          - text: Mettre en forme la sortie des applets de commande
+            url: formatting-output.md
+  - title: Gérer les ressources Azure
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Exemples de scripts pour des machines virtuelles
+            url: /azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json
+          - text: Exemples de scripts pour Azure App Service
+            url: /azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json
+          - text: Exemples de scripts pour des bases de données SQL
+            url: /azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json
+      - linkListType: tutorial
+        links:
+          - text: Créer des machines virtuelles sur le même sous-réseau
+            url: azureps-vm-tutorial.yml
+      - linkListType: learn
+        links:
+          - text: Automatiser des tâches Azure à partir de PowerShell
+            url: /learn/modules/automate-azure-tasks-with-powershell/
+  - title: Migrer à partir d’AzureRM
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: "À propos du module «\_Az\_» Azure PowerShell"
+            url: new-azureps-module-az.md
+      - linkListType: concept
+        links:
+          - text: Migrer d’AzureRM vers Az
+            url: migrate-from-azurerm-to-az.md
+      - linkListType: reference
+        links:
+          - text: Changements cassants entre AzureRM et Az
+            url: migrate-az-1.0.0.md
+  - title: "Référence Azure\_PowerShell"
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Référence sur les applets de commande
+            url: /powershell/module/?view=azps-1.8.0
+          - text: Notes de publication
+            url: release-notes-azureps.md
+  - title: Autres modules Azure PowerShell
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Azure Active Directory pour PowerShell
+            url: /powershell/azure/active-directory/
+          - text: Azure Service Fabric pour PowerShell
+            url: /powershell/azure/service-fabric/
+          - text: Azure ElasticDB pour PowerShell
+            url: /powershell/azure/elasticdbjobs/
