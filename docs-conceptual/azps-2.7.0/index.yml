@@ -72,7 +72,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: Référence sur les applets de commande
-            url: /powershell/module/?view=azps-2.6.0
+            url: /powershell/module/?view=azps-2.7.0
           - text: Notes de publication
             url: release-notes-azureps.md
           - text: "Changements cassants dans Az\_2.0.0"
