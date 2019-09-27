@@ -1570,7 +1570,7 @@ Ajout de la prise en charge de la configuration de RewriteRuleSets dans Applicat
     - À présent, l’activation des catégories de la cmdlet ne doit plus être indiquée explicitement lors de la création. Par exemple, cela fonctionne comme documenté
 
 #### <a name="aznetwork"></a>Az.Network
-* Modification du type d’homologation en paramètre obligatoire pour les cmdlets suivantes : -
+* Modification du type de peering en paramètre obligatoire pour les cmdlets suivantes : -
     - Get-AzExpressRouteCircuitRouteTable
     - Get-AzExpressRouteCircuitARPTable
     - Get-AzExpressRouteCircuitRouteTableSummary

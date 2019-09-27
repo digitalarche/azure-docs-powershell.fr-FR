@@ -452,11 +452,11 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
         - Des informations supplémentaires sont disponibles dans la publication suivante : https://github.com/Azure/azure-powershell/issues/635
 * ServiceManagement pour ExpressRoute :
     * L’applet de commande New-AzureBgpPeering a été mise à jour pour ajouter les nouvelles options suivantes :
-        - PeerAddressType : La valeur « IPv4 » ou « IPv6 » peut être spécifiée pour créer une homologation BGP du type de famille d’adresses correspondant.
+        - PeerAddressType : La valeur « IPv4 » ou « IPv6 » peut être spécifiée pour créer un peering BGP du type de famille d’adresses correspondant.
     * L’applet de commande Set-AzureBgpPeering a été mise à jour pour ajouter les nouvelles options suivantes :
-        - PeerAddressType : La valeur « IPv4 » ou « IPv6 » peut être spécifiée pour mettre à jour une homologation BGP du type de famille d’adresses correspondant.
+        - PeerAddressType : La valeur « IPv4 » ou « IPv6 » peut être spécifiée pour mettre à jour un peering BGP du type de famille d’adresses correspondant.
     * L’applet de commande Remove-AzureBgpPeering a été mise à jour pour ajouter les nouvelles options suivantes :
-        - PeerAddressType : Les valeurs « IPv4 », « IPv6 » ou All peuvent être spécifiées pour supprimer l’homologation BGP du type de famille d’adresses correspondant ou de tous les types de famille d’adresses.
+        - PeerAddressType : Les valeurs « IPv4 », « IPv6 » ou All peuvent être spécifiées pour supprimer le peering BGP du type de famille d’adresses correspondant ou de tous les types de famille d’adresses.
 
 ## <a name="20170607---version-410"></a>07/06/2017 - Version 4.1.0
 * AnalysisServices

@@ -126,7 +126,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
     - À présent, l’activation des catégories de la cmdlet ne doit plus être indiquée explicitement lors de la création. Par exemple, cela fonctionne comme documenté
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
-* Modification du type d’homologation en paramètre obligatoire pour les cmdlets suivantes : -
+* Modification du type de peering en paramètre obligatoire pour les cmdlets suivantes : -
     - Get-AzureRmExpressRouteCircuitRouteTable
     - Get-AzureRmExpressRouteCircuitARPTable
     - Get-AzureRmExpressRouteCircuitRouteTableSummary
@@ -776,7 +776,7 @@ Il s’agit de la liste des modifications apportées à Azure PowerShell dans ce
 * Correction de l’erreur « impossible de résoudre le jeu de paramètres » dans New-AzureRmLogicApp
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
-* Activer l’homologation entre des réseaux virtuels dans plusieurs locataires pour Set/Add-AzureRmVirtualNetworkPeering
+* Activer le peering entre des réseaux virtuels dans plusieurs locataires pour Set/Add-AzureRmVirtualNetworkPeering
 * Mise à jour des applets de commande ci-dessous pour Application Gateway
     - New-AzureRmApplicationGateway : Ajout d’un indicateur EnableFIPS et prise en charge de Zones
     - New-AzureRmApplicationGatewaySku : Ajout de nouvelles références (SKU) Standard_v2 et WAF_v2
