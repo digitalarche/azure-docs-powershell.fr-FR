@@ -1,10 +1,18 @@
 ---
-ms.openlocfilehash: faf9313d642a3ca45731f4527aafdfd7f5096a78
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+title: Notes de publication Azure PowerShell
+description: Découvrez toutes les dernières mises à jour des modules Azure PowerShell.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.devlang: powershell
+ms.topic: conceptual
+ms.date: 04/30/2019
+ms.openlocfilehash: 8a9a399f72ed9e3e9a3cbc09c8a4abaa91339c24
+ms.sourcegitcommit: f0f09eee03ef9dd7fe07432252a3dc8ca93e3a7b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861289"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319305"
 ---
 ## <a name="180---april-2019"></a>1.8.0 - Avril 2019
 ### <a name="highlights-since-the-last-major-release"></a>Points importants depuis la dernière version majeure
