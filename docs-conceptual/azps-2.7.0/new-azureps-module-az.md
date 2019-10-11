@@ -7,16 +7,16 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 21d41b6e14d1b39a78e40daee74b80de3a80c2a0
-ms.sourcegitcommit: 92722d603b60dc769660e7517da60110133d9959
+ms.openlocfilehash: 36bb0074694947f48d703aebc9119f90b508da57
+ms.sourcegitcommit: a6ea0fb4d58a4e4177cab0e7bfd17f893325bc69
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71226420"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72162597"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Présentation du nouveau module Azure PowerShell Az
 
-À compter de décembre 2018, le module Azure PowerShell Az est en version générale et désormais le module PowerShell prévu pour interagir avec Azure. Az propose des commandes plus courtes, améliore la stabilité et prend en charge plusieurs plateformes. AZ dispose également des mêmes fonctionnalités qu’AzureRM, ce qui vous donne une voie de migration facile.
+À compter de décembre 2018, le module Azure PowerShell Az est en version générale et est maintenant le module PowerShell prévu pour interagir avec Azure. Az propose des commandes plus courtes, améliore la stabilité et prend en charge plusieurs plateformes. AZ dispose également des mêmes fonctionnalités qu’AzureRM, ce qui vous donne une voie de migration facile.
 
 Avec le module Az, Azure PowerShell est désormais compatible avec PowerShell 5.1 sur Windows, et avec PowerShell Core 6.x et ultérieur, sur toutes les plateformes prises en charge,notamment Windows, macOS et Linux.
 
