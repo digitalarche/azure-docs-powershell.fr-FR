@@ -28,9 +28,9 @@
     - name: Créer un principal du service
       href: create-azure-service-principal-azureps.md
       displayName: 'automation, application, web app, script, certificate, sign in, signin, log in, login, devops, dev ops, itpro, it pro, role, aad, authentication, authenticate'
-    - name: Informations d’identification persistantes
+    - name: Contextes d’informations d’identification
       href: context-persistence.md
-      displayName: 'sign in, signin, log in, login, process, session'
+      displayName: 'sign in, signin, log in, login, process, session, context, persist, jobs, background, automation, scripting, task'
 - name: Requêtes
   href: queries-azureps.md
   displayName: 'filter, search, format, output, variable, scripting, array, dictionary, map, object'
@@ -52,7 +52,7 @@
   items:
     - name: Travaux PowerShell
       href: using-psjobs.md
-      displayName: 'background, task, scripting, automation'
+      displayName: 'background, task, scripting, automation, context, process'
 - name: Tutoriels
   items:
     - name: Créer des machines virtuelles
