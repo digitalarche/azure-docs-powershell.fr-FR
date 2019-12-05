@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 83e6039153bcc2b8ccb7ceddfa91609f0d6c7b3f
-ms.sourcegitcommit: b4ee3fbaaa2a329ea28308bd1902ae83a34db698
+ms.openlocfilehash: 8c1369cdedf8848f3c62ca6b6bc4eb3d2d78be95
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380195"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74656822"
 ---
 ## <a name="280---october-2019"></a>2.8.0 - octobre 2019
 ### <a name="general"></a>Généralités
@@ -56,7 +56,7 @@ ms.locfileid: "72380195"
 * Correctif de bogues mineurs : Get-AzIothub ne retourne pas subscriptionId 
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Nouveaux récepteurs de groupe d’actions ajoutés pour le groupe d’actions   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
+* Nouveaux récepteurs de groupe d’actions ajoutés pour New-AzActionGroupReceiver :   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
 * Utiliser le schéma d’alerte commun activé pour les récepteurs. Cela ne s’applique pas aux SMS, au push Azure App, à ITSM et aux systèmes vocaux
 * Les webhooks prennent maintenant en charge l’authentification Azure Active Directory.
 
@@ -64,8 +64,8 @@ ms.locfileid: "72380195"
 * Ajout de la nouvelle applet de commande Get-AzAvailableServiceAlias qui peut être appelée pour obtenir des alias pouvant être utilisés pour les stratégies de point de terminaison de service.
 * Ajout de la prise en charge des sélecteurs de trafic pour les connexions de passerelle de réseau virtuel
     - Ajout de nouvelles cmdlets :
-        - New-AzureRmTrafficSelectorPolicy
-    - Applets de commande mises à jour avec un paramètre facultatif -TrafficSelectorPolicies   -New-AzureRmVirtualNetworkGatewayConnection   -Set-AzureRmVirtualNetworkGatewayConnection
+        - New-AzIpsecTrafficSelectorPolicy
+    - Applets de commande mises à jour avec un paramètre facultatif -TrafficSelectorPolicies   -New-AzVirtualNetworkGatewayConnection   -Set-AzVirtualNetworkGatewayConnection
 * Ajout de la prise en charge des protocoles ESP et AH dans les configurations de règles de sécurité réseau
     - Cmdlets mises à jour :
         - Add-AzNetworkSecurityRuleConfig
@@ -220,7 +220,7 @@ ms.locfileid: "72380195"
     -  Remove-AzRmStorageShare
 
 #### <a name="azwebsites"></a>Az.Websites
-* Résolution du problème de suppression des balises d’application web lors de la migration de l’application vers un nouvel ASP
+* Résolution du problème de suppression des balises webapp lors de la migration de l’application vers un nouvel ASP
 * Correction de Publish-AzureWebapp pour un fonctionnement sur Linux et Windows
 * Mise à jour de l’exemple dans la documentation de référence pour « Get-AzWebAppPublishingProfile »
 
