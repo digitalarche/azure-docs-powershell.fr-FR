@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 12/20/2018
-ms.openlocfilehash: bdb63ce4bb614920582460ae707d8594977e8f71
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.openlocfilehash: a5c5504aa4c2932582df9e4a40b4950d5f999cbd
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67863579"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035844"
 ---
 # <a name="overview-of-azure-powershell"></a>Vue d’ensemble d’Azure PowerShell
 
@@ -34,7 +34,7 @@ Les exemples suivants peuvent vous aider à comprendre comment utiliser Azure Po
 
 Si vous n’êtes pas familiarisé avec le logiciel PowerShell, une introduction à ce dernier peut s’avérer opportune.
 
-* [Installation de PowerShell](/powershell/scripting/setup/installing-windows-powershell)
+* [Installation de PowerShell](/powershell/scripting/install/installing-windows-powershell)
 * [Scripts avec PowerShell](/powershell/scripting/powershell-scripting)
 
 Vous pouvez également regarder cette vidéo : [Notions de base de PowerShell : (Première partie) Prise en main de PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
