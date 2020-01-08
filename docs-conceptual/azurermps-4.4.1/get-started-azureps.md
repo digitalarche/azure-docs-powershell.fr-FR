@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: 77a66b3d218bbbfb230ed993b2a34eb3e845b1f1
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 564a3e70e3f6d1803cdff9976bace119f6e20f48
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534894"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75720393"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Bien démarrer avec Azure PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "65534894"
 
 Azure PowerShell est conçu pour la gestion et l’administration des ressources Azure à partir de la ligne de commande, et pour la création de scripts d’automatisation utilisables avec Azure Resource Manager. Vous pouvez l’ouvrir dans le navigateur avec [Azure Cloud Shell](/azure/cloud-shell/overview), ou vous pouvez l’installer sur votre ordinateur local et l’utiliser dans une session PowerShell. Cet article vous aide à bien démarrer et explique les concepts de base.
 
-## <a name="connect"></a>Connecter
+## <a name="connect"></a>Se connecter
 
 La façon la plus simple de commencer est de [lancer Cloud Shell](/azure/cloud-shell/quickstart).
 
@@ -50,7 +50,7 @@ La première étape est de vérifier que la dernière version d’Azure PowerShe
 
 Connectez-vous de manière interactive :
 
-1. Saisissez `Login-AzureRmAccount`. Une boîte de dialogue s’affiche pour vous demander vos informations d’identification Azure. L’option « -EnvironmentName » peut vous permettre de vous authentifier pour Azure - Chine ou Azure - Allemagne.
+1. Tapez `Login-AzureRmAccount`. Une boîte de dialogue s’affiche pour vous demander vos informations d’identification Azure. L’option « -EnvironmentName » peut vous permettre de vous authentifier pour Azure - Chine ou Azure - Allemagne.
 
    Par exemple, Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -270,9 +270,9 @@ my-login@MyLinuxVM:../../..$
 
 ## <a name="creating-other-resources-in-azure"></a>Création d’autres ressources dans Azure
 
-Nous avons vu comment créer un groupe de ressources, une machine virtuelle Linux et une machine virtuelle Windows Server. Nous pouvons aussi créer de nombreux autres types de ressources Azure.
+Nous avons vu comment créer un groupe de ressources, une machine virtuelle Linux et une machine virtuelle Windows Server. Vous pouvez créer de nombreux autres types de ressources Azure.
 
-Par exemple, nous pouvons créer un équilibrage de la charge réseau Azure, pour l’associer ensuite à nos nouvelles machines virtuelles, en utilisant la commande create suivante :
+Par exemple, pour créer un équilibreur de charge réseau Azure que nous pourrions ensuite associer avec nos nouvelles machines virtuelles, nous pouvons utiliser la commande create suivante :
 
 ```powershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
@@ -286,7 +286,7 @@ $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location w
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
 ```
 
-Ce qui rend Azure et Azure PowerShell si puissants, c’est que nous pouvons les utiliser non seulement pour mettre en place une infrastructure cloud, mais également pour créer des services de plateforme gérés. Ces services peuvent ensuite être combinés avec l’infrastructure pour obtenir des solutions encore plus puissantes.
+Ce qui rend Azure et Azure PowerShell si puissants, c’est que nous pouvons les utiliser non seulement pour mettre en place une infrastructure cloud, mais également pour créer des services de plateforme gérés. Les services de plateforme gérés peuvent aussi être combinés avec l’infrastructure pour générer des solutions encore plus puissantes.
 
 Par exemple, utilisez Azure PowerShell pour créer un service Azure App Service. Azure App Service est un service de plateforme géré qui offre un excellent moyen d’héberger des applications web sans avoir à se soucier de l’infrastructure. Après avoir créé le service App Service, vous pouvez y créer deux applications Azure Web Apps à l’aide des commandes suivantes :
 
@@ -358,7 +358,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 L’exécution de cette commande peut prendre plusieurs minutes.
 
-## <a name="get-samples"></a>Obtenir des exemples
+## <a name="get-samples"></a>Obtenir les exemples
 
 Pour plus d’informations sur les différentes utilisations d’Azure PowerShell, découvrez nos scripts les plus courants pour les [machines virtuelles Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), les [machines virtuelles Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), les [applications Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) et les [bases de données SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).
 
@@ -369,5 +369,5 @@ Pour plus d’informations sur les différentes utilisations d’Azure PowerShel
 * [Créer des principaux du service dans Azure à l’aide d’Azure PowerShell](create-azure-service-principal-azureps.md)
 * Lisez les notes de publication sur la migration à partir d’une version antérieure : [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Obtenir de l’aide de la communauté :
-  * [Forum Azure sur MSDN (en anglais)](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [Forum Azure sur MSDN (en anglais)](https://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [stackoverflow](https://go.microsoft.com/fwlink/?LinkId=320213)

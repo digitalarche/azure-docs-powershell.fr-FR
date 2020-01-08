@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: 1f859dcbaca88e28ebc0814513b7f4ee35610dc2
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: a4911e72f687c07b31805c07fd23263a6b7f33b4
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863212"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718795"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Installer le module Azure PowerShell Service Management
 
@@ -26,7 +26,7 @@ Pour installer des éléments à partir de PowerShell Gallery, vous avez besoin 
 Get-InstalledModule PowerShellGet -AllVersions | Select-Object Name,Version,Path
 ```
 
-Vous obtenez normalement un résultat similaire à la sortie suivante :
+Vous devez obtenir un graphique similaire à la sortie suivante :
 
 ```output
 Name          Version Path
@@ -36,7 +36,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 Si PowerShellGet n’est pas installé, consultez [Comment obtenir PowerShellGet](#how-to-get-powershellget).
 
-## <a name="step-2-install-azure-powershell"></a>Étape 2 : Installation d’Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>Étape 2 : Installation d’Azure PowerShell
 
 Exécutez la commande suivante à partir de la console Windows PowerShell en tant qu’administrateur :
 
@@ -74,7 +74,7 @@ Les modules Azure PowerShell sont fréquemment mis à jour. Si vous remarquez qu
 
 Pour obtenir des exemples de scripts qui peuvent vous aider à automatiser certaines tâches courantes dans Azure, consultez le [Centre de scripts Microsoft Azure](http://www.windowsazure.com/documentation/scripts/).
 
-Pour obtenir des informations générales sur l’installation, l’apprentissage, l’utilisation et la personnalisation de Windows PowerShell, consultez [Écriture de scripts avec Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=320210).
+Pour obtenir des informations générales sur l’installation, l’apprentissage, l’utilisation et la personnalisation de Windows PowerShell, consultez [Écriture de scripts avec Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=320210).
 
 ### <a name="how-to-get-powershellget"></a>Comment obtenir PowerShellGet
 
@@ -82,7 +82,7 @@ Pour obtenir des informations générales sur l’installation, l’apprentissag
 |---|---|
 |J’ai Windows 10 ou Windows Server 2016|Intégré à Windows Management Framework (WMF) 5.0 inclus dans le système d’exploitation|
 |Je veux effectuer la mise à niveau vers PowerShell 5|[Installer la dernière version de WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
-|Mon ordinateur exécute une version de Windows avec PowerShell 3 ou 4|[Obtenir les modules PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
+|Mon ordinateur exécute une version de Windows avec PowerShell 3 ou 4|[Obtenir les modules PackageManagement](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
 

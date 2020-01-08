@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: fe35fccd7994d7c3c3587096263a50af598e8651
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: aaba0ce38129b96e3d691f1a9d9cfdc929188ffd
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535037"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722405"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>Installer Azure PowerShell sur Windows avec un fichier MSI ou Web Platform Installer
 
@@ -42,7 +42,7 @@ Pour savoir comment conserver votre connexion Azure sur plusieurs sessions, cons
 
 ## <a name="install-or-update-on-windows-using-the-web-platform-installer"></a>Installer ou mettre à jour sur Windows à l’aide de Web Platform Installer
 
-Téléchargez le [package Azure PowerShell WebPI](http://aka.ms/webpi-azps) et démarrez l’installation. Si vous avez installé des versions antérieures de modules Azure à partir d’un fichier MSI ou avec WebPi, le programme d’installation les supprime automatiquement. Les modules sont installés dans `${env:ProgramFiles}\WindowsPowerShell\Modules`. Les modules `AzureRM` et `Azure` sont installés.
+Téléchargez le [package Azure PowerShell WebPI](https://aka.ms/webpi-azps) et démarrez l’installation. Si vous avez installé des versions antérieures de modules Azure à partir d’un fichier MSI ou avec WebPi, le programme d’installation les supprime automatiquement. Les modules sont installés dans `${env:ProgramFiles}\WindowsPowerShell\Modules`. Les modules `AzureRM` et `Azure` sont installés.
 
 > [!NOTE]
 > N’utilisez que le module `Azure` si vous utilisez le modèle de déploiement Azure Classic.

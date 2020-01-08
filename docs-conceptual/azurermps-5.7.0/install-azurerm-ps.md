@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: ff50c676d42cad515aea74ea960105ed76f418a6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: 5a4ccd67433fe3716df42075a4e2fd035a12af2b
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863306"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722439"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Installer Azure PowerShell sur Windows avec PowerShellGet
 
@@ -25,7 +25,7 @@ Le modèle de déploiement Azure Classic n’est pas pris en charge par cette ve
 > [!IMPORTANT]
 > Le module AzureRM n’est pas pris en charge sur macOS ou Linux. Pour utiliser des applets de commande Azure PowerShell sur ces plateformes, [installez le module Az](/powershell/azure/install-az-ps).
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
 Pour installer Azure PowerShell, il vous faut la version 1.1.2.0 ou plus récente de PowerShellGet. Pour savoir si elle est disponible sur votre système, exécutez la commande suivante :
 
@@ -54,9 +54,9 @@ Si PowerShellGet n’est pas installé, suivez les instructions dans le tableau 
 
 |Scénario|Instructions d’installation|
 |---|---|
-|Windows 10<br/>Windows Server 2016|Intégré à Windows Management Framework (WMF) 5.0 inclus dans le système d’exploitation|
+|Windows 10<br/>Windows Server 2016|Intégré à Windows Management Framework (WMF) 5.0 inclus dans le système d’exploitation|
 |Mise à niveau vers PowerShell 5| <ol><li>[Installer la dernière version de WMF](https://www.microsoft.com/download/details.aspx?id=54616)</li><li>Exécutez la commande suivante :<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|Windows avec PowerShell 3 ou PowerShell 4|<ol><il>[Obtenir les modules PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Exécutez la commande suivante :<br/>```Install-Module PowerShellGet -Force```</li></ol>|
+|Windows avec PowerShell 3 ou PowerShell 4|<ol><il>[Obtenir les modules PackageManagement](https://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Exécutez la commande suivante :<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 > [!NOTE]
 > L’utilisation de PowerShellGet nécessite une stratégie d’exécution pour exécuter les scripts. Pour plus d’informations sur la stratégie d’exécution de PowerShell, consultez [About Execution Policy](/powershell/module/microsoft.powershell.core/about/about_execution_policies) (À propos des stratégies d’exécution).
